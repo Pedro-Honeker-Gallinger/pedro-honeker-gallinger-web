@@ -312,87 +312,68 @@ function tech(t,l){
 }
 
 const ALL=[
-  // FEATURED (primeras 3)
-  {title:'Ichtus',w:100,h:100,t:'ac',coll:'Entre Rios, Argentina',details:[],featured:true},
-  {title:'Luz al Instante',w:80,h:120,t:'ac',coll:'Paraná, Brasil',details:[],featured:true},
-  {title:'Enjoy the Silence',w:80,h:60,t:'ac',coll:'New York, USA',details:[],featured:true},
-  // GRID
-  {title:'Corazón Portal',w:80,h:70,t:'ac',coll:'Bogotá, Colombia',details:[]},
-  {title:'Maestro Lobo',w:80,h:70,t:'ac',coll:'Palma de Mallorca, España',details:['detail']},
-  {title:'Familia',w:90,h:70,t:'ac',coll:'Buenos Aires, Argentina',details:[]},
-  {title:'Talismán Álmico',w:90,h:80,t:'ac',coll:'Buenos Aires, Argentina',details:[]},
-  {title:'Real',w:80,h:60,t:'ac',coll:'Buenos Aires, Argentina',details:[]},
-  {title:'Ecuanimidad',w:80,h:60,t:'ac',coll:'Palma de Mallorca, España',details:[]},
-  {title:'Nuevos Despertares',w:80,h:60,t:'ac',coll:'La Plata, Argentina',details:[]},
-  {title:'Unidos Siempre',w:80,h:60,t:'ac',coll:'Paraná, Argentina',details:[]},
-  {title:'Millones de Manifestaciones',w:80,h:60,t:'ac',coll:'Vitoria, Brasil',details:['detail1','detail2']},
-  {title:'Cura y Conciencia',w:80,h:60,t:'ac',coll:'Paraná, Argentina',details:[]},
-  {title:'Visión',w:80,h:60,t:'ac',coll:'Curitiba, Brasil',details:[]},
-  {title:'Txana Ixa',w:60,h:80,t:'ac',coll:'Rio Grande do Sul, Brasil',details:[]},
-  {title:'Nectar Amrita',w:60,h:80,t:'ac',coll:'Mexico DF',details:[]},
-  {title:'Jai Bolo',w:100,h:100,t:'ac',coll:'Buenos Aires, Argentina',details:[]},
-  {title:'Pushkar',w:200,h:100,t:'oc',coll:'Buenos Aires, Argentina',details:[]},
-  {title:'Nueva Era',w:100,h:100,t:'ac',coll:'Buenos Aires, Argentina',details:['detail']},
-  {title:'Nueva Era 2',w:100,h:100,t:'ac',coll:'Buenos Aires, Argentina',details:['detail']},
-  {title:'Flower of Life',w:100,h:100,t:'silk',coll:'Vitoria, Brasil',details:['detail']},
-  {title:'Anahata',w:90,h:90,t:'ac',coll:'Rio de Janeiro, Brasil',details:[]},
-  {title:'Todo',w:90,h:90,t:'ac',coll:'Buenos Aires, Argentina',details:[]},
-  {title:'Elementales',w:70,h:70,t:'ac',coll:'Entre Rios, Argentina',details:['detail']},
-  {title:'Starry Eye',w:60,h:50,t:'ac',coll:'Buenos Aires, Argentina',details:[]},
-  {title:'Maps and Cities',w:90,h:130,t:'ac',coll:'personal',details:[]},
-  {title:'Esa Noche en el Bosque',w:110,h:90,t:'ac',coll:'personal',details:[]},
-  {title:'Fuego',w:200,h:100,t:'ac',coll:'Buenos Aires, Argentina',details:[]},
-  {title:'Energy Hole',w:80,h:60,t:'oc',coll:'Bogotá, Colombia',details:[]},
-  {title:'Túnel Azul',w:50,h:70,t:'ac',coll:'Buenos Aires, Argentina',details:[]},
-  {title:'Shiva',w:70,h:70,t:'ac',coll:'Buenos Aires, Argentina',details:[]},
-  {title:'Bhakti',w:70,h:70,t:'ac',coll:'New York, USA',details:[]},
-  {title:'Prana',w:70,h:70,t:'ac',coll:'New York, USA',details:[]},
-  {title:'Shakti',w:70,h:70,t:'ac',coll:'New York, USA',details:[]},
-  {title:'Karma',w:70,h:70,t:'ac',coll:'New York, USA',details:[]},
-  {title:'Bindu',w:70,h:70,t:'ac',coll:'New York, USA',details:[]},
-  {title:'Amrita',w:70,h:70,t:'ac',coll:'New York, USA',details:[]},
-  {title:'Magia y Mística',w:90,h:90,t:'ac',coll:'Curitiba, Brasil',details:[]},
-  {title:'Cura',w:70,h:70,t:'ac',coll:'Curitiba, Brasil',details:[]},
-  {title:'Em Nós Confio',w:60,h:80,t:'ac',coll:'Brasilia, Brasil',details:[]},
-  {title:'Águila y Quetzal',w:80,h:60,t:'ac',coll:'Entre Rios, Argentina',details:[]},
-  {title:'Aquario',w:90,h:70,t:'ac',coll:'Alemania',details:['detail']},
-  {title:'Arut Perum Jhoti',w:80,h:60,t:'ac',coll:'Vitoria, Brasil',details:[]},
-  {title:'CO-LI-BRI',w:80,h:60,t:'ac',coll:'Curitiba, Brasil',details:[]},
-  {title:'Equilibrio',w:70,h:70,t:'ac',coll:'Palmeira, Brasil',details:[]},
-  {title:'La Noche del Cielo',w:140,h:100,t:'ac',coll:'Buenos Aires, Argentina',details:[]},
-  {title:'Light Network',w:200,h:100,t:'ac',coll:'Ciudad de Guatemala',details:[]},
-  {title:'Metamorfosis',w:60,h:70,t:'ac',coll:'Hawaii, USA',details:[]},
-  {title:'O Chamado',w:90,h:90,t:'ac',coll:'Florianópolis, Brasil',details:[]},
-  {title:'Plenitud',w:80,h:60,t:'silk',coll:'Entre Rios, Argentina',details:['detail1','detail2']},
-  {title:'Red Amor',w:80,h:80,t:'ac',coll:'Curitiba, Brasil',details:[]},
-  {title:'Rey Corazón',w:80,h:80,t:'ac',coll:'Buenos Aires, Argentina',details:[]},
-  {title:'Soy Amor Todo Es Amor',w:80,h:80,t:'ac',coll:'Buenos Aires, Argentina',details:[]},
-  {title:'Soy Semilla',w:80,h:60,t:'ac',coll:'Madrid, España',details:['detail']},
-  {title:'Yo Soy',w:80,h:60,t:'ac',coll:'Entre Rios, Argentina',details:['detail1','detail2']},
+  {title:'Ichtus',w:100,h:100,t:'ac',coll:'Entre Rios, Argentina',img:'Ichtus-Pedro-Honeker-Gallinger-Vayu.webp',details:[],featured:true},
+  {title:'Luz al Instante',w:80,h:120,t:'ac',coll:'Paraná, Brasil',img:'Luz-Al-Instante-Pedro-Honeker-Gallinger-Vayu.webp',details:[],featured:true},
+  {title:'Enjoy the Silence',w:80,h:60,t:'ac',coll:'New York, USA',img:'Enjoy-the-silence-2021-Pedro-Honeker-Gallinger-Vayu.webp',details:[],featured:true},
+  {title:'Corazón Portal',w:80,h:70,t:'ac',coll:'Bogotá, Colombia',img:'Corazon-portal-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Maestro Lobo',w:80,h:70,t:'ac',coll:'Palma de Mallorca, España',img:'Maestro-lobo-Pedro-Honeker-Gallinger-Vayu.webp',details:['Maestro-lobo-Pedro-Honeker-Gallinger-Vayu-detail.webp']},
+  {title:'Familia',w:90,h:70,t:'ac',coll:'Buenos Aires, Argentina',img:'Familia-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Talismán Álmico',w:90,h:80,t:'ac',coll:'Buenos Aires, Argentina',img:'Talisman-almico-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Real',w:80,h:60,t:'ac',coll:'Buenos Aires, Argentina',img:'Real-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Ecuanimidad',w:80,h:60,t:'ac',coll:'Palma de Mallorca, España',img:'ecuanimidad-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Nuevos Despertares',w:80,h:60,t:'ac',coll:'La Plata, Argentina',img:'Nuevos-despertares-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Unidos Siempre',w:80,h:60,t:'ac',coll:'Paraná, Argentina',img:'Unidos-siempre.-La-raiz-y-las-ramas.-Como-un-solo-cuerpo-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Millones de Manifestaciones',w:80,h:60,t:'ac',coll:'Vitoria, Brasil',img:'millones-de-manifestaciones-una-misma-proporsion-Pedro-Honeker-Gallinger-Vayu.webp',details:['millones-de-manifestaciones-una-misma-proporsion-Pedro-Honeker-Gallinger-Vayu-detail1.webp','millones-de-manifestaciones-una-misma-proporsion-Pedro-Honeker-Gallinger-Vayu-detail2.webp']},
+  {title:'Cura y Conciencia',w:80,h:60,t:'ac',coll:'Paraná, Argentina',img:'Cura-y-conciencia-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Visión',w:80,h:60,t:'ac',coll:'Curitiba, Brasil',img:'Vision-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Txana Ixa',w:60,h:80,t:'ac',coll:'Rio Grande do Sul, Brasil',img:'Txana-Ixa-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Nectar Amrita',w:60,h:80,t:'ac',coll:'Mexico DF',img:'Nectar-Amrita-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Jai Bolo',w:100,h:100,t:'ac',coll:'Buenos Aires, Argentina',img:'Jai-Bolo-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Pushkar',w:200,h:100,t:'oc',coll:'Buenos Aires, Argentina',img:'Pushkar-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Nueva Era',w:100,h:100,t:'ac',coll:'Buenos Aires, Argentina',img:'Nueva-Era-Pedro-Honeker-Gallinger-Vayu.webp',details:['Nueva-era-Pedro-Honeker-Gallinger-Vayu.jpg-detail.webp']},
+  {title:'Nueva Era 2',w:100,h:100,t:'ac',coll:'Buenos Aires, Argentina',img:'Nueva-era-2-Pedro-Honeker-Gallinger-Vayu-detail2.webp',details:['Nueva-era-2-Pedro-Honeker-Gallinger-Vayu-detail2.webp']},
+  {title:'Flower of Life',w:100,h:100,t:'silk',coll:'Vitoria, Brasil',img:'Flower-of-life-Pedro-Honeker-Gallinger-Vayu.webp',details:['Flower-of-life-Pedro-Honeker-Gallinger-Vayu-detail.webp']},
+  {title:'Anahata',w:90,h:90,t:'ac',coll:'Rio de Janeiro, Brasil',img:'Anahata-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Todo',w:90,h:90,t:'ac',coll:'Buenos Aires, Argentina',img:'Todo-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Elementales',w:70,h:70,t:'ac',coll:'Entre Rios, Argentina',img:'Elementales-Pedro-Honeker-Gallinger-Vayu.webp',details:['Elementales-Pedro-Honeker-Gallinger-Vayu-Detail.webp']},
+  {title:'Starry Eye',w:60,h:50,t:'ac',coll:'Buenos Aires, Argentina',img:'Starry-eye-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Maps and Cities',w:90,h:130,t:'ac',coll:'personal',img:'Maps-and-cities-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Esa Noche en el Bosque',w:110,h:90,t:'ac',coll:'personal',img:'Esa-noche-en-el-bosque-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Fuego',w:200,h:100,t:'ac',coll:'Buenos Aires, Argentina',img:'Fuego-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Energy Hole',w:80,h:60,t:'oc',coll:'Bogotá, Colombia',img:'',details:[]},
+  {title:'Túnel Azul',w:50,h:70,t:'ac',coll:'Buenos Aires, Argentina',img:'Tunel-Azul-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Shiva',w:70,h:70,t:'ac',coll:'Buenos Aires, Argentina',img:'Shiva-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Bhakti',w:70,h:70,t:'ac',coll:'New York, USA',img:'BHAKTI-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Prana',w:70,h:70,t:'ac',coll:'New York, USA',img:'Prana-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Shakti',w:70,h:70,t:'ac',coll:'New York, USA',img:'Shakti-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Karma',w:70,h:70,t:'ac',coll:'New York, USA',img:'Karma-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Bindu',w:70,h:70,t:'ac',coll:'New York, USA',img:'Bindu-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Amrita',w:70,h:70,t:'ac',coll:'New York, USA',img:'Nectar-Amrita-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Magia y Mística',w:90,h:90,t:'ac',coll:'Curitiba, Brasil',img:'Magia-y-mistica-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Cura',w:70,h:70,t:'ac',coll:'Curitiba, Brasil',img:'Cura-y-conciencia-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Em Nós Confio',w:60,h:80,t:'ac',coll:'Brasilia, Brasil',img:'Em-nos-confio-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Águila y Quetzal',w:80,h:60,t:'ac',coll:'Entre Rios, Argentina',img:'Aguila-y-quetzal-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Aquario',w:90,h:70,t:'ac',coll:'Alemania',img:'Aquario-Pedro-Honeker-Gallinger-Vayu.webp',details:['Aquario-Pedro-Honeker-Gallinger-Vayu-detail.webp']},
+  {title:'Arut Perum Jhoti',w:80,h:60,t:'ac',coll:'Vitoria, Brasil',img:'Arut-perum-jhoti-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'CO-LI-BRI',w:80,h:60,t:'ac',coll:'Curitiba, Brasil',img:'Co-li-bri-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Equilibrio',w:70,h:70,t:'ac',coll:'Palmeira, Brasil',img:'equilibrio-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'La Noche del Cielo',w:140,h:100,t:'ac',coll:'Buenos Aires, Argentina',img:'La-noche-del-cielo-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Light Network',w:200,h:100,t:'ac',coll:'Ciudad de Guatemala',img:'Light-Network-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Metamorfosis',w:60,h:70,t:'ac',coll:'Hawaii, USA',img:'Metamorfosis-2020-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'O Chamado',w:90,h:90,t:'ac',coll:'Florianópolis, Brasil',img:'O-chamado-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Plenitud',w:80,h:60,t:'silk',coll:'Entre Rios, Argentina',img:'Plenitud-Pedro-Honeker-Gallinger-Vayu.webp',details:['Plenitud-Pedro-Honeker-Gallinger-Vayu-detail1.webp','Plenitud-Pedro-Honeker-Gallinger-Vayu-detail2.webp']},
+  {title:'Red Amor',w:80,h:80,t:'ac',coll:'Curitiba, Brasil',img:'Red-Amor-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Rey Corazón',w:80,h:80,t:'ac',coll:'Buenos Aires, Argentina',img:'Rey-Corazon-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Soy Amor Todo Es Amor',w:80,h:80,t:'ac',coll:'Buenos Aires, Argentina',img:'Soy-Amor-Todo-Es-Amor-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
+  {title:'Soy Semilla',w:80,h:60,t:'ac',coll:'Madrid, España',img:'Soy-Semilla-Pedro-Honeker-Gallinger-Vayu.webp',details:['Soy-semilla-Pedro-Honeker-Gallinger-Vayu-detail.webp']},
+  {title:'Yo Soy',w:80,h:60,t:'ac',coll:'Entre Rios, Argentina',img:'Yo-Soy-Pedro-Honeker-Gallinger-Vayu.webp',details:['Yo-Soy-Pedro-Honeker-Gallinger-Vayu-detail1.webp','Yo-Soy-Pedro-Honeker-Gallinger-Vayu-detail2.webp']}
 ];
 
 const FEATURED=ALL.filter(o=>o.featured);
 const GRID=ALL.filter(o=>!o.featured).map(o=>({...o,r:o.w/o.h}));
 
-const DEMOS=[
-  'https://static.wixstatic.com/media/54f562_02ed75d5ab6f4670ae3ef7a45284f7e3~mv2_d_1800_1215_s_2.png/v1/fit/w_900,h_1200,q_90,enc_avif,quality_auto/54f562_02ed75d5ab6f4670ae3ef7a45284f7e3~mv2_d_1800_1215_s_2.png',
-  'https://static.wixstatic.com/media/54f562_6865aefaaf9c459cb9d2e080e5acfcf5~mv2.jpg/v1/fit/w_900,h_1100,q_90,enc_avif,quality_auto/54f562_6865aefaaf9c459cb9d2e080e5acfcf5~mv2.jpg',
-  'https://static.wixstatic.com/media/54f562_1ef4cc0270c04e91b3c7f26cda04f6ab~mv2.jpg/v1/fit/w_900,h_900,q_90,enc_avif,quality_auto/54f562_1ef4cc0270c04e91b3c7f26cda04f6ab~mv2.jpg',
-  'https://static.wixstatic.com/media/54f562_105e4fabb65645f192e5f8a969020808~mv2.jpg/v1/fit/w_700,h_700,q_90,enc_avif,quality_auto/54f562_105e4fabb65645f192e5f8a969020808~mv2.jpg',
-  'https://static.wixstatic.com/media/54f562_b544b163b64d4283a44501f4747d44ae~mv2.jpg/v1/fit/w_700,h_1100,q_90,enc_avif,quality_auto/54f562_b544b163b64d4283a44501f4747d44ae~mv2.jpg',
-  'https://static.wixstatic.com/media/54f562_07c6afeb6d4149d2904b2958cd978a38~mv2.jpg/v1/fit/w_700,h_430,q_90,enc_avif,quality_auto/54f562_07c6afeb6d4149d2904b2958cd978a38~mv2.jpg',
-  'https://static.wixstatic.com/media/54f562_22000dd67e2d41088ad15a548ee9541f~mv2.jpg/v1/fit/w_700,h_900,q_90,enc_avif,quality_auto/54f562_22000dd67e2d41088ad15a548ee9541f~mv2.jpg',
-  'https://static.wixstatic.com/media/54f562_5853f5c784ed4ece8084238f52364040~mv2.jpg/v1/fit/w_700,h_460,q_90,enc_avif,quality_auto/54f562_5853f5c784ed4ece8084238f52364040~mv2.jpg',
-  'https://static.wixstatic.com/media/54f562_826f2296ba76484a8a7e1711d500bfec~mv2.jpg/v1/fit/w_700,h_560,q_90,enc_avif,quality_auto/54f562_826f2296ba76484a8a7e1711d500bfec~mv2.jpg',
-  'https://static.wixstatic.com/media/54f562_dcc65798966b4a50a577be96a22ce67a~mv2_d_4032_3024_s_4_2.jpeg/v1/fit/w_700,h_530,q_90,enc_avif,quality_auto/54f562_dcc65798966b4a50a577be96a22ce67a~mv2_d_4032_3024_s_4_2.jpeg',
-  'https://static.wixstatic.com/media/54f562_359fb66e768c4ad3ad891d7378fdc36a~mv2.jpg/v1/fit/w_700,h_870,q_90,enc_avif,quality_auto/54f562_359fb66e768c4ad3ad891d7378fdc36a~mv2.jpg',
-  'https://static.wixstatic.com/media/54f562_18e926015d11499c9c1fb97b17f00596~mv2.png/v1/fit/w_700,h_440,q_90,enc_avif,quality_auto/54f562_18e926015d11499c9c1fb97b17f00596~mv2.png',
-];
-
 let lang='en',shownCount=0,activeKey=null;
 const TARGET=320,MIN=220,MAX=480,GAP=6,BATCH=12;
-function di(i){return DEMOS[i%DEMOS.length];}
-
 function detectLang(){
   const tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';
   const nv=navigator.language||'';
@@ -413,13 +394,13 @@ function waUrl(title){
 
 function panelHTML(obra,imgIdx){
   const t=T[lang];
-  const det=obra.details.length?`<div class="expand-details-row">${obra.details.map((_,k)=>`<img src="${di(imgIdx+k+1)}" class="expand-detail-thumb" alt="${obra.title} detail">`).join('')}</div>`:'';
+  const det=obra.details.length?`<div class="expand-details-row">${obra.details.map((_,k)=>`<img src="${obra.img}" class="expand-detail-thumb" alt="${obra.title} detail">`).join('')}</div>`:'';
   const dims=`${obra.w} × ${obra.h} cm`;
   const techStr=tech(obra.t,lang);
   const collStr=collLabel(obra.coll,lang);
   return`<div class="expand-inner">
     <button class="expand-close" onclick="closeExpand()">← ${t.close}</button>
-    <img src="${di(imgIdx)}" class="expand-img" alt="${obra.title} — Pedro Honeker Gallinger — Inspiritual Art">
+    <img src="${obra.img}" class="expand-img" alt="${obra.title} — Pedro Honeker Gallinger — Inspiritual Art">
     ${det}
     <div class="expand-divider"></div>
     <div class="expand-tag">${t.tag}</div>
@@ -510,7 +491,7 @@ function loadMore(){
       item.style.flexGrow='1';
       const ci=obra.idx,cr=rowEl;
       item.onclick=()=>openGrid(ci,cr);
-      item.innerHTML=`<img src="${di(obra.idx+3)}" alt="${obra.title} — Pedro Honeker Gallinger" loading="lazy"><div class="card-hover"><div class="card-title">${obra.title}</div><div class="card-cta">Explore →</div></div>`;
+      item.innerHTML=`<img src="${obra.img}" alt="${obra.title} — Pedro Honeker Gallinger" loading="lazy"><div class="card-hover"><div class="card-title">${obra.title}</div><div class="card-cta">Explore →</div></div>`;
       rowEl.appendChild(item);
     });
     const expandEl=document.createElement('div');
@@ -548,7 +529,7 @@ function init(){
     card.className='feat-card';
     card.style.aspectRatio=r;
     card.onclick=()=>openFeat(i);
-    card.innerHTML=`<img src="${di(i)}" alt="${obra.title} — Pedro Honeker Gallinger"><div class="card-hover"><div class="card-title">${obra.title}</div><div class="card-cta">Explore →</div></div>`;
+    card.innerHTML=`<img src="${obra.img}" alt="${obra.title} — Pedro Honeker Gallinger"><div class="card-hover"><div class="card-title">${obra.title}</div><div class="card-cta">Explore →</div></div>`;
     featGrid.appendChild(card);
   });
 }
