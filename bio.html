@@ -226,41 +226,106 @@ footer{
   transform:translateY(0);
   will-change:transform;
 }
+
+/* ================================================================
+   QUIET LUXURY NAV (replaces old nav)
+   ================================================================ */
+:root{--nav-h:64px}
+nav.qn{position:sticky;top:0;z-index:200;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;background:rgba(250,247,242,0.92);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border-bottom:0.5px solid var(--border)}
+body.menu-open nav.qn{z-index:160}
+.qn-logo{font-family:'Playfair Display',serif;font-size:0.88rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);text-decoration:none;font-weight:400;transition:color 0.25s}
+.qn-logo:hover{color:var(--gold)}
+.qn-right{display:flex;align-items:center;gap:0.9rem}
+.qn-lang-drop{position:relative}
+.qn-lang-toggle{display:flex;align-items:center;gap:0.35rem;font-family:'DM Sans',sans-serif;font-size:0.66rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:300;color:var(--text-mid);background:transparent;border:0.5px solid var(--border);padding:0.42rem 0.72rem;cursor:pointer;transition:border-color 0.25s,color 0.25s}
+.qn-lang-toggle:hover{border-color:var(--gold);color:var(--blue)}
+.qn-lang-toggle svg{width:9px;height:9px;transition:transform 0.25s}
+.qn-lang-drop.open .qn-lang-toggle svg{transform:rotate(180deg)}
+.qn-lang-drop.open .qn-lang-toggle{border-color:var(--gold);color:var(--blue)}
+.qn-lang-menu{position:absolute;top:calc(100% + 6px);right:0;background:#fff;border:0.5px solid var(--border);box-shadow:0 10px 28px rgba(27,46,75,0.10);min-width:160px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity 0.25s,transform 0.25s,visibility 0s linear 0.25s;z-index:210}
+.qn-lang-drop.open .qn-lang-menu{opacity:1;visibility:visible;transform:translateY(0);transition:opacity 0.25s,transform 0.25s,visibility 0s linear 0s}
+.qn-lang-opt{display:flex;align-items:center;gap:0.7rem;width:100%;text-align:left;padding:0.6rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:300;color:var(--text-light);background:none;border:none;cursor:pointer;transition:background 0.15s,color 0.15s}
+.qn-lang-opt span{font-size:0.72rem;letter-spacing:0.04em;text-transform:none;color:var(--text-mid);font-weight:300}
+.qn-lang-opt:hover{background:var(--cream2);color:var(--blue)}
+.qn-lang-opt:hover span{color:var(--blue)}
+.qn-lang-opt.active{color:var(--gold)}
+.qn-lang-opt.active span{color:var(--gold)}
+.qn-burger{width:34px;height:34px;background:none;border:none;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0;position:relative}
+.qn-burger span{display:block;width:22px;height:1px;background:var(--blue);transition:transform 0.4s cubic-bezier(0.65,0,0.35,1),opacity 0.3s,background 0.25s,width 0.4s;transform-origin:center}
+.qn-burger:hover span{background:var(--gold)}
+body.menu-open .qn-burger span:nth-child(1){transform:translateY(6px) rotate(45deg);width:24px}
+body.menu-open .qn-burger span:nth-child(2){opacity:0;transform:scaleX(0)}
+body.menu-open .qn-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg);width:24px}
+.qn-overlay{position:fixed;top:0;right:0;width:340px;max-width:88vw;max-height:100vh;z-index:150;background:linear-gradient(180deg,rgba(20,33,55,0.985) 0%,rgba(27,46,75,0.985) 100%);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-left:0.5px solid rgba(201,161,85,0.18);border-bottom:0.5px solid rgba(201,161,85,0.18);box-shadow:-20px 20px 60px rgba(0,0,0,0.25);transform:translateX(100%);transition:transform 0.45s cubic-bezier(0.65,0,0.35,1);display:flex;flex-direction:column;padding:calc(var(--nav-h) + 2rem) 2.5rem 2rem;overflow-y:auto}
+body.menu-open .qn-overlay{transform:translateX(0)}
+.qn-overlay::before{content:'';position:absolute;width:300px;height:300px;top:-80px;right:-100px;background:radial-gradient(circle,rgba(201,161,85,0.10) 0%,transparent 65%);pointer-events:none}
+.qn-backdrop{position:fixed;inset:0;z-index:140;background:rgba(15,22,38,0.35);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:opacity 0.4s ease,visibility 0s linear 0.4s}
+body.menu-open .qn-backdrop{opacity:1;visibility:visible;transition:opacity 0.4s ease,visibility 0s linear 0s}
+.qn-menu{position:relative;z-index:2;display:flex;flex-direction:column;gap:0.2rem}
+.qn-menu a{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:400;color:rgba(255,255,255,0.85);text-decoration:none;letter-spacing:0.06em;position:relative;display:inline-block;padding:0.85rem 0;border-bottom:0.5px solid rgba(255,255,255,0.06);transition:color 0.25s,padding-left 0.3s cubic-bezier(0.65,0,0.35,1);opacity:0;transform:translateX(15px)}
+body.menu-open .qn-menu a{opacity:1;transform:translateX(0)}
+body.menu-open .qn-menu a:nth-child(1){transition:opacity 0.4s 0.18s,transform 0.5s 0.18s,color 0.25s,padding-left 0.3s}
+body.menu-open .qn-menu a:nth-child(2){transition:opacity 0.4s 0.22s,transform 0.5s 0.22s,color 0.25s,padding-left 0.3s}
+body.menu-open .qn-menu a:nth-child(3){transition:opacity 0.4s 0.26s,transform 0.5s 0.26s,color 0.25s,padding-left 0.3s}
+body.menu-open .qn-menu a:nth-child(4){transition:opacity 0.4s 0.30s,transform 0.5s 0.30s,color 0.25s,padding-left 0.3s}
+body.menu-open .qn-menu a:nth-child(5){transition:opacity 0.4s 0.34s,transform 0.5s 0.34s,color 0.25s,padding-left 0.3s}
+body.menu-open .qn-menu a:nth-child(6){transition:opacity 0.4s 0.38s,transform 0.5s 0.38s,color 0.25s,padding-left 0.3s}
+body.menu-open .qn-menu a:nth-child(7){transition:opacity 0.4s 0.42s,transform 0.5s 0.42s,color 0.25s,padding-left 0.3s}
+.qn-menu a:hover{color:#e8c95a;padding-left:0.6rem}
+.qn-foot{position:relative;z-index:2;display:flex;flex-direction:column;gap:1.2rem;padding-top:1.8rem;margin-top:1.2rem;border-top:0.5px solid rgba(232,201,90,0.25);opacity:0;transition:opacity 0.4s 0.5s}
+body.menu-open .qn-foot{opacity:1}
+.qn-ig{display:flex;align-items:center;gap:0.55rem;font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;transition:color 0.25s}
+.qn-ig:hover{color:#e8c95a}
+.qn-ig svg{width:14px;height:14px}
+body.menu-open{overflow:hidden}
+@media(max-width:768px){nav.qn{padding:0 1.2rem}.qn-logo{font-size:0.72rem;letter-spacing:0.16em}}
+
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
-  <a href="index.html" class="nav-logo">Pedro Honeker Gallinger</a>
-  <ul class="nav-links">
-    <li><a href="index.html#works">Works</a></li>
-    <li><a href="index.html#murals">Murals</a></li>
-    <li><a href="index.html#live-painting">Institutional</a></li>
-    <li><a href="index.html#bio" style="color:var(--gold)">Bio</a></li>
-    <li><a href="index.html#concierge">Concierge</a></li>
-  </ul>
-  <div class="nav-right">
-    <a href="https://www.instagram.com/pedrohonekergallinger/" target="_blank" class="nav-ig" title="Instagram — @pedrohonekergallinger">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-    </a>
-    <div class="lang-drop" id="lang-drop">
-      <button class="lang-toggle" id="lang-toggle" onclick="document.getElementById('lang-drop').classList.toggle('open')">
-        <span id="lang-code">ES</span>
+<nav class="qn">
+  <a href="index.html" class="qn-logo">Pedro Honeker Gallinger</a>
+  <div class="qn-right">
+    <div class="qn-lang-drop" id="qnLangDrop">
+      <button class="qn-lang-toggle" id="qnLangToggle" aria-haspopup="true" aria-expanded="false">
+        <span id="qnLangCode">EN</span>
         <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M1 1l4 4 4-4"/></svg>
       </button>
-      <div class="lang-menu" id="lang-menu">
-        <button class="lang-option" onclick="selectLang('en')"><span class="lang-option-code">EN</span>English</button>
-        <button class="lang-option active" onclick="selectLang('es')"><span class="lang-option-code">ES</span>Español</button>
-        <button class="lang-option" onclick="selectLang('pt')"><span class="lang-option-code">PT</span>Português</button>
-        <button class="lang-option" onclick="selectLang('ar')"><span class="lang-option-code">AR</span>العربية</button>
-        <button class="lang-option" onclick="selectLang('ja')"><span class="lang-option-code">JA</span>日本語</button>
-        <button class="lang-option" onclick="selectLang('zh')"><span class="lang-option-code">ZH</span>中文</button>
+      <div class="qn-lang-menu" id="qnLangMenu" role="menu">
+        <button class="qn-lang-opt active" data-lang="en" role="menuitem">EN <span>English</span></button>
+        <button class="qn-lang-opt" data-lang="es" role="menuitem">ES <span>Español</span></button>
+        <button class="qn-lang-opt" data-lang="pt" role="menuitem">PT <span>Português</span></button>
+        <button class="qn-lang-opt" data-lang="ar" role="menuitem">AR <span>العربية</span></button>
+        <button class="qn-lang-opt" data-lang="ja" role="menuitem">JA <span>日本語</span></button>
+        <button class="qn-lang-opt" data-lang="zh" role="menuitem">ZH <span>中文</span></button>
       </div>
     </div>
-    <a href="index.html#concierge" class="nav-btn">Enquire</a>
+    <button class="qn-burger" id="qnBurger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<div class="qn-backdrop" id="qnBackdrop"></div>
+<div class="qn-overlay" id="qnOverlay">
+  <nav class="qn-menu" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="index.html#works">Available Works</a>
+    <a href="index.html#murals">Murals</a>
+    <a href="live-painting.html">Live Art</a>
+    <a href="vayu-collection.html">Vayu Collection</a>
+    <a href="bio.html">Biography</a>
+    <a href="index.html#concierge">Concierge</a>
+  </nav>
+  <div class="qn-foot">
+    <a href="https://www.instagram.com/pedrohonekergallinger/" target="_blank" rel="noopener" class="qn-ig">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      @pedrohonekergallinger
+    </a>
+  </div>
+</div>
 
 <!-- HERO PORTRAIT -->
 <div class="bio-hero">
@@ -346,12 +411,14 @@ document.querySelectorAll('img').forEach(img => {
 
 // Lang dropdown
 function selectLang(l){
-  document.getElementById('lang-code').textContent = l.toUpperCase();
-  document.querySelectorAll('.lang-option').forEach(b=>{
-    const code = b.querySelector('.lang-option-code').textContent.trim().toLowerCase();
-    b.classList.toggle('active', code === l);
+  try { localStorage.setItem('phg_lang', l); } catch(e){}
+  var qnCode = document.getElementById('qnLangCode');
+  if(qnCode) qnCode.textContent = l.toUpperCase();
+  document.querySelectorAll('.qn-lang-opt').forEach(function(b){
+    b.classList.toggle('active', b.dataset.lang === l);
   });
-  document.getElementById('lang-drop').classList.remove('open');
+  document.documentElement.lang = l;
+  document.documentElement.dir = (l === 'ar') ? 'rtl' : 'ltr';
 }
 
 // Close lang dropdown on outside click
@@ -375,6 +442,76 @@ document.addEventListener('click', function(e){
   }
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
+})();
+
+
+
+// ============ LANGUAGE INIT (bio is single-language but stores user preference) ============
+(function(){
+  var stored = null;
+  try { stored = localStorage.getItem('phg_lang'); } catch(e){}
+  var lang = stored && ['en','es','pt','ar','ja','zh'].includes(stored) ? stored : null;
+  if(!lang){
+    var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone||'').toLowerCase();
+    var nv = (navigator.language||'').toLowerCase();
+    if(/brazil|sao_paulo|brasilia|belem|manaus|fortaleza|recife|bahia|maceio/.test(tz)) lang='pt';
+    else if(nv.startsWith('pt')) lang='pt';
+    else if(/argentina|chile|colombia|mexico|peru|uruguay|venezuela|bolivia|ecuador|paraguay|cuba|panama|costa_rica|guatemala|honduras|nicaragua|salvador|santo_domingo|asuncion|montevideo|caracas|bogota|lima|santiago|madrid|tegucigalpa|managua/.test(tz)) lang='es';
+    else if(nv.startsWith('es')) lang='es';
+    else if(/asia\/dubai|asia\/riyadh|asia\/qatar|asia\/bahrain|asia\/kuwait|asia\/muscat|asia\/baghdad|africa\/cairo|asia\/amman|asia\/beirut|asia\/damascus/.test(tz)) lang='ar';
+    else if(nv.startsWith('ar')) lang='ar';
+    else if(/asia\/tokyo/.test(tz)) lang='ja';
+    else if(nv.startsWith('ja')) lang='ja';
+    else if(/asia\/shanghai|asia\/hong_kong|asia\/taipei|asia\/chongqing|asia\/macau/.test(tz)) lang='zh';
+    else if(nv.startsWith('zh')) lang='zh';
+    else lang='en';
+  }
+  var qnCode = document.getElementById('qnLangCode');
+  if(qnCode) qnCode.textContent = lang.toUpperCase();
+  document.querySelectorAll('.qn-lang-opt').forEach(function(b){
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+})();
+
+// ============ QUIET LUXURY NAV CONTROLS ============
+(function(){
+  const burger = document.getElementById('qnBurger');
+  const backdrop = document.getElementById('qnBackdrop');
+  const body = document.body;
+  if(!burger||!backdrop) return;
+  function openMenu(){body.classList.add('menu-open');burger.setAttribute('aria-expanded','true');}
+  function closeMenu(){body.classList.remove('menu-open');burger.setAttribute('aria-expanded','false');}
+  function toggleMenu(){body.classList.contains('menu-open')?closeMenu():openMenu();}
+  burger.addEventListener('click',toggleMenu);
+  document.querySelectorAll('.qn-menu a').forEach(a=>a.addEventListener('click',closeMenu));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&body.classList.contains('menu-open'))closeMenu();});
+  backdrop.addEventListener('click',closeMenu);
+})();
+
+// ============ NEW LANG DROPDOWN BINDINGS ============
+(function(){
+  const langDrop = document.getElementById('qnLangDrop');
+  const langToggle = document.getElementById('qnLangToggle');
+  if(!langDrop||!langToggle) return;
+  langToggle.addEventListener('click', e=>{
+    e.stopPropagation();
+    langDrop.classList.toggle('open');
+    langToggle.setAttribute('aria-expanded', langDrop.classList.contains('open'));
+  });
+  document.querySelectorAll('.qn-lang-opt').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      if(typeof selectLang==='function'){selectLang(b.dataset.lang);}
+      else if(typeof applyLang==='function'){applyLang(b.dataset.lang);}
+      langDrop.classList.remove('open');
+      langToggle.setAttribute('aria-expanded','false');
+    });
+  });
+  document.addEventListener('click', e=>{
+    if(!langDrop.contains(e.target)){
+      langDrop.classList.remove('open');
+      langToggle.setAttribute('aria-expanded','false');
+    }
+  });
 })();
 
 </script>
