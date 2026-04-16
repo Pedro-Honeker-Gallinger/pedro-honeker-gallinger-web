@@ -364,7 +364,7 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
   .vayu-intro { gap: 2rem !important;}
   .vayu-mini-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
   .vayu-title-responsive { font-size: 1.8rem !important; white-space: normal !important; line-height: 1.3 !important; }
-  .vayu-mini-item { height: 140px !important; }
+  
 
 }
   .vid-card-info h3 { font-size: 1.2rem !important; margin-bottom: 5px !important; }
@@ -386,6 +386,11 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
 .vayu-mini-grid { width: 100%; display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 15px; order: -1; }
 .vayu-eyebrow-container { justify-content: center; text-align: center; width: 100%; display: flex;}
 .vayu-title-responsive { text-align: center !important; }
+
+
+.vayu-mini-item { aspect-ratio: 1 / 1; height: auto !important; overflow: hidden; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.vayu-mini-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+.vayu-mini-item:hover img { transform: scale(1.05); }
 
 </style>
 </head>
@@ -517,6 +522,11 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
 .vayu-mini-grid { width: 100%; display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 15px; order: -1; }
 .vayu-eyebrow-container { justify-content: center; text-align: center; width: 100%; display: flex;}
 .vayu-title-responsive { text-align: center !important; }
+
+
+.vayu-mini-item { aspect-ratio: 1 / 1; height: auto !important; overflow: hidden; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.vayu-mini-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+.vayu-mini-item:hover img { transform: scale(1.05); }
 
 </style>
 
@@ -1181,14 +1191,14 @@ const MURALS=[
 ];
 
 const VAYU_PREVIEW=[
-  'https://static.wixstatic.com/media/54f562_105e4fabb65645f192e5f8a969020808~mv2.jpg/v1/fit/w_400,h_400,q_90,enc_avif,quality_auto/54f562_105e4fabb65645f192e5f8a969020808~mv2.jpg',
-  'https://static.wixstatic.com/media/54f562_b544b163b64d4283a44501f4747d44ae~mv2.jpg/v1/fit/w_400,h_640,q_90,enc_avif,quality_auto/54f562_b544b163b64d4283a44501f4747d44ae~mv2.jpg',
-  'https://static.wixstatic.com/media/54f562_07c6afeb6d4149d2904b2958cd978a38~mv2.jpg/v1/fit/w_400,h_246,q_90,enc_avif,quality_auto/54f562_07c6afeb6d4149d2904b2958cd978a38~mv2.jpg',
-  'https://static.wixstatic.com/media/54f562_22000dd67e2d41088ad15a548ee9541f~mv2.jpg/v1/fit/w_400,h_506,q_90,enc_avif,quality_auto/54f562_22000dd67e2d41088ad15a548ee9541f~mv2.jpg',
-  'https://static.wixstatic.com/media/54f562_5853f5c784ed4ece8084238f52364040~mv2.jpg/v1/fit/w_400,h_260,q_90,enc_avif,quality_auto/54f562_5853f5c784ed4ece8084238f52364040~mv2.jpg',
-  'https://static.wixstatic.com/media/54f562_826f2296ba76484a8a7e1711d500bfec~mv2.jpg/v1/fit/w_400,h_320,q_90,enc_avif,quality_auto/54f562_826f2296ba76484a8a7e1711d500bfec~mv2.jpg',
-  'https://static.wixstatic.com/media/54f562_79c5b9da761a45968ae7b1c5f392cb15~mv2.jpg/v1/fit/w_400,h_246,q_90,enc_avif,quality_auto/54f562_79c5b9da761a45968ae7b1c5f392cb15~mv2.jpg',
-  'https://static.wixstatic.com/media/54f562_d1c0dd015964490680f3b662f15e3ecc~mv2.jpg/v1/fit/w_400,h_256,q_90,enc_avif,quality_auto/54f562_d1c0dd015964490680f3b662f15e3ecc~mv2.jpg',
+  'chtus-Pedro-Honeker-Gallinger-Vayu.webp',
+  'Luz-Al-Instante-Pedro-Honeker-Gallinger-Vayu.webp',
+  'Enjoy-the-silence-2021-Pedro-Honeker-Gallinger-Vayu.webp',
+  'Corazon-portal-Pedro-Honeker-Gallinger-Vayu.webp',
+  'Maestro-lobo-Pedro-Honeker-Gallinger-Vayu.webp',
+  'Talisman-almico-Pedro-Honeker-Gallinger-Vayu.webp',
+  'ecuanimidad-Pedro-Honeker-Gallinger-Vayu.webp',
+  'Nuevos-despertares-Pedro-Honeker-Gallinger-Vayu.webp'
 ];
 
 let lang='en', vidShown=3, activeWork=null, activeMural=null, activeVid=null;
