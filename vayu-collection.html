@@ -64,8 +64,8 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 3
 .btn-em-s{display:flex;align-items:center;gap:0.55rem;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--blue);background:transparent;border:0.5px solid rgba(27,46,75,0.25);padding:0.8rem 1.5rem;cursor:pointer;text-decoration:none;transition:border-color 0.2s,color 0.2s;font-family:'DM Sans',sans-serif}
 .btn-em-s:hover{border-color:var(--gold);color:var(--gold)}
 .feat-loadmore-wrap{padding:2.5rem 0;text-align:center}
-.grid-section{display:none;padding:0 3rem}
-.grid-section.visible{display:block}
+.grid-section{display:block;padding:0 3rem}
+.grid-section{display:block}
 .grid-divider{height:0.5px;background:var(--border);margin:0 0 1.5rem}
 .grid-label{font-size:0.58rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--text-light);margin-bottom:1.2rem}
 .justified-gallery{width:100%}
@@ -143,6 +143,8 @@ body.menu-open nav.qn{z-index:160}
 .qn-logo{font-family:'Playfair Display',serif;font-size:0.88rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);text-decoration:none;font-weight:400;transition:color 0.25s}
 .qn-logo:hover{color:var(--gold)}
 .qn-right{display:flex;align-items:center;gap:0.9rem}
+.qn-ig-nav{color:var(--text-mid);display:flex;align-items:center;transition:color 0.25s;text-decoration:none}
+.qn-ig-nav:hover{color:var(--gold)}
 .qn-lang-drop{position:relative}
 .qn-lang-toggle{display:flex;align-items:center;gap:0.35rem;font-family:'DM Sans',sans-serif;font-size:0.66rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:300;color:var(--text-mid);background:transparent;border:0.5px solid var(--border);padding:0.42rem 0.72rem;cursor:pointer;transition:border-color 0.25s,color 0.25s}
 .qn-lang-toggle:hover{border-color:var(--gold);color:var(--blue)}
@@ -163,13 +165,13 @@ body.menu-open nav.qn{z-index:160}
 body.menu-open .qn-burger span:nth-child(1){transform:translateY(6px) rotate(45deg);width:24px}
 body.menu-open .qn-burger span:nth-child(2){opacity:0;transform:scaleX(0)}
 body.menu-open .qn-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg);width:24px}
-.qn-overlay{position:fixed;top:0;right:0;width:340px;max-width:88vw;max-height:100vh;z-index:150;background:linear-gradient(180deg,rgba(20,33,55,0.985) 0%,rgba(27,46,75,0.985) 100%);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-left:0.5px solid rgba(201,161,85,0.18);border-bottom:0.5px solid rgba(201,161,85,0.18);box-shadow:-20px 20px 60px rgba(0,0,0,0.25);transform:translateX(100%);transition:transform 0.45s cubic-bezier(0.65,0,0.35,1);display:flex;flex-direction:column;padding:calc(var(--nav-h) + 2rem) 2.5rem 2rem;overflow-y:auto}
+.qn-overlay{position:fixed;top:0;right:0;width:340px;max-width:88vw;max-height:100vh;z-index:150;background:#FFFFFF;border-left:0.5px solid var(--border);box-shadow:-12px 0 40px rgba(0,0,0,0.12);transform:translateX(100%);transition:transform 0.45s cubic-bezier(0.65,0,0.35,1);display:flex;flex-direction:column;padding:calc(var(--nav-h) + 2rem) 2.5rem 2rem;overflow-y:auto}
 body.menu-open .qn-overlay{transform:translateX(0)}
-.qn-overlay::before{content:'';position:absolute;width:300px;height:300px;top:-80px;right:-100px;background:radial-gradient(circle,rgba(201,161,85,0.10) 0%,transparent 65%);pointer-events:none}
-.qn-backdrop{position:fixed;inset:0;z-index:140;background:rgba(15,22,38,0.35);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:opacity 0.4s ease,visibility 0s linear 0.4s}
+
+.qn-backdrop{position:fixed;inset:0;z-index:140;background:rgba(0,0,0,0.18);opacity:0;visibility:hidden;transition:opacity 0.4s ease,visibility 0s linear 0.4s}
 body.menu-open .qn-backdrop{opacity:1;visibility:visible;transition:opacity 0.4s ease,visibility 0s linear 0s}
 .qn-menu{position:relative;z-index:2;display:flex;flex-direction:column;gap:0.2rem}
-.qn-menu a{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:400;color:rgba(255,255,255,0.85);text-decoration:none;letter-spacing:0.06em;position:relative;display:inline-block;padding:0.85rem 0;border-bottom:0.5px solid rgba(255,255,255,0.06);transition:color 0.25s,padding-left 0.3s cubic-bezier(0.65,0,0.35,1);opacity:0;transform:translateX(15px)}
+.qn-menu a{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:400;color:var(--blue);text-decoration:none;letter-spacing:0.06em;position:relative;display:inline-block;padding:0.85rem 0;border-bottom:0.5px solid var(--border);transition:color 0.25s,padding-left 0.3s cubic-bezier(0.65,0,0.35,1);opacity:0;transform:translateX(15px)}
 body.menu-open .qn-menu a{opacity:1;transform:translateX(0)}
 body.menu-open .qn-menu a:nth-child(1){transition:opacity 0.4s 0.18s,transform 0.5s 0.18s,color 0.25s,padding-left 0.3s}
 body.menu-open .qn-menu a:nth-child(2){transition:opacity 0.4s 0.22s,transform 0.5s 0.22s,color 0.25s,padding-left 0.3s}
@@ -178,63 +180,68 @@ body.menu-open .qn-menu a:nth-child(4){transition:opacity 0.4s 0.30s,transform 0
 body.menu-open .qn-menu a:nth-child(5){transition:opacity 0.4s 0.34s,transform 0.5s 0.34s,color 0.25s,padding-left 0.3s}
 body.menu-open .qn-menu a:nth-child(6){transition:opacity 0.4s 0.38s,transform 0.5s 0.38s,color 0.25s,padding-left 0.3s}
 body.menu-open .qn-menu a:nth-child(7){transition:opacity 0.4s 0.42s,transform 0.5s 0.42s,color 0.25s,padding-left 0.3s}
-.qn-menu a:hover{color:#e8c95a;padding-left:0.6rem}
-.qn-foot{position:relative;z-index:2;display:flex;flex-direction:column;gap:1.2rem;padding-top:1.8rem;margin-top:1.2rem;border-top:0.5px solid rgba(232,201,90,0.25);opacity:0;transition:opacity 0.4s 0.5s}
+.qn-menu a:hover{color:var(--gold);padding-left:0.6rem}
+.qn-foot{position:relative;z-index:2;display:flex;flex-direction:column;gap:1.2rem;padding-top:1.8rem;margin-top:1.2rem;border-top:0.5px solid var(--border);opacity:0;transition:opacity 0.4s 0.5s}
 body.menu-open .qn-foot{opacity:1}
-.qn-ig{display:flex;align-items:center;gap:0.55rem;font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;transition:color 0.25s}
-.qn-ig:hover{color:#e8c95a}
+.qn-ig{display:flex;align-items:center;gap:0.55rem;font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-mid);text-decoration:none;transition:color 0.25s}
+.qn-ig:hover{color:var(--gold)}
 .qn-ig svg{width:14px;height:14px}
 body.menu-open{overflow:hidden}
 @media(max-width:768px){nav.qn{padding:0 1.2rem}.qn-logo{font-size:0.72rem;letter-spacing:0.16em}}
-
-
-.modal { display:none; position:fixed; inset:0; background:rgba(27,46,75,0.95); z-index:9999; padding:2rem; overflow-y:auto; align-items:flex-start; justify-content:center; backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); }
-.modal.active { display:flex; }
-.modal-close { position:fixed; top:2rem; right:2rem; color:#FFF; font-size:2rem; cursor:pointer; z-index:10000; font-family:sans-serif; }
-.modal-content { max-width:1200px; width:100%; margin:auto; text-align:center; position:relative; display:flex; flex-direction:column; align-items:center; }
-.expand-img { max-width:100%; max-height:80vh; object-fit:contain; border-radius:4px; box-shadow:0 10px 40px rgba(0,0,0,0.3); }
-.expand-text { margin-top:2rem; color:#FFF; max-width:800px; }
-.expand-text h3 { font-family:'Playfair Display', serif; font-size:2.5rem; color:var(--gold); margin-bottom:1rem; }
-.expand-text p { font-family:'DM Sans', sans-serif; font-size:1.1rem; line-height:1.7; color:var(--cream2); }
 
 </style>
 </head>
 <body>
 
 <script>
-// ============ READ STORED LANGUAGE BEFORE INIT ============
+/* ══════════════════════════════════════════════════════════════
+   LANGUAGE DETECTION — auto by country/timezone, manual override
+   Stores choice in localStorage('phg_lang')
+   ══════════════════════════════════════════════════════════════ */
 (function(){
-  var stored = null;
-  try { stored = localStorage.getItem('phg_lang'); } catch(e){}
-  var detected = null;
-  if(stored && ['en','es','pt','ar','ja','zh'].includes(stored)) {
-    detected = stored;
+  var stored=null;
+  try{stored=localStorage.getItem('phg_lang');}catch(e){}
+  var detected=null;
+  if(stored&&['en','es','pt','ar','ja','zh'].includes(stored)){
+    detected=stored;
   } else {
-    var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone||'').toLowerCase();
-    var nv = (navigator.language||'').toLowerCase();
+    var tz=(Intl.DateTimeFormat().resolvedOptions().timeZone||'').toLowerCase();
+    var nv=(navigator.language||'').toLowerCase();
     if(/brazil|sao_paulo|brasilia|belem|manaus|fortaleza|recife|bahia|maceio/.test(tz)) detected='pt';
     else if(nv.startsWith('pt')) detected='pt';
-    else if(/argentina|chile|colombia|mexico|peru|uruguay|venezuela|bolivia|ecuador|paraguay|cuba|panama|costa_rica|guatemala|honduras|nicaragua|salvador|santo_domingo|asuncion|montevideo|caracas|bogota|lima|santiago|madrid|tegucigalpa|managua/.test(tz)) detected='es';
+    else if(/argentina|chile|colombia|mexico|peru|uruguay|venezuela|bolivia|ecuador|paraguay|cuba|panama|costa_rica|guatemala|honduras|nicaragua|salvador|asuncion|montevideo|bogota|lima|santiago|madrid/.test(tz)) detected='es';
     else if(nv.startsWith('es')) detected='es';
+    else if(/tokyo|japan/.test(tz)||nv.startsWith('ja')) detected='ja';
+    else if(/shanghai|hong_kong|taipei|macau|china/.test(tz)||nv.startsWith('zh')) detected='zh';
+    else if(/riyadh|dubai|qatar|kuwait|bahrain|oman|egypt|cairo|amman|beirut|baghdad|casablanca|tunis|algiers|tripoli/.test(tz)||nv.startsWith('ar')) detected='ar';
     else detected='en';
   }
-  // Vayu only supports en/es/pt — fallback to en for other languages
-  if(!['en','es','pt'].includes(detected)) detected = 'en';
-  // Set global lang so init() picks it up
-  window.lang = detected;
-  // Update nav code immediately
-  document.addEventListener('DOMContentLoaded', function(){
-    var nav = document.getElementById('lang-code-nav');
-    if(nav) nav.textContent = detected.toUpperCase();
-    var qn = document.getElementById('qnLangCode');
-    if(qn) qn.textContent = detected.toUpperCase();
+  if(!['en','es','pt','ar','ja','zh'].includes(detected)) detected='en';
+  window.phgLang=detected;
+  document.addEventListener('DOMContentLoaded',function(){
+    var qn=document.getElementById('qnLangCode');
+    if(qn) qn.textContent=detected.toUpperCase();
     document.querySelectorAll('.qn-lang-opt').forEach(function(b){
-      b.classList.toggle('active', b.dataset.lang === detected);
+      b.classList.toggle('active',b.dataset.lang===detected);
     });
+    document.documentElement.lang=detected;
+    document.documentElement.dir=(detected==='ar')?'rtl':'ltr';
   });
 })();
 
+/* ══════════════════════════════════════════════════════════════
+   IMAGE HELPER — builds real filenames from the provided list
+   Convention: {Slug}-Pedro-Honeker-Gallinger-Vayu.webp
+               {Slug}-Pedro-Honeker-Gallinger-Vayu-{detail}.webp
+   ══════════════════════════════════════════════════════════════ */
+function img(slug,detail){
+  var base=slug+'-Pedro-Honeker-Gallinger-Vayu';
+  return detail ? base+'-'+detail+'.webp' : base+'.webp';
+}
 
+/* ══════════════════════════════════════════════════════════════
+   COUNTRIES displayed in header flags row
+   ══════════════════════════════════════════════════════════════ */
 const COUNTRIES=[
   {flag:'🇸🇬',name:'Singapore'},{flag:'🇺🇸',name:'USA'},{flag:'🇨🇦',name:'Canada'},
   {flag:'🇲🇽',name:'México'},{flag:'🇨🇴',name:'Colombia'},{flag:'🇬🇹',name:'Guatemala'},
@@ -243,7 +250,6 @@ const COUNTRIES=[
   {flag:'🇮🇳',name:'India'},{flag:'🇨🇭',name:'Suiza'},{flag:'🇮🇹',name:'Italia'}
 ];
 
-// Traducciones de países y ciudades
 const PLACES={
   en:{'Argentina':'Argentina','Brasil':'Brazil','Colombia':'Colombia','España':'Spain',
       'USA':'USA','Guatemala':'Guatemala','México':'Mexico','Entre Rios, Argentina':'Entre Ríos, Argentina',
@@ -251,47 +257,91 @@ const PLACES={
       'Alemania':'Germany','Vitoria, Brasil':'Vitória, Brazil','Curitiba, Brasil':'Curitiba, Brazil',
       'Bogotá, Colombia':'Bogotá, Colombia','Paraná, Argentina':'Paraná, Argentina',
       'Palma de Mallorca, España':'Palma de Mallorca, Spain','Buenos Aires, Argentina':'Buenos Aires, Argentina',
-      'Brasilia, Brasil':'Brasília, Brazil','Bogotá, Colombia':'Bogotá, Colombia',
-      'Palmeira, Brasil':'Palmeira, Brazil','Paraná, Brasil':'Paraná, Brazil',
-      'Hawaii, USA':'Hawaii, USA','Mexico DF':'Mexico City, Mexico','La Plata, Argentina':'La Plata, Argentina',
-      'Florianópolis, Brasil':'Florianópolis, Brazil','Madrid, España':'Madrid, Spain',
-      'Rio Grande do Sul, Brasil':'Rio Grande do Sul, Brazil','Ciudad de Guatemala':'Guatemala City',
-      'personal':'Artist\'s personal collection'},
+      'Brasilia, Brasil':'Brasília, Brazil','Palmeira, Brasil':'Palmeira, Brazil',
+      'Paraná, Brasil':'Paraná, Brazil','Hawaii, USA':'Hawaii, USA','Mexico DF':'Mexico City, Mexico',
+      'La Plata, Argentina':'La Plata, Argentina','Florianópolis, Brasil':'Florianópolis, Brazil',
+      'Madrid, España':'Madrid, Spain','Rio Grande do Sul, Brasil':'Rio Grande do Sul, Brazil',
+      'Ciudad de Guatemala':'Guatemala City','personal':"Artist's personal collection"},
   es:{'Argentina':'Argentina','Brasil':'Brasil','Colombia':'Colombia','España':'España',
       'USA':'Estados Unidos','Guatemala':'Guatemala','México':'México','Entre Rios, Argentina':'Entre Ríos, Argentina',
-      'New York, USA':'Nueva York, Estados Unidos','Rio de Janeiro, Brasil':'Río de Janeiro, Brasil',
+      'New York, USA':'Nueva York, EE.UU.','Rio de Janeiro, Brasil':'Río de Janeiro, Brasil',
       'Alemania':'Alemania','Vitoria, Brasil':'Vitória, Brasil','Curitiba, Brasil':'Curitiba, Brasil',
       'Bogotá, Colombia':'Bogotá, Colombia','Paraná, Argentina':'Paraná, Argentina',
       'Palma de Mallorca, España':'Palma de Mallorca, España','Buenos Aires, Argentina':'Buenos Aires, Argentina',
-      'Brasilia, Brasil':'Brasilia, Brasil','Bogotá, Colombia':'Bogotá, Colombia',
-      'Palmeira, Brasil':'Palmeira, Brasil','Paraná, Brasil':'Paraná, Brasil',
-      'Hawaii, USA':'Hawái, Estados Unidos','Mexico DF':'Ciudad de México','La Plata, Argentina':'La Plata, Argentina',
-      'Florianópolis, Brasil':'Florianópolis, Brasil','Madrid, España':'Madrid, España',
-      'Rio Grande do Sul, Brasil':'Rio Grande do Sul, Brasil','Ciudad de Guatemala':'Ciudad de Guatemala',
-      'personal':'Acervo personal del artista'},
+      'Brasilia, Brasil':'Brasilia, Brasil','Palmeira, Brasil':'Palmeira, Brasil',
+      'Paraná, Brasil':'Paraná, Brasil','Hawaii, USA':'Hawái, EE.UU.','Mexico DF':'Ciudad de México',
+      'La Plata, Argentina':'La Plata, Argentina','Florianópolis, Brasil':'Florianópolis, Brasil',
+      'Madrid, España':'Madrid, España','Rio Grande do Sul, Brasil':'Rio Grande do Sul, Brasil',
+      'Ciudad de Guatemala':'Ciudad de Guatemala','personal':'Acervo personal del artista'},
   pt:{'Argentina':'Argentina','Brasil':'Brasil','Colombia':'Colômbia','España':'Espanha',
       'USA':'Estados Unidos','Guatemala':'Guatemala','México':'México','Entre Rios, Argentina':'Entre Ríos, Argentina',
-      'New York, USA':'Nova York, Estados Unidos','Rio de Janeiro, Brasil':'Rio de Janeiro, Brasil',
+      'New York, USA':'Nova York, EUA','Rio de Janeiro, Brasil':'Rio de Janeiro, Brasil',
       'Alemania':'Alemanha','Vitoria, Brasil':'Vitória, Brasil','Curitiba, Brasil':'Curitiba, Brasil',
       'Bogotá, Colombia':'Bogotá, Colômbia','Paraná, Argentina':'Paraná, Argentina',
       'Palma de Mallorca, España':'Palma de Maiorca, Espanha','Buenos Aires, Argentina':'Buenos Aires, Argentina',
-      'Brasilia, Brasil':'Brasília, Brasil','Bogotá, Colombia':'Bogotá, Colômbia',
-      'Palmeira, Brasil':'Palmeira, Brasil','Paraná, Brasil':'Paraná, Brasil',
-      'Hawaii, USA':'Havaí, Estados Unidos','Mexico DF':'Cidade do México','La Plata, Argentina':'La Plata, Argentina',
-      'Florianópolis, Brasil':'Florianópolis, Brasil','Madrid, España':'Madri, Espanha',
-      'Rio Grande do Sul, Brasil':'Rio Grande do Sul, Brasil','Ciudad de Guatemala':'Cidade da Guatemala',
-      'personal':'Acervo pessoal do artista'},
+      'Brasilia, Brasil':'Brasília, Brasil','Palmeira, Brasil':'Palmeira, Brasil',
+      'Paraná, Brasil':'Paraná, Brasil','Hawaii, USA':'Havaí, EUA','Mexico DF':'Cidade do México',
+      'La Plata, Argentina':'La Plata, Argentina','Florianópolis, Brasil':'Florianópolis, Brasil',
+      'Madrid, España':'Madri, Espanha','Rio Grande do Sul, Brasil':'Rio Grande do Sul, Brasil',
+      'Ciudad de Guatemala':'Cidade da Guatemala','personal':'Acervo pessoal do artista'},
+  ar:{'Argentina':'الأرجنتين','Brasil':'البرازيل','Colombia':'كولومبيا','España':'إسبانيا',
+      'USA':'الولايات المتحدة','Guatemala':'غواتيمالا','México':'المكسيك','Entre Rios, Argentina':'إنتري ريوس، الأرجنتين',
+      'New York, USA':'نيويورك، الولايات المتحدة','Rio de Janeiro, Brasil':'ريو دي جانيرو، البرازيل',
+      'Alemania':'ألمانيا','Vitoria, Brasil':'فيتوريا، البرازيل','Curitiba, Brasil':'كوريتيبا، البرازيل',
+      'Bogotá, Colombia':'بوغوتا، كولومبيا','Paraná, Argentina':'بارانا، الأرجنتين',
+      'Palma de Mallorca, España':'بالما دي مايوركا، إسبانيا','Buenos Aires, Argentina':'بوينس آيرس، الأرجنتين',
+      'Brasilia, Brasil':'برازيليا، البرازيل','Palmeira, Brasil':'بالميرا، البرازيل',
+      'Paraná, Brasil':'بارانا، البرازيل','Hawaii, USA':'هاواي، الولايات المتحدة','Mexico DF':'مكسيكو سيتي',
+      'La Plata, Argentina':'لا بلاتا، الأرجنتين','Florianópolis, Brasil':'فلوريانوبوليس، البرازيل',
+      'Madrid, España':'مدريد، إسبانيا','Rio Grande do Sul, Brasil':'ريو غراندي دو سول، البرازيل',
+      'Ciudad de Guatemala':'مدينة غواتيمالا','personal':'المجموعة الشخصية للفنان'},
+  ja:{'Argentina':'アルゼンチン','Brasil':'ブラジル','Colombia':'コロンビア','España':'スペイン',
+      'USA':'アメリカ','Guatemala':'グアテマラ','México':'メキシコ','Entre Rios, Argentina':'エントレ・リオス、アルゼンチン',
+      'New York, USA':'ニューヨーク、アメリカ','Rio de Janeiro, Brasil':'リオデジャネイロ、ブラジル',
+      'Alemania':'ドイツ','Vitoria, Brasil':'ヴィトーリア、ブラジル','Curitiba, Brasil':'クリチバ、ブラジル',
+      'Bogotá, Colombia':'ボゴタ、コロンビア','Paraná, Argentina':'パラナ、アルゼンチン',
+      'Palma de Mallorca, España':'パルマ・デ・マヨルカ、スペイン','Buenos Aires, Argentina':'ブエノスアイレス、アルゼンチン',
+      'Brasilia, Brasil':'ブラジリア、ブラジル','Palmeira, Brasil':'パルメイラ、ブラジル',
+      'Paraná, Brasil':'パラナ、ブラジル','Hawaii, USA':'ハワイ、アメリカ','Mexico DF':'メキシコシティ',
+      'La Plata, Argentina':'ラプラタ、アルゼンチン','Florianópolis, Brasil':'フロリアノポリス、ブラジル',
+      'Madrid, España':'マドリード、スペイン','Rio Grande do Sul, Brasil':'リオグランデドスル、ブラジル',
+      'Ciudad de Guatemala':'グアテマラシティ','personal':'アーティスト個人コレクション'},
+  zh:{'Argentina':'阿根廷','Brasil':'巴西','Colombia':'哥伦比亚','España':'西班牙',
+      'USA':'美国','Guatemala':'危地马拉','México':'墨西哥','Entre Rios, Argentina':'恩特雷里奥斯，阿根廷',
+      'New York, USA':'纽约，美国','Rio de Janeiro, Brasil':'里约热内卢，巴西',
+      'Alemania':'德国','Vitoria, Brasil':'维多利亚，巴西','Curitiba, Brasil':'库里蒂巴，巴西',
+      'Bogotá, Colombia':'波哥大，哥伦比亚','Paraná, Argentina':'巴拉那，阿根廷',
+      'Palma de Mallorca, España':'帕尔马，西班牙','Buenos Aires, Argentina':'布宜诺斯艾利斯，阿根廷',
+      'Brasilia, Brasil':'巴西利亚，巴西','Palmeira, Brasil':'帕尔梅拉，巴西',
+      'Paraná, Brasil':'巴拉那，巴西','Hawaii, USA':'夏威夷，美国','Mexico DF':'墨西哥城',
+      'La Plata, Argentina':'拉普拉塔，阿根廷','Florianópolis, Brasil':'弗洛里亚诺波利斯，巴西',
+      'Madrid, España':'马德里，西班牙','Rio Grande do Sul, Brasil':'南大河州，巴西',
+      'Ciudad de Guatemala':'危地马拉城','personal':'艺术家私人收藏'},
 };
 
-function place(key,l){return PLACES[l][key]||key;}
+function place(key,l){return(PLACES[l]&&PLACES[l][key])||PLACES['en'][key]||key;}
 function collLabel(key,l){
-  if(key==='personal'){
-    return place('personal',l);
-  }
-  const labels={en:'Private collection',es:'Colección privada',pt:'Coleção privada'};
-  return`${labels[l]} · ${place(key,l)}`;
+  if(key==='personal') return place('personal',l);
+  var labels={en:'Private collection',es:'Colección privada',pt:'Coleção privada',ar:'مجموعة خاصة',ja:'プライベートコレクション',zh:'私人收藏'};
+  return (labels[l]||labels['en'])+' · '+place(key,l);
 }
 
+function tech(t,l){
+  if(t==='oc'){
+    var r={en:'Oil on canvas',es:'Óleo sobre tela',pt:'Óleo sobre tela',ar:'زيت على قماش',ja:'キャンバスに油彩',zh:'油画布'};
+    return r[l]||r['en'];
+  }
+  if(t==='silk'){
+    var r={en:'Acrylic on iridescent silk (Sari from India)',es:'Acrílico sobre seda iridiscente (Sari de India)',pt:'Acrílico sobre seda iridescente (Sari da Índia)',ar:'أكريليك على حرير متقزح (ساري هندي)',ja:'インドのサリー絹に描いたアクリル',zh:'亚克力颜料 · 彩虹光泽丝绸（印度纱丽）'};
+    return r[l]||r['en'];
+  }
+  var r={en:'Acrylic on canvas',es:'Acrílico sobre tela',pt:'Acrílico sobre tela',ar:'أكريليك على قماش',ja:'キャンバスにアクリル',zh:'丙烯画布'};
+  return r[l]||r['en'];
+}
+
+/* ══════════════════════════════════════════════════════════════
+   TRANSLATIONS
+   ══════════════════════════════════════════════════════════════ */
 const T={
   en:{eyebrow:'Vayu Collection · 2015–2025',title:'Works sold to collectors in 15+ countries',
     sub:"These original pieces are part of Pedro's legacy as VAYU — each found its home with a discerning collector around the world.",
@@ -311,200 +361,212 @@ const T={
     tag:'Original · Coleção Vayu · Pedro Honeker Gallinger',
     conc:'Interessado em uma obra similar ou uma nova comissão?',
     btn_wa:'WhatsApp Concierge',btn_em:'Email Privado',close:'Fechar',tooltip:'Converse com o estúdio de Pedro'},
+  ar:{eyebrow:'مجموعة فايو · 2015–2025',title:'أعمال بيعت لهواة جمع في أكثر من 15 دولة',
+    sub:'هذه القطع الأصلية جزء من إرث بيدرو بوصفه VAYU — وجدت كل منها مكانها لدى جامع محترف حول العالم.',
+    flags:'تم تجميعها في',feat_label:'اختيار الفنان',grid_label:'المزيد من الأعمال',loadmore:'تحميل المزيد',
+    tag:'أصلي · مجموعة فايو · بيدرو هونيكر غالينغر',
+    conc:'هل أنت مهتم بعمل مماثل أو لوحة جديدة بالطلب؟',
+    btn_wa:'واتساب كونسيرج',btn_em:'بريد إلكتروني خاص',close:'إغلاق',tooltip:'تحدث مع استوديو بيدرو'},
+  ja:{eyebrow:'バイユ・コレクション · 2015–2025',title:'15カ国以上のコレクターに渡った作品',
+    sub:'これらのオリジナル作品はVAYUとしてのペドロの遺産であり、世界中の目の肥えたコレクターたちのもとへと旅立ちました。',
+    flags:'収蔵国',feat_label:'アーティスト厳選作品',grid_label:'その他の作品',loadmore:'さらに読み込む',
+    tag:'オリジナル · バイユ・コレクション · ペドロ・オネケル・ガリンガー',
+    conc:'類似作品や新しい依頼作品にご興味はありますか？',
+    btn_wa:'WhatsAppコンシェルジュ',btn_em:'プライベートメール',close:'閉じる',tooltip:'ペドロのスタジオへ'},
+  zh:{eyebrow:'Vayu 系列 · 2015–2025',title:'作品已售往15个以上国家的收藏家',
+    sub:'这些原创作品是Pedro以VAYU身份创作的珍贵遗产——每一件都找到了属于自己的收藏家。',
+    flags:'收藏于',feat_label:'艺术家精选',grid_label:'更多作品',loadmore:'加载更多',
+    tag:'原作 · Vayu系列 · 佩德罗·奥内克尔·加林格尔',
+    conc:'对类似作品或新定制作品感兴趣？',
+    btn_wa:'WhatsApp礼宾',btn_em:'私人邮件',close:'关闭',tooltip:'联系Pedro的工作室'},
 };
 
-// w y h en cms → aspect ratio = w/h
-// tecnica: 'ac'=acrylic on canvas, 'oc'=oil on canvas, 'silk'=special silk
-function tech(t,l){
-  if(t==='oc') return l==='en'?'Oil on canvas':l==='es'?'Óleo sobre tela':'Óleo sobre tela';
-  if(t==='silk') return l==='en'?'Acrylic on iridescent silk (Sari from India)':l==='es'?'Acrílico sobre seda iridiscente (Sari de India)':'Acrílico sobre seda iridescente (Sari da Índia)';
-  return l==='en'?'Acrylic on canvas':l==='es'?'Acrílico sobre tela':'Acrílico sobre tela';
-}
-
+/* ══════════════════════════════════════════════════════════════
+   ALL WORKS — slug maps to exact filename on disk
+   ══════════════════════════════════════════════════════════════ */
 const ALL=[
-  {title:'Ichtus',w:100,h:100,t:'ac',coll:'Entre Rios, Argentina',img:'Ichtus-Pedro-Honeker-Gallinger-Vayu.webp',details:[],featured:true},
-  {title:'Luz al Instante',w:80,h:120,t:'ac',coll:'Paraná, Brasil',img:'Luz-Al-Instante-Pedro-Honeker-Gallinger-Vayu.webp',details:[],featured:true},
-  {title:'Enjoy the Silence',w:80,h:60,t:'ac',coll:'New York, USA',img:'Enjoy-the-silence-2021-Pedro-Honeker-Gallinger-Vayu.webp',details:[],featured:true},
-  {title:'Corazón Portal',w:80,h:70,t:'ac',coll:'Bogotá, Colombia',img:'Corazon-portal-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Maestro Lobo',w:80,h:70,t:'ac',coll:'Palma de Mallorca, España',img:'Maestro-lobo-Pedro-Honeker-Gallinger-Vayu.webp',details:['Maestro-lobo-Pedro-Honeker-Gallinger-Vayu-detail.webp']},
-  {title:'Familia',w:90,h:70,t:'ac',coll:'Buenos Aires, Argentina',img:'Familia-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Talismán Álmico',w:90,h:80,t:'ac',coll:'Buenos Aires, Argentina',img:'Talisman-almico-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Real',w:80,h:60,t:'ac',coll:'Buenos Aires, Argentina',img:'Real-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Ecuanimidad',w:80,h:60,t:'ac',coll:'Palma de Mallorca, España',img:'ecuanimidad-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Nuevos Despertares',w:80,h:60,t:'ac',coll:'La Plata, Argentina',img:'Nuevos-despertares-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Unidos Siempre',w:80,h:60,t:'ac',coll:'Paraná, Argentina',img:'Unidos-siempre.-La-raiz-y-las-ramas.-Como-un-solo-cuerpo-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Millones de Manifestaciones',w:80,h:60,t:'ac',coll:'Vitoria, Brasil',img:'millones-de-manifestaciones-una-misma-proporsion-Pedro-Honeker-Gallinger-Vayu.webp',details:['millones-de-manifestaciones-una-misma-proporsion-Pedro-Honeker-Gallinger-Vayu-detail1.webp','millones-de-manifestaciones-una-misma-proporsion-Pedro-Honeker-Gallinger-Vayu-detail2.webp']},
-  {title:'Cura y Conciencia',w:80,h:60,t:'ac',coll:'Paraná, Argentina',img:'Cura-y-conciencia-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Visión',w:80,h:60,t:'ac',coll:'Curitiba, Brasil',img:'Vision-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Txana Ixa',w:60,h:80,t:'ac',coll:'Rio Grande do Sul, Brasil',img:'Txana-Ixa-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Nectar Amrita',w:60,h:80,t:'ac',coll:'Mexico DF',img:'Nectar-Amrita-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Jai Bolo',w:100,h:100,t:'ac',coll:'Buenos Aires, Argentina',img:'Jai-Bolo-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Pushkar',w:200,h:100,t:'oc',coll:'Buenos Aires, Argentina',img:'Pushkar-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Nueva Era',w:100,h:100,t:'ac',coll:'Buenos Aires, Argentina',img:'Nueva-Era-Pedro-Honeker-Gallinger-Vayu.webp',details:['Nueva-era-Pedro-Honeker-Gallinger-Vayu.jpg-detail.webp']},
-  {title:'Nueva Era 2',w:100,h:100,t:'ac',coll:'Buenos Aires, Argentina',img:'Nueva-era-2-Pedro-Honeker-Gallinger-Vayu-detail2.webp',details:['Nueva-era-2-Pedro-Honeker-Gallinger-Vayu-detail2.webp']},
-  {title:'Flower of Life',w:100,h:100,t:'silk',coll:'Vitoria, Brasil',img:'Flower-of-life-Pedro-Honeker-Gallinger-Vayu.webp',details:['Flower-of-life-Pedro-Honeker-Gallinger-Vayu-detail.webp']},
-  {title:'Anahata',w:90,h:90,t:'ac',coll:'Rio de Janeiro, Brasil',img:'Anahata-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Todo',w:90,h:90,t:'ac',coll:'Buenos Aires, Argentina',img:'Todo-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Elementales',w:70,h:70,t:'ac',coll:'Entre Rios, Argentina',img:'Elementales-Pedro-Honeker-Gallinger-Vayu.webp',details:['Elementales-Pedro-Honeker-Gallinger-Vayu-Detail.webp']},
-  {title:'Starry Eye',w:60,h:50,t:'ac',coll:'Buenos Aires, Argentina',img:'Starry-eye-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Maps and Cities',w:90,h:130,t:'ac',coll:'personal',img:'Maps-and-cities-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Esa Noche en el Bosque',w:110,h:90,t:'ac',coll:'personal',img:'Esa-noche-en-el-bosque-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Fuego',w:200,h:100,t:'ac',coll:'Buenos Aires, Argentina',img:'Fuego-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Energy Hole',w:80,h:60,t:'oc',coll:'Bogotá, Colombia',img:'Energy-hole-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Túnel Azul',w:50,h:70,t:'ac',coll:'Buenos Aires, Argentina',img:'Tunel-Azul-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Shiva',w:70,h:70,t:'ac',coll:'Buenos Aires, Argentina',img:'Shiva-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Bhakti',w:70,h:70,t:'ac',coll:'New York, USA',img:'BHAKTI-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Prana',w:70,h:70,t:'ac',coll:'New York, USA',img:'Prana-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Shakti',w:70,h:70,t:'ac',coll:'New York, USA',img:'Shakti-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Karma',w:70,h:70,t:'ac',coll:'New York, USA',img:'Karma-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Bindu',w:70,h:70,t:'ac',coll:'New York, USA',img:'Bindu-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Amrita',w:70,h:70,t:'ac',coll:'New York, USA',img:'Nectar-Amrita-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Magia y Mística',w:90,h:90,t:'ac',coll:'Curitiba, Brasil',img:'Magia-y-mistica-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Cura',w:70,h:70,t:'ac',coll:'Curitiba, Brasil',img:'Cura-y-conciencia-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Em Nós Confio',w:60,h:80,t:'ac',coll:'Brasilia, Brasil',img:'Em-nos-confio-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Águila y Quetzal',w:80,h:60,t:'ac',coll:'Entre Rios, Argentina',img:'Aguila-y-quetzal-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Aquario',w:90,h:70,t:'ac',coll:'Alemania',img:'Aquario-Pedro-Honeker-Gallinger-Vayu.webp',details:['Aquario-Pedro-Honeker-Gallinger-Vayu-detail.webp']},
-  {title:'Arut Perum Jhoti',w:80,h:60,t:'ac',coll:'Vitoria, Brasil',img:'Arut-perum-jhoti-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'CO-LI-BRI',w:80,h:60,t:'ac',coll:'Curitiba, Brasil',img:'Co-li-bri-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Equilibrio',w:70,h:70,t:'ac',coll:'Palmeira, Brasil',img:'equilibrio-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'La Noche del Cielo',w:140,h:100,t:'ac',coll:'Buenos Aires, Argentina',img:'La-noche-del-cielo-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Light Network',w:200,h:100,t:'ac',coll:'Ciudad de Guatemala',img:'Light-Network-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Metamorfosis',w:60,h:70,t:'ac',coll:'Hawaii, USA',img:'Metamorfosis-2020-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'O Chamado',w:90,h:90,t:'ac',coll:'Florianópolis, Brasil',img:'O-chamado-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Plenitud',w:80,h:60,t:'silk',coll:'Entre Rios, Argentina',img:'Plenitud-Pedro-Honeker-Gallinger-Vayu.webp',details:['Plenitud-Pedro-Honeker-Gallinger-Vayu-detail1.webp','Plenitud-Pedro-Honeker-Gallinger-Vayu-detail2.webp']},
-  {title:'Red Amor',w:80,h:80,t:'ac',coll:'Curitiba, Brasil',img:'Red-Amor-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Rey Corazón',w:80,h:80,t:'ac',coll:'Buenos Aires, Argentina',img:'Rey-Corazon-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Soy Amor Todo Es Amor',w:80,h:80,t:'ac',coll:'Buenos Aires, Argentina',img:'Soy-Amor-Todo-Es-Amor-Pedro-Honeker-Gallinger-Vayu.webp',details:[]},
-  {title:'Soy Semilla',w:80,h:60,t:'ac',coll:'Madrid, España',img:'Soy-Semilla-Pedro-Honeker-Gallinger-Vayu.webp',details:['Soy-semilla-Pedro-Honeker-Gallinger-Vayu-detail.webp']},
-  {title:'Yo Soy',w:80,h:60,t:'ac',coll:'Entre Rios, Argentina',img:'Yo-Soy-Pedro-Honeker-Gallinger-Vayu.webp',details:['Yo-Soy-Pedro-Honeker-Gallinger-Vayu-detail1.webp','Yo-Soy-Pedro-Honeker-Gallinger-Vayu-detail2.webp']}
+  // ── FEATURED ─────────────────────────────────────────────────────────────
+  {title:'Ichtus',           slug:'Ichtus',                                                        w:100,h:100,t:'ac',  coll:'Entre Rios, Argentina',     details:[],              featured:true},
+  {title:'Soy Semilla',      slug:'Soy-Semilla',                                                   w:80, h:60, t:'ac',  coll:'Madrid, España',            details:['detail'],      featured:true},
+  {title:'Luz al Instante',  slug:'Luz-Al-Instante',                                               w:80, h:120,t:'ac',  coll:'Paraná, Brasil',            details:[],              featured:true},
+  {title:'Enjoy the Silence',slug:'Enjoy-the-silence-2021',                                        w:80, h:60, t:'ac',  coll:'New York, USA',             details:[],              featured:true},
+  // ── GRID ──────────────────────────────────────────────────────────────────
+  {title:'Corazón Portal',             slug:'Corazon-portal',                                      w:80, h:70, t:'ac',  coll:'Bogotá, Colombia',          details:[]},
+  {title:'Maestro Lobo',               slug:'Maestro-lobo',                                        w:80, h:70, t:'ac',  coll:'Palma de Mallorca, España', details:['detail']},
+  {title:'Familia',                    slug:'Familia',                                             w:90, h:70, t:'ac',  coll:'Buenos Aires, Argentina',   details:[]},
+  {title:'Talismán Álmico',            slug:'Talisman-almico',                                     w:90, h:80, t:'ac',  coll:'Buenos Aires, Argentina',   details:[]},
+  {title:'Real',                       slug:'Real',                                                w:80, h:60, t:'ac',  coll:'Buenos Aires, Argentina',   details:[]},
+  {title:'Ecuanimidad',                slug:'ecuanimidad',                                         w:80, h:60, t:'ac',  coll:'Palma de Mallorca, España', details:[]},
+  {title:'Nuevos Despertares',         slug:'Nuevos-despertares',                                  w:80, h:60, t:'ac',  coll:'La Plata, Argentina',       details:[]},
+  {title:'Unidos Siempre',             slug:'Unidos-siempre.-La-raíz-y-las-ramas.-Como-un-solo-cuerpo', w:80,h:60,t:'ac', coll:'Paraná, Argentina',     details:[]},
+  {title:'Millones de Manifestaciones',slug:'millones-de-manifestaciones-una-misma-proporsion',   w:80, h:60, t:'ac',  coll:'Vitoria, Brasil',           details:['detail1','detail2']},
+  {title:'Cura y Conciencia',          slug:'Cura-y-conciencia',                                   w:80, h:60, t:'ac',  coll:'Paraná, Argentina',         details:[]},
+  {title:'Visión',                     slug:'Vision',                                              w:80, h:60, t:'ac',  coll:'Curitiba, Brasil',          details:[]},
+  {title:'Txana Ixa',                  slug:'Txana-Ixa',                                           w:60, h:80, t:'ac',  coll:'Rio Grande do Sul, Brasil', details:[]},
+  {title:'Nectar Amrita',              slug:'Nectar-Amrita',                                       w:60, h:80, t:'ac',  coll:'Mexico DF',                 details:[]},
+  {title:'Jai Bolo',                   slug:'Jai-Bolo',                                            w:100,h:100,t:'ac',  coll:'Buenos Aires, Argentina',   details:[]},
+  {title:'Pushkar',                    slug:'Pushkar',                                             w:200,h:100,t:'oc',  coll:'Buenos Aires, Argentina',   details:[]},
+  {title:'Nueva Era',                  slug:'Nueva-Era',                                           w:100,h:100,t:'ac',  coll:'Buenos Aires, Argentina',   details:['jpg-detail']},
+  {title:'Nueva Era 2',                slug:'Nueva-era-2',                                         w:100,h:100,t:'ac',  coll:'Buenos Aires, Argentina',   details:['detail2']},
+  {title:'Flower of Life',             slug:'Flower-of-life',                                      w:100,h:100,t:'silk',coll:'Vitoria, Brasil',           details:['detail']},
+  {title:'Anahata',                    slug:'Anahata',                                             w:90, h:90, t:'ac',  coll:'Rio de Janeiro, Brasil',    details:[]},
+  {title:'Todo',                       slug:'Todo',                                                w:90, h:90, t:'ac',  coll:'Buenos Aires, Argentina',   details:[]},
+  {title:'Elementales',                slug:'Elementales',                                         w:70, h:70, t:'ac',  coll:'Entre Rios, Argentina',     details:['Detail']},
+  {title:'Starry Eye',                 slug:'Starry-eye',                                          w:60, h:50, t:'ac',  coll:'Buenos Aires, Argentina',   details:[]},
+  {title:'Maps and Cities',            slug:'Maps-and-cities',                                     w:90, h:130,t:'ac',  coll:'personal',                  details:[]},
+  {title:'Esa Noche en el Bosque',     slug:'Esa-noche-en-el-bosque',                              w:110,h:90, t:'ac',  coll:'personal',                  details:[]},
+  {title:'Fuego',                      slug:'Fuego',                                               w:200,h:100,t:'ac',  coll:'Buenos Aires, Argentina',   details:[]},
+  {title:'Energy Hole',                slug:'Energy-hole',                                         w:80, h:60, t:'oc',  coll:'Bogotá, Colombia',          details:[]},
+  {title:'Túnel Azul',                 slug:'Tunel-Azul',                                          w:50, h:70, t:'ac',  coll:'Buenos Aires, Argentina',   details:[]},
+  {title:'Shiva',                      slug:'Shiva',                                               w:70, h:70, t:'ac',  coll:'Buenos Aires, Argentina',   details:[]},
+  {title:'Bhakti',                     slug:'BHAKTI',                                              w:70, h:70, t:'ac',  coll:'New York, USA',             details:[]},
+  {title:'Prana',                      slug:'Prana',                                               w:70, h:70, t:'ac',  coll:'New York, USA',             details:[]},
+  {title:'Shakti',                     slug:'Shakti',                                              w:70, h:70, t:'ac',  coll:'New York, USA',             details:[]},
+  {title:'Karma',                      slug:'Karma',                                               w:70, h:70, t:'ac',  coll:'New York, USA',             details:[]},
+  {title:'Bindu',                      slug:'Bindu',                                               w:70, h:70, t:'ac',  coll:'New York, USA',             details:[]},
+  {title:'Amrita',                     slug:'Amrita',                                              w:70, h:70, t:'ac',  coll:'New York, USA',             details:[]},
+  {title:'Magia y Mística',            slug:'Magia-y-mistica',                                     w:90, h:90, t:'ac',  coll:'Curitiba, Brasil',          details:[]},
+  {title:'Cura',                       slug:'cura',                                                w:70, h:70, t:'ac',  coll:'Curitiba, Brasil',          details:[]},
+  {title:'Em Nós Confio',              slug:'Em-nos-confio',                                       w:60, h:80, t:'ac',  coll:'Brasilia, Brasil',          details:[]},
+  {title:'Águila y Quetzal',           slug:'Aguila-y-quetzal',                                    w:80, h:60, t:'ac',  coll:'Entre Rios, Argentina',     details:[]},
+  {title:'Aquario',                    slug:'Aquario',                                             w:90, h:70, t:'ac',  coll:'Alemania',                  details:['detail']},
+  {title:'Arut Perum Jhoti',           slug:'Arut-perum-jhoti',                                    w:80, h:60, t:'ac',  coll:'Vitoria, Brasil',           details:[]},
+  {title:'Co-li-bri',                  slug:'Co-li-bri',                                           w:80, h:60, t:'ac',  coll:'Curitiba, Brasil',          details:[]},
+  {title:'Equilibrio',                 slug:'equilibrio',                                          w:70, h:70, t:'ac',  coll:'Palmeira, Brasil',          details:[]},
+  {title:'La Noche del Cielo',         slug:'La-noche-del-cielo',                                  w:140,h:100,t:'ac',  coll:'Buenos Aires, Argentina',   details:[]},
+  {title:'Light Network',              slug:'Light-Network',                                       w:200,h:100,t:'ac',  coll:'Ciudad de Guatemala',       details:[]},
+  {title:'Metamorfosis',               slug:'Metamorfosis-2020',                                   w:60, h:70, t:'ac',  coll:'Hawaii, USA',               details:[]},
+  {title:'O Chamado',                  slug:'O-chamado',                                           w:90, h:90, t:'ac',  coll:'Florianópolis, Brasil',      details:[]},
+  {title:'Plenitud',                   slug:'Plenitud',                                            w:80, h:60, t:'silk',coll:'Entre Rios, Argentina',      details:['detail1','detail2']},
+  {title:'Red Amor',                   slug:'Red-Amor',                                            w:80, h:80, t:'ac',  coll:'Curitiba, Brasil',          details:[]},
+  {title:'Rey Corazón',                slug:'Rey-Corazon',                                         w:80, h:80, t:'ac',  coll:'Buenos Aires, Argentina',   details:[]},
+  {title:'Soy Amor Todo Es Amor',      slug:'Soy-Amor-Todo-Es-Amor',                               w:80, h:80, t:'ac',  coll:'Buenos Aires, Argentina',   details:[]},
+  {title:'Yo Soy',                     slug:'Yo-Soy',                                              w:80, h:60, t:'ac',  coll:'Entre Rios, Argentina',     details:['detail1','detail2']},
 ];
 
 const FEATURED=ALL.filter(o=>o.featured);
 const GRID=ALL.filter(o=>!o.featured).map(o=>({...o,r:o.w/o.h}));
 
-let lang='en',shownCount=0,activeKey=null;
-const TARGET=320,MIN=220,MAX=480,GAP=6,BATCH=12;
+let lang='en', shownCount=0, activeKey=null;
+const TARGET=320, MIN=220, MAX=480, GAP=6, BATCH=12;
+
 function detectLang(){
-  const tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';
-  const nv=navigator.language||'';
-  if(/Argentina|Chile|Colombia|Mexico|Peru|Uruguay|Venezuela|Bolivia|Ecuador|Paraguay|Cuba|Panama|Costa_Rica|Guatemala|Honduras|Nicaragua/.test(tz))return'es';
-  if(/Brazil|Sao_Paulo|Brasilia|Belem|Manaus|Fortaleza|Recife/.test(tz))return'pt';
-  if(nv.startsWith('es'))return'es';
-  if(nv.startsWith('pt'))return'pt';
-  return'en';
-}
-function waUrl(title){
-  const m={
-    en:`Hello Pedro. I was moved by your work "${title}" and I'd love to know more about a similar commission.`,
-    es:`Hola Pedro. Me emocionó tu obra "${title}" y me gustaría consultar sobre una comisión similar.`,
-    pt:`Olá Pedro. Me emocionei com sua obra "${title}" e gostaria de saber mais sobre uma comissão similar.`
-  };
-  return`https://wa.me/5511920150899?text=${encodeURIComponent(m[lang])}`;
+  try{var s=localStorage.getItem('phg_lang');if(s&&['en','es','pt','ar','ja','zh'].includes(s))return s;}catch(e){}
+  return window.phgLang||'en';
 }
 
-function panelHTML(obra,imgIdx){
-  const t=T[lang];
-  const det=obra.details.length?`<div class="expand-details-row">${obra.details.map((_,k)=>`<img src="${obra.img}" class="expand-detail-thumb" alt="${obra.title} detail">`).join('')}</div>`:'';
-  const dims=`${obra.w} × ${obra.h} cm`;
-  const techStr=tech(obra.t,lang);
-  const collStr=collLabel(obra.coll,lang);
-  return`<div class="expand-inner">
-    <button class="expand-close" onclick="closeExpand()">← ${t.close}</button>
-    <img src="${di(imgIdx)}" class="expand-img" alt="${obra.title} — Pedro Honeker Gallinger — Inspiritual Art">
-    ${det}
-    <div class="expand-divider"></div>
-    <div class="expand-tag">${t.tag}</div>
-    <h2 class="expand-title">${obra.title}</h2>
-    <p class="expand-meta">${techStr} · ${dims}</p>
-    <p class="expand-collection">${collStr}</p>
-    <div class="expand-divider"></div>
-    <p class="expand-conc">${t.conc}</p>
-    <div class="expand-btns">
-      <a href="${waUrl(obra.title)}" class="btn-wa-s" target="_blank">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.522 5.837L.057 23.215a.75.75 0 00.93.93l5.378-1.465A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.712 9.712 0 01-4.964-1.362l-.356-.212-3.692 1.005 1.005-3.693-.213-.355A9.714 9.714 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
-        ${t.btn_wa}
-      </a>
-      <a href="mailto:artist@pedrohonekergallinger.art?subject=Commission - ${encodeURIComponent(obra.title)}" class="btn-em-s">${t.btn_em}</a>
-    </div>
-  </div>`;
+function waUrl(title){
+  var m={
+    en:'Hello Pedro. I was moved by your work "'+title+'" and I\'d love to know more about a similar commission.',
+    es:'Hola Pedro. Me emocionó tu obra "'+title+'" y me gustaría consultar sobre una comisión similar.',
+    pt:'Olá Pedro. Me emocionei com sua obra "'+title+'" e gostaria de saber mais sobre uma comissão similar.',
+    ar:'مرحبا بيدرو. أثار عملك "'+title+'" مشاعري وأودّ الاستفسار عن لوحة مماثلة.',
+    ja:'ペドロさん、「'+title+'」に深く感動しました。類似作品の制作についてお聞きしたいです。',
+    zh:'你好Pedro，您的作品《'+title+'》深深打动了我，我想了解类似委托创作的可能性。'
+  };
+  return 'https://wa.me/5511920150899?text='+encodeURIComponent(m[lang]||m['en']);
+}
+
+function panelHTML(obra){
+  var t=T[lang]||T['en'];
+  var det=obra.details.length
+    ? '<div class="expand-details-row">'+obra.details.map(function(d){
+        return '<img src="'+img(obra.slug,d)+'" class="expand-detail-thumb" alt="'+obra.title+' detail" loading="lazy">';
+      }).join('')+'</div>'
+    : '';
+  var dims=obra.w+' × '+obra.h+' cm';
+  return '<div class="expand-inner">'
+    +'<button class="expand-close" onclick="closeExpand()">← '+t.close+'</button>'
+    +'<img src="'+img(obra.slug)+'" class="expand-img" alt="'+obra.title+' — Pedro Honeker Gallinger — Inspiritual Art" loading="lazy">'
+    +det
+    +'<div class="expand-divider"></div>'
+    +'<div class="expand-tag">'+t.tag+'</div>'
+    +'<h2 class="expand-title">'+obra.title+'</h2>'
+    +'<p class="expand-meta">'+tech(obra.t,lang)+' · '+dims+'</p>'
+    +'<p class="expand-collection">'+collLabel(obra.coll,lang)+'</p>'
+    +'<div class="expand-divider"></div>'
+    +'<p class="expand-conc">'+t.conc+'</p>'
+    +'<div class="expand-btns">'
+    +'<a href="'+waUrl(obra.title)+'" class="btn-wa-s" target="_blank">'
+    +'<svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.522 5.837L.057 23.215a.75.75 0 00.93.93l5.378-1.465A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.712 9.712 0 01-4.964-1.362l-.356-.212-3.692 1.005 1.005-3.693-.213-.355A9.714 9.714 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>'
+    +t.btn_wa+'</a>'
+    +'<a href="mailto:artist@pedrohonekergallinger.art?subject=Commission - '+encodeURIComponent(obra.title)+'" class="btn-em-s">'+t.btn_em+'</a>'
+    +'</div>'
+    +'</div>';
 }
 
 function closeExpand(){
-  document.querySelectorAll('.expand-panel,.row-expand').forEach(p=>{p.classList.remove('open');p.innerHTML='';});
+  document.querySelectorAll('.expand-panel,.row-expand').forEach(function(p){p.classList.remove('open');p.innerHTML='';});
   activeKey=null;
 }
 function openFeat(i){
-  const panel=document.getElementById('feat-expand');
+  var panel=document.getElementById('feat-expand');
   if(activeKey==='f'+i){closeExpand();return;}
   closeExpand(); activeKey='f'+i;
-  panel.innerHTML=panelHTML(FEATURED[i],i);
+  panel.innerHTML=panelHTML(FEATURED[i]);
   panel.classList.add('open');
-  setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'start'}),50);
+  setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'start'});},50);
 }
 function openGrid(i,rowEl){
   if(activeKey==='g'+i){closeExpand();return;}
   closeExpand(); activeKey='g'+i;
-  const expand=rowEl.nextElementSibling;
+  var expand=rowEl.nextElementSibling;
   if(expand&&expand.classList.contains('row-expand')){
-    expand.innerHTML=panelHTML(GRID[i],i+3);
+    expand.innerHTML=panelHTML(GRID[i]);
     expand.classList.add('open');
-    setTimeout(()=>expand.scrollIntoView({behavior:'smooth',block:'start'}),50);
+    setTimeout(function(){expand.scrollIntoView({behavior:'smooth',block:'start'});},50);
   }
 }
 function showGrid(){
   document.getElementById('grid-section').classList.add('visible');
   document.getElementById('feat-loadmore').style.display='none';
   loadMore();
-  setTimeout(()=>document.getElementById('grid-section').scrollIntoView({behavior:'smooth',block:'start'}),50);
+  setTimeout(function(){document.getElementById('grid-section').scrollIntoView({behavior:'smooth',block:'start'});},50);
 }
+
 function buildRows(items,cw){
-  const rows=[];let i=0;
+  var rows=[]; var i=0;
   while(i<items.length){
-    let row=[],sum=0;
+    var row=[],sum=0;
     while(i<items.length){
-      const item=items[i];
-      const r=item.r||1;
-      const newSum=sum+r;
-      const gaps=row.length*GAP;
-      const h=(cw-gaps)/newSum;
+      var item=items[i]; var r=item.r||1; var newSum=sum+r;
+      var gaps=row.length*GAP; var h=(cw-gaps)/newSum;
       if(row.length>0&&h<MIN) break;
-      row.push(item);sum=newSum;i++;
-      const ch=(cw-(row.length-1)*GAP)/sum;
+      row.push(item); sum=newSum; i++;
+      var ch=(cw-(row.length-1)*GAP)/sum;
       if(ch<=TARGET&&row.length>=2) break;
       if(row.length>=4) break;
     }
-    rows.push({items:row,sum});
+    rows.push({items:row,sum:sum});
   }
   return rows;
 }
+
 function loadMore(){
-  const t=T[lang];
-  const gallery=document.getElementById('justified-gallery');
-  const btn=document.getElementById('load-btn');
-  const end=Math.min(shownCount+BATCH,GRID.length);
+  var t=T[lang]||T['en'];
+  var gallery=document.getElementById('justified-gallery');
+  var btn=document.getElementById('load-btn');
+  var end=Math.min(shownCount+BATCH,GRID.length);
   if(shownCount>=GRID.length) return;
-  const batch=GRID.slice(shownCount,end).map((o,k)=>({...o,idx:shownCount+k}));
-  const cw=gallery.offsetWidth||900;
-  const rows=buildRows(batch,cw);
-  rows.forEach(rowData=>{
-    const gaps=(rowData.items.length-1)*GAP;
-    const rowH=Math.min(MAX,Math.max(MIN,(cw-gaps)/rowData.sum));
-    const rowEl=document.createElement('div');
-    rowEl.className='justrow';
-    rowEl.style.height=rowH+'px';
-    rowData.items.forEach(obra=>{
-      const itemW=obra.r*rowH;
-      const item=document.createElement('div');
+  var batch=GRID.slice(shownCount,end).map(function(o,k){return Object.assign({},o,{idx:shownCount+k});});
+  var cw=gallery.offsetWidth||900;
+  var rows=buildRows(batch,cw);
+  rows.forEach(function(rowData){
+    var gaps=(rowData.items.length-1)*GAP;
+    var rowH=Math.min(MAX,Math.max(MIN,(cw-gaps)/rowData.sum));
+    var rowEl=document.createElement('div');
+    rowEl.className='justrow'; rowEl.style.height=rowH+'px';
+    rowData.items.forEach(function(obra){
+      var itemW=obra.r*rowH;
+      var item=document.createElement('div');
       item.className='justrow-item';
-      item.style.width=itemW+'px';
-      item.style.height=rowH+'px';
-      item.style.flexGrow='1';
-      const ci=obra.idx,cr=rowEl;
-      item.onclick=()=>openGrid(ci,cr);
-      item.innerHTML=`<img src="${obra.img}" alt="${obra.title} — Pedro Honeker Gallinger" loading="lazy"><div class="card-hover"><div class="card-title">${obra.title}</div><div class="card-cta">Explore →</div></div>`;
+      item.style.width=itemW+'px'; item.style.height=rowH+'px'; item.style.flexGrow='1';
+      var ci=obra.idx, cr=rowEl;
+      item.onclick=function(){openGrid(ci,cr);};
+      item.innerHTML='<img src="'+img(obra.slug)+'" alt="'+obra.title+' — Pedro Honeker Gallinger" loading="lazy"><div class="card-hover"><div class="card-title">'+obra.title+'</div><div class="card-cta">Explore →</div></div>';
       rowEl.appendChild(item);
     });
-    const expandEl=document.createElement('div');
+    var expandEl=document.createElement('div');
     expandEl.className='row-expand';
     gallery.appendChild(rowEl);
     gallery.appendChild(expandEl);
@@ -513,9 +575,19 @@ function loadMore(){
   if(shownCount>=GRID.length) btn.classList.add('hidden');
   else btn.textContent=t.loadmore;
 }
+
 function init(){
   lang=detectLang();
-  const t=T[lang];
+  var t=T[lang]||T['en'];
+  document.documentElement.lang=lang;
+  document.documentElement.dir=(lang==='ar')?'rtl':'ltr';
+  // Update nav lang code
+  var qn=document.getElementById('qnLangCode');
+  if(qn) qn.textContent=lang.toUpperCase();
+  document.querySelectorAll('.qn-lang-opt').forEach(function(b){
+    b.classList.toggle('active',b.dataset.lang===lang);
+  });
+  // Fill static texts
   document.getElementById('eyebrow-text').textContent=t.eyebrow;
   document.getElementById('gallery-title').textContent=t.title;
   document.getElementById('gallery-sub').textContent=t.sub;
@@ -525,32 +597,41 @@ function init(){
   document.getElementById('load-btn').textContent=t.loadmore;
   document.getElementById('feat-loadmore-btn').textContent=t.loadmore;
   document.getElementById('wa-tooltip').textContent=t.tooltip;
-  const flagsRow=document.getElementById('flags-row');
-  COUNTRIES.forEach(c=>{
-    const el=document.createElement('div');
-    el.className='flag-item';
-    el.innerHTML=`<span class="flag">${c.flag}</span><span>${c.name}</span>`;
+  // Flags row
+  var flagsRow=document.getElementById('flags-row');
+  flagsRow.innerHTML='';
+  COUNTRIES.forEach(function(c){
+    var el=document.createElement('div'); el.className='flag-item';
+    el.innerHTML='<span class="flag">'+c.flag+'</span><span>'+c.name+'</span>';
     flagsRow.appendChild(el);
   });
-  const featGrid=document.getElementById('feat-grid');
-  FEATURED.forEach((obra,i)=>{
-    const r=obra.w/obra.h;
-    const card=document.createElement('div');
-    card.className='feat-card';
-    card.style.aspectRatio=r;
-    card.onclick=()=>openFeat(i);
-    card.innerHTML=`<img src="${di(i)}" alt="${obra.title} — Pedro Honeker Gallinger"><div class="card-hover"><div class="card-title">${obra.title}</div><div class="card-cta">Explore →</div></div>`;
+  // Ocultar botón "see all" — la grid se carga directo
+  var fl=document.getElementById('feat-loadmore');
+  if(fl) fl.style.display='none';
+  // Featured grid
+  var featGrid=document.getElementById('feat-grid');
+  featGrid.innerHTML='';
+  FEATURED.forEach(function(obra,i){
+    var r=obra.w/obra.h;
+    var card=document.createElement('div');
+    card.className='feat-card'; card.style.aspectRatio=r;
+    card.onclick=function(){openFeat(i);};
+    card.innerHTML='<img src="'+img(obra.slug)+'" alt="'+obra.title+' — Pedro Honeker Gallinger"><div class="card-hover"><div class="card-title">'+obra.title+'</div><div class="card-cta">Explore →</div></div>';
     featGrid.appendChild(card);
   });
+  // Cargar primeras 12 obras de la grid automáticamente
+  loadMore();
 }
 window.addEventListener('load',init);
-
 </script>
 
 <!-- SITE NAV -->
 <nav class="qn">
   <a href="index.html" class="qn-logo">Pedro Honeker Gallinger</a>
   <div class="qn-right">
+    <a href="https://www.instagram.com/pedrohonekergallinger/" target="_blank" rel="noopener" class="qn-ig-nav" title="Instagram · @pedrohonekergallinger" aria-label="Instagram">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
     <div class="qn-lang-drop" id="qnLangDrop">
       <button class="qn-lang-toggle" id="qnLangToggle" aria-haspopup="true" aria-expanded="false">
         <span id="qnLangCode">EN</span>
@@ -623,45 +704,6 @@ window.addEventListener('load',init);
 </div>
 
 <!-- FOOTER -->
-
-<section id="contacto" style="background:var(--blue); color:#FFF; padding:6rem 3rem;">
-  <div style="max-width:1200px; margin:0 auto; display:flex; flex-direction:column; align-items:center; text-align:center;">
-    <div style="text-align:center; margin-bottom:1.5rem; width:100%;">
-      <span data-t="conc_ey" style="font-family:'DM Sans', sans-serif; font-size: 0.85rem; letter-spacing: 2px; text-transform:uppercase; color: var(--gold); margin:0; white-space:nowrap; display:inline-block;">Servicio Privado</span>
-    </div>
-    <h2 class="conc-title" data-t="conc_t" style="font-family:'Playfair Display', serif; font-size: 1.6rem; text-align:center; margin-bottom:1.5rem;">CONTACTO</h2>
-    <div style="display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; margin-top:2rem;">
-      <a href="mailto:pedrohonekergallinger@gmail.com" class="btn-gold" style="display:flex;align-items:center;gap:0.6rem; background:var(--gold); color:#FFF; padding:12px 24px; text-decoration:none; border-radius:4px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-        Email
-      </a>
-      <a href="https://www.instagram.com/pedrohonekergallinger/" class="btn-gold" target="_blank" style="display:flex;align-items:center;gap:0.6rem; background:var(--gold); color:#FFF; padding:12px 24px; text-decoration:none; border-radius:4px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-        Instagram
-      </a>
-    
-      <a href="https://wa.me/5511920150899" class="btn-gold" target="_blank" style="display:flex;align-items:center;gap:0.6rem; background:var(--gold); color:#FFF; padding:12px 24px; text-decoration:none; border-radius:4px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-        WhatsApp
-      </a>
-    </div>
-  </div>
-</section>
-
-
-
-<div class="modal" id="expandModal" onclick="if(event.target===this) closeModal()">
-  <div class="modal-close" onclick="closeModal()">✕</div>
-  <div class="modal-content">
-    <img id="mImg" src="" class="expand-img" alt="">
-    <div class="expand-text">
-      <h3 id="mTitle"></h3>
-      <p id="mInfo"></p>
-    </div>
-    <div id="mDetails"></div>
-  </div>
-</div>
-
 <footer>
   <div class="footer-top">
     <div>
@@ -714,22 +756,31 @@ window.addEventListener('load',init);
 // Lang switcher for nav (decorative — only updates code shown in dropdown).
 // Real translations are stored in localStorage and applied by other pages on load.
 function switchLang(l){
-  try { localStorage.setItem('phg_lang', l); } catch(e){}
-  var nav = document.getElementById('lang-code-nav');
-  if(nav) nav.textContent = l.toUpperCase();
-  var qn = document.getElementById('qnLangCode');
-  if(qn) qn.textContent = l.toUpperCase();
-  document.querySelectorAll('.lang-option').forEach(function(b){
-    var code = b.querySelector('.lang-option-code');
-    if(code) b.classList.toggle('active', code.textContent.trim().toLowerCase() === l);
-  });
+  if(!['en','es','pt','ar','ja','zh'].includes(l)) l='en';
+  try{localStorage.setItem('phg_lang',l);}catch(e){}
+  lang=l;
+  var qn=document.getElementById('qnLangCode');
+  if(qn) qn.textContent=l.toUpperCase();
   document.querySelectorAll('.qn-lang-opt').forEach(function(b){
-    b.classList.toggle('active', b.dataset.lang === l);
+    b.classList.toggle('active',b.dataset.lang===l);
   });
-  document.documentElement.lang = l;
-  document.documentElement.dir = (l === 'ar') ? 'rtl' : 'ltr';
-  var d = document.getElementById('lang-drop-nav');
+  document.documentElement.lang=l;
+  document.documentElement.dir=(l==='ar')?'rtl':'ltr';
+  var d=document.getElementById('lang-drop-nav');
   if(d) d.classList.remove('open');
+  var qd=document.getElementById('qnLangDrop');
+  if(qd) qd.classList.remove('open');
+  // Refresh all static texts immediately
+  var t=T[l]||T['en'];
+  var map={'eyebrow-text':'eyebrow','gallery-title':'title','gallery-sub':'sub','flags-label':'flags','feat-label':'feat_label','grid-label':'grid_label','wa-tooltip':'tooltip'};
+  Object.keys(map).forEach(function(id){
+    var el=document.getElementById(id);
+    if(el) el.textContent=t[map[id]]||'';
+  });
+  var btn=document.getElementById('load-btn');
+  if(btn&&!btn.classList.contains('hidden')) btn.textContent=t.loadmore;
+  var lb=document.getElementById('feat-loadmore-btn');
+  if(lb) lb.textContent=t.loadmore;
 }
 
 // Close lang dropdown on outside click
@@ -766,8 +817,7 @@ document.addEventListener('click', function(e){
   });
   document.querySelectorAll('.qn-lang-opt').forEach(b=>{
     b.addEventListener('click', ()=>{
-      if(typeof selectLang==='function'){selectLang(b.dataset.lang);}
-      else if(typeof applyLang==='function'){applyLang(b.dataset.lang);}
+      switchLang(b.dataset.lang);
       langDrop.classList.remove('open');
       langToggle.setAttribute('aria-expanded','false');
     });
