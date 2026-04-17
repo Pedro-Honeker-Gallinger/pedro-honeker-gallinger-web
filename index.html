@@ -2,6 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E3Y2C40KEM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E3Y2C40KEM');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pedro Honeker Gallinger — Inspiritual Art</title>
 <meta name="description" content="Pedro Honeker Gallinger — Inspiritual Art. Original paintings, large-scale murals and sacred geometry art. Collected in 20+ countries. Based in Trancoso, Bahia, Brazil.">
@@ -41,12 +49,12 @@ body.menu-open .qn-burger span:nth-child(3){transform:translateY(-6.4px) rotate(
 /* Backdrop + overlay */
 .qn-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.32);z-index:210}
 body.menu-open .qn-backdrop{display:block}
-.qn-overlay{position:fixed;top:0;right:0;bottom:0;width:min(300px,80vw);background:var(--cream);z-index:220;transform:translateX(100%);transition:transform 0.32s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;padding:4.5rem 2.5rem 2.5rem}
+.qn-overlay{position:fixed;top:0;right:0;bottom:0;width:min(340px,88vw);background:#fff;border-left:0.5px solid var(--border);box-shadow:-20px 0 60px rgba(0,0,0,0.10);z-index:220;transform:translateX(100%);transition:transform 0.32s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;padding:4.5rem 2.5rem 2.5rem}
 body.menu-open .qn-overlay{transform:translateX(0)}
 .qn-menu{display:flex;flex-direction:column}
-.qn-menu a{font-family:'DM Sans',sans-serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-mid);text-decoration:none;padding:1rem 0;border-bottom:0.5px solid var(--border);transition:color 0.2s}
+.qn-menu a{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:400;color:var(--blue);text-decoration:none;letter-spacing:0.06em;padding:0.85rem 0;border-bottom:0.5px solid var(--border);transition:color 0.25s,padding-left 0.3s cubic-bezier(0.65,0,0.35,1)}
 .qn-menu a:last-child{border-bottom:none}
-.qn-menu a:hover{color:var(--blue)}
+.qn-menu a:hover{color:var(--gold2);padding-left:0.6rem}
 .qn-foot{margin-top:auto;padding-top:2rem}
 .qn-ig{display:flex;align-items:center;gap:0.5rem;font-family:'DM Sans',sans-serif;font-size:0.62rem;letter-spacing:0.1em;color:var(--text-light);text-decoration:none;transition:color 0.2s}
 .qn-ig svg{width:16px;height:16px;flex-shrink:0}
@@ -426,12 +434,13 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
 <div class="qn-backdrop" id="qnBackdrop"></div>
 <div class="qn-overlay" id="qnOverlay">
   <nav class="qn-menu" aria-label="Main navigation">
-    <a href="#works" data-t="nav_works">Works</a>
+    <a href="index.html" data-t="nav_home">Home</a>
+    <a href="#works" data-t="nav_works">Available Works</a>
     <a href="#murals" data-t="nav_murals">Murals</a>
-    <a href="live-painting.html" data-t="nav_corp">Live Art</a>
-    <a href="vayu-collection.html">Vayu Collection</a>
+    <a href="live-painting.html" data-t="nav_live">Live Art</a>
+    <a href="vayu-collection.html" data-t="nav_vayu">Vayu Collection</a>
     <a href="#bio" data-t="nav_bio">Biography</a>
-    <a href="#contacto" data-t="nav_conc">Concierge</a>
+    <a href="#contacto" data-t="nav_conc">Contact</a>
   </nav>
   <div class="qn-foot">
     <a href="https://www.instagram.com/pedrohonekergallinger/" target="_blank" rel="noopener" class="qn-ig">
@@ -631,7 +640,7 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
       <h5 data-t="f_s" style="margin-top:1.5rem">Studio</h5>
       <a href="/institutional.html" data-t="f_corp">Institutional</a>
       <a href="bio.html" data-t="f_bio2">Biography</a>
-      <a href="#contacto" data-t="f_conc">Concierge</a>
+      <a href="#contacto" data-t="f_conc">Contact</a>
     </div>
     <div class="footer-col">
       <h5 data-t="f_l">Legal</h5>
@@ -664,7 +673,7 @@ const T={
   en:{
     vayu_ey: 'VAYU COLLECTION', vayu_t: 'Um Capítulo de Luz: 2008 – 2025', mural_glass_ey: 'SITE-SPECIFIC MURALS & WORKS', live_promo_title: 'Sublime Live Painting', live_promo_desc: 'Bespoke live art performances for philanthropic galas, corporate soirées, concerts, and luxury weddings. Immortalizing the beauty of the moment in real-time, transforming fleeting instances into eternal masterpieces.', live_promo_btn: 'Discover the Experience', mural_glass_title: 'Art that Inhabits Space', mural_glass_desc: 'I understand muralism as the act of giving a soul to architecture. I collaborate with collectors and institutions to create monumental works that transcend decoration; precise interventions on interiors and facades that transform the environment and elevate the experience of dwelling.', mural_glass_btn: 'Explore Murals',
     lang_tag:'Inspiritual Art · Pedro Honeker Gallinger',
-    nav_works:'Works',nav_murals:'Murals',nav_corp:'Institutional',nav_bio:'Bio',nav_conc:'Contact',nav_btn:'Enquire',
+    nav_works:'Available Works',nav_murals:'Murals',nav_corp:'Institutional',nav_bio:'Bio',nav_conc:'Contact',nav_btn:'Enquire',
     hero_ey:'<span class="hero-eyebrow-styled">Inspiritual Art<br><span style="font-size:0.8em; opacity:0.9">Art that Inspires the Spirit</span></span>',
     hero_t:'<em style="font-size:0.85em">"Beauty is the true spirituality.<br>Beauty lies in radiance."</em>',
     hero_q:'That certainty has guided every brushstroke for twenty years. In my works, the precision of sacred geometry and the warmth of the human figure coexist — classical tradition and the most luminous dimension of who we are. A singular visual language now part of private and institutional collections in more than 15 countries. Each piece is an original, certified work, available to private collectors, galleries, and large-scale institutional projects.',
@@ -712,7 +721,7 @@ const T={
     ft_tag:'Inspiritual Art · Trancoso, Bahia, Brasil',
     f_w:'Works',f_s:'Studio',f_l:'Legal',
     f_avail:'Available Works',f_mur:'Murals',f_vayu:'Vayu Collection',f_vid:'Videos',
-    f_corp:'Institutional',f_bio2:'Biography',f_conc:'Concierge',
+    f_corp:'Institutional',f_bio2:'Biography',f_conc:'Contact',
     f_priv:'Privacy Policy',f_del:'Delivery',f_ret:'Returns',f_copy:'Copyright',f_legal:'Legal Information',
     f_cr:'© 2026 Pedro Honeker Gallinger. All rights reserved.',
     f_seo:'Inspiritual Art · Original Paintings · Murals · Luxury Art · Sacred Geometry · Trancoso',
@@ -725,7 +734,7 @@ const T={
   es:{
     vayu_ey: 'COLECCIÓN VAYU', vayu_t: 'Un Capítulo de Luz: 2008 – 2025', mural_glass_ey: 'MURALES Y OBRAS SITE-SPECIFIC', live_promo_title: 'Sublime Live Painting', live_promo_desc: 'Performances de arte en vivo a medida para galas benéficas, eventos corporativos, conciertos y bodas de lujo. Inmortalizando la belleza del momento en tiempo real, transformando instantes fugaces en obras maestras eternas.', live_promo_btn: 'Descubrir la Experiencia', mural_glass_title: 'Arte que habita el espacio', mural_glass_desc: 'Entiendo el muralismo como el acto de otorgar alma a la arquitectura. Colaboro con coleccionistas e instituciones para crear obras monumentales que trascienden lo decorativo; intervenciones precisas en interiores y fachadas que transforman el entorno y elevan la experiencia de habitar.', mural_glass_btn: 'Explorar Murales',
     lang_tag:'Arte Inspiritual · Pedro Honeker Gallinger',
-    nav_works:'Obras',nav_murals:'Murales',nav_corp:'Institucional',nav_bio:'Bio',nav_conc:'Contact',nav_btn:'Consultar',
+    nav_works:'Obras Disponibles',nav_murals:'Murales',nav_corp:'Institucional',nav_bio:'Bio',nav_conc:'Contacto',nav_btn:'Consultar',
     hero_ey:'<span class="hero-eyebrow-styled">Arte Inspiritual<br><span style="font-size:0.8em; opacity:0.9">Arte que Inspira el Espíritu</span></span>',
     hero_t:'<em style="font-size:0.85em">"La belleza es la verdadera espiritualidad.<br>La Belleza está en la radiancia."</em>',
     hero_q:'Esa certeza guía cada pincelada desde hace veinte años. En mis obras conviven la precisión de la geometría sagrada y la calidez de la figura humana, la tradición clásica y la dimensión más luminosa de lo que somos. Un lenguaje visual propio que hoy forma parte de colecciones privadas e institucionales en más de 15 países. Cada pieza es una obra original y certificada, disponible para coleccionistas privados, galerías y proyectos institucionales de gran escala.',
@@ -773,7 +782,7 @@ const T={
     ft_tag:'Arte Inspiritual · Trancoso, Bahía, Brasil',
     f_w:'Obras',f_s:'Estudio',f_l:'Legal',
     f_avail:'Obras Disponibles',f_mur:'Murales',f_vayu:'Colección Vayu',f_vid:'Videos',
-    f_corp:'Institucional',f_bio2:'Biografía',f_conc:'Concierge',
+    f_corp:'Institucional',f_bio2:'Biografía',f_conc:'Contacto',
     f_priv:'Política de Privacidad',f_del:'Entregas',f_ret:'Devoluciones',f_copy:'Copyright',f_legal:'Información Legal',
     f_cr:'© 2026 Pedro Honeker Gallinger. Todos los derechos reservados.',
     f_seo:'Arte Inspiritual · Pinturas Originales · Murales · Arte de Lujo · Geometría Sagrada · Trancoso',
@@ -786,7 +795,7 @@ const T={
   pt:{
     vayu_ey: 'COLEÇÃO VAYU', vayu_t: 'Um Capítulo de Luz: 2008 – 2025', mural_glass_ey: 'MURAIS E OBRAS SITE-SPECIFIC', live_promo_title: 'Sublime Live Painting', live_promo_desc: 'Performances de arte ao vivo sob medida para galas beneficentes, eventos corporativos, shows e casamentos de luxo. Imortalizando a beleza do momento em tempo real, transformando instantes fugazes em obras-primas eternas.', live_promo_btn: 'Descobrir a Experiência', mural_glass_title: 'Arte que Habita o Espaço', mural_glass_desc: 'Entendo o muralismo como o ato de dar alma à arquitetura. Colaboro com colecionadores e instituições para criar obras monumentais que transcendem a decoração; intervenções precisas em interiores e fachadas que transformam o ambiente e elevam a experiência de habitar.', mural_glass_btn: 'Explorar Murais',
     lang_tag:'Arte Inspiritual · Pedro Honeker Gallinger',
-    nav_works:'Obras',nav_murals:'Murais',nav_corp:'Institucional',nav_bio:'Bio',nav_conc:'Contact',nav_btn:'Consultar',
+    nav_works:'Obras Disponíveis',nav_murals:'Murais',nav_corp:'Institucional',nav_bio:'Bio',nav_conc:'Contacto',nav_btn:'Consultar',
     hero_ey:'<span class="hero-eyebrow-styled">Arte Inspiritual<br><span style="font-size:0.8em; opacity:0.9">Arte que Inspira o Espírito</span></span>',
     hero_t:'<em style="font-size:0.85em">"A beleza é a verdadeira espiritualidade.<br>A beleza está na radiância."</em>',
     hero_q:'Essa certeza guia cada pincelada há vinte anos. Em minhas obras convivem a precisão da geometria sagrada e o calor da figura humana, a tradição clássica e a dimensão mais luminosa do que somos. Uma linguagem visual própria que hoje faz parte de coleções privadas e institucionais em mais de 15 países. Cada peça é uma obra original e certificada, disponível para colecionadores privados, galerias e projetos institucionais de grande escala.',
@@ -834,7 +843,7 @@ const T={
     ft_tag:'Arte Inspiritual · Trancoso, Bahia, Brasil',
     f_w:'Obras',f_s:'Estúdio',f_l:'Legal',
     f_avail:'Obras Disponíveis',f_mur:'Murais',f_vayu:'Coleção Vayu',f_vid:'Vídeos',
-    f_corp:'Institucional',f_bio2:'Biografia',f_conc:'Concierge',
+    f_corp:'Institucional',f_bio2:'Biografia',f_conc:'Contacto',
     f_priv:'Política de Privacidade',f_del:'Entregas',f_ret:'Devoluções',f_copy:'Copyright',f_legal:'Informações Legais',
     f_cr:'© 2026 Pedro Honeker Gallinger. Todos os direitos reservados.',
     f_seo:'Arte Inspiritual · Pinturas Originais · Murais · Arte de Luxo · Geometria Sagrada · Trancoso',
@@ -846,7 +855,7 @@ const T={
   },
   ar:{
     lang_tag:'فن روحاني · بيدرو هونيكر غالينغر',
-    nav_works:'الأعمال',nav_murals:'الجداريات',nav_corp:'المؤسسات',nav_bio:'السيرة',nav_conc:'كونسيرج',nav_btn:'استفسار',
+    nav_works:'الأعمال المتاحة',nav_murals:'الجداريات',nav_corp:'المؤسسات',nav_bio:'السيرة',nav_conc:'تواصل معنا',nav_btn:'استفسار',
     hero_ey:'فن روحاني · فن يُلهم الروح',
     hero_t:'<em>"الجمال هو الروحانية الحقيقية."</em>',
     hero_q:'هذا اليقين يُرشد كل ضربة فرشاة منذ عشرين عامًا. في أعمالي تتعايش دقة الهندسة المقدسة ودفء الشكل البشري، والتقليد الكلاسيكي والبُعد الأكثر إشراقًا لما نحن عليه. لغة بصرية خاصة باتت اليوم جزءًا من مجموعات خاصة ومؤسسية في أكثر من 15 دولة. كل قطعة عمل فريد أصيل موثّق، متاح للمقتنين الخاصين والمعارض والمشاريع المؤسسية الكبرى.',
@@ -894,7 +903,7 @@ const T={
     ft_tag:'فن روحاني · ترانكوزو، باهيا، البرازيل',
     f_w:'الأعمال',f_s:'المرسم',f_l:'قانوني',
     f_avail:'أعمال متاحة',f_mur:'جداريات',f_vayu:'مجموعة فايو',f_vid:'فيديوهات',
-    f_corp:'مؤسسي',f_bio2:'سيرة',f_conc:'كونسيرج',
+    f_corp:'مؤسسي',f_bio2:'سيرة',f_conc:'تواصل',
     f_priv:'سياسة الخصوصية',f_del:'التوصيل',f_ret:'الإرجاع',f_copy:'حقوق النشر',f_legal:'معلومات قانونية',
     f_cr:'© 2026 بيدرو هونيكر غالينغر. جميع الحقوق محفوظة.',
     f_seo:'فن روحاني · لوحات أصلية · جداريات · فن فاخر · هندسة مقدّسة · ترانكوزو',
@@ -906,7 +915,7 @@ const T={
   },
   ja:{
     lang_tag:'インスピリチュアル・アート · ペドロ・ホネカー・ガリンガー',
-    nav_works:'作品',nav_murals:'壁画',nav_corp:'法人',nav_bio:'経歴',nav_conc:'コンシェルジュ',nav_btn:'お問合せ',
+    nav_works:'利用可能な作品',nav_murals:'壁画',nav_corp:'法人',nav_bio:'経歴',nav_conc:'お問い合わせ先',nav_btn:'お問合せ',
     hero_ey:'インスピリチュアル・アート · 魂を鼓舞する芸術',
     hero_t:'<em>「美は真の霊性である。」</em>',
     hero_q:'この確信が二十年間、すべての筆使いを導いてきました。私の作品には、聖なる幾何学の精緻さと人間の温もり、古典的な伝統と私たちの最も輝かしい次元が共存しています。今日では15カ国以上の個人・機関コレクションに収められた独自の視覚言語。各作品は真正なオリジナルであり、個人コレクター、ギャラリー、大規模な機関プロジェクトにご提供しています。',
@@ -954,7 +963,7 @@ const T={
     ft_tag:'インスピリチュアル・アート · トランコーゾ、バイーア、ブラジル',
     f_w:'作品',f_s:'スタジオ',f_l:'法的情報',
     f_avail:'販売可能作品',f_mur:'壁画',f_vayu:'ヴァーユ・コレクション',f_vid:'動画',
-    f_corp:'法人',f_bio2:'経歴',f_conc:'コンシェルジュ',
+    f_corp:'法人',f_bio2:'経歴',f_conc:'連絡先',
     f_priv:'プライバシーポリシー',f_del:'配送',f_ret:'返品',f_copy:'著作権',f_legal:'法的情報',
     f_cr:'© 2026 ペドロ・ホネカー・ガリンガー。全著作権所有。',
     f_seo:'インスピリチュアル・アート · オリジナル絵画 · 壁画 · ラグジュアリーアート · 神聖幾何学 · トランコーゾ',
@@ -966,7 +975,7 @@ const T={
   },
   zh:{
     lang_tag:'灵性艺术 · 佩德罗·霍内克·加林格',
-    nav_works:'作品',nav_murals:'壁画',nav_corp:'机构',nav_bio:'简历',nav_conc:'礼宾',nav_btn:'咨询',
+    nav_works:'可用作品',nav_murals:'壁画',nav_corp:'机构',nav_bio:'简历',nav_conc:'联系我们',nav_btn:'咨询',
     hero_ey:'灵性艺术 · 启迪心灵的艺术',
     hero_t:'<em>"美是真正的灵性。"</em>',
     hero_q:'二十年来，这一信念引领着每一笔创作。在我的作品中，神圣几何的精准与人体的温度共存——古典传统与我们存在中最光辉的维度相融。这一独特的视觉语言如今已成为超过15个国家私人与机构收藏的一部分。每件作品均为真迹原作并附有证书，面向私人藏家、画廊及大型机构项目。',
@@ -1014,7 +1023,7 @@ const T={
     ft_tag:'灵性艺术 · 特兰科索，巴伊亚，巴西',
     f_w:'作品',f_s:'工作室',f_l:'法律',
     f_avail:'可售作品',f_mur:'壁画',f_vayu:'Vayu收藏',f_vid:'视频',
-    f_corp:'机构',f_bio2:'简历',f_conc:'礼宾',
+    f_corp:'机构',f_bio2:'简历',f_conc:'联系',
     f_priv:'隐私政策',f_del:'配送',f_ret:'退货',f_copy:'版权',f_legal:'法律信息',
     f_cr:'© 2026 佩德罗·霍内克·加林格。版权所有。',
     f_seo:'灵性艺术 · 原创绘画 · 壁画 · 奢华艺术 · 神圣几何 · 特兰科索',
