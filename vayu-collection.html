@@ -2,6 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E3Y2C40KEM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E3Y2C40KEM');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vayu Collection · Pedro Honeker Gallinger — Inspiritual Art</title>
 <meta name="description" content="Vayu Collection 2015-2025. Original paintings by Pedro Honeker Gallinger, collected in 15+ countries worldwide.">
@@ -35,8 +43,8 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 3
 .featured-section{padding:2rem 3rem 0}
 .section-label{font-size:0.58rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--text-light);margin-bottom:1rem;padding-bottom:0.8rem;border-bottom:0.5px solid var(--border)}
 .featured-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-.feat-card{cursor:pointer;overflow:hidden;background:var(--cream2);position:relative}
-.feat-card img{width:100%;height:100%;display:block;object-fit:contain;filter:saturate(0.85);transition:transform 0.5s,filter 0.4s;background:var(--cream2)}
+.feat-card{cursor:pointer;overflow:hidden;position:relative}
+.feat-card img{width:100%;height:100%;display:block;object-fit:contain;filter:saturate(0.85);transition:transform 0.5s,filter 0.4s;background:transparent}
 .feat-card:hover img{transform:scale(1.02);filter:saturate(1)}
 .card-hover{position:absolute;bottom:0;left:0;right:0;padding:1.1rem 1.3rem;background:linear-gradient(transparent,rgba(11,20,35,0.82));opacity:0;transition:opacity 0.35s}
 .feat-card:hover .card-hover,.justrow-item:hover .card-hover{opacity:1}
@@ -48,9 +56,9 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 3
 .expand-inner{max-width:900px;margin:0 auto;text-align:center}
 .expand-close{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-light);cursor:pointer;background:none;border:none;font-family:'DM Sans',sans-serif;padding:0;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:2.5rem;transition:color 0.2s}
 .expand-close:hover{color:var(--blue)}
-.expand-img{width:100%;display:block;max-height:82vh;object-fit:contain;margin-bottom:1.5rem;background:var(--cream2)}
+.expand-img{width:100%;display:block;max-height:82vh;object-fit:contain;margin-bottom:1.5rem;background:transparent}
 .expand-details-row{display:flex;justify-content:center;gap:8px;margin-bottom:2rem}
-.expand-detail-thumb{height:80px;width:auto;display:block;cursor:pointer;filter:saturate(0.75);transition:filter 0.3s;border:2px solid transparent;background:var(--cream2);object-fit:contain}
+.expand-detail-thumb{height:120px;width:auto;display:block;cursor:pointer;filter:saturate(0.75);transition:filter 0.3s,border-color 0.3s;border:2px solid transparent;background:transparent;object-fit:contain}
 .expand-detail-thumb:hover{filter:saturate(1);border-color:var(--gold)}
 .expand-divider{height:0.5px;background:var(--border);margin:2rem 0}
 .expand-tag{font-size:0.55rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem}
@@ -71,7 +79,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 3
 .justified-gallery{width:100%}
 .justrow{display:flex;gap:6px;margin-bottom:6px;align-items:stretch}
 /* Cada item: fondo cremoso, imagen con object-fit:contain = nunca recortada */
-.justrow-item{cursor:pointer;position:relative;overflow:hidden;background:var(--cream2);flex-shrink:0;flex-grow:1}
+.justrow-item{cursor:pointer;position:relative;overflow:hidden;background:transparent;flex-shrink:0;flex-grow:1}
 .justrow-item img{width:100%;height:100%;display:block;object-fit:contain;filter:saturate(0.85);transition:transform 0.4s,filter 0.4s}
 .justrow-item:hover img{transform:scale(1.02);filter:saturate(1)}
 .load-wrap{padding:2rem 0 3.5rem;text-align:center}
@@ -121,6 +129,7 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
 .footer-seo{font-size:0.6rem;color:rgba(255,255,255,0.18);margin-top:1.2rem;line-height:1.6}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:0.65rem;letter-spacing:0.1em;color:rgba(255,255,255,0.3);flex-wrap:wrap;gap:0.5rem}
 /* Responsive */
+html,body{overflow-x:hidden;max-width:100%}
 @media(max-width:768px){
   .site-nav{padding:0.6rem 1.2rem;flex-wrap:wrap;gap:0.5rem}
   .site-nav .nav-links{gap:0.8rem;flex-wrap:wrap}
@@ -129,6 +138,11 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
   .gallery-header{padding:2rem 1.5rem 1.5rem}
   .featured-section{padding:1.5rem 1.5rem 0}
   .featured-grid{grid-template-columns:1fr}
+  .justrow-item{width:100% !important;height:auto !important;flex:none !important}
+  .justrow-item img{width:100%;height:auto !important;object-fit:contain}
+  .justified-row{flex-direction:column !important;height:auto !important}
+  .expand-panel,.row-expand{padding:1.5rem 1rem}
+  .expand-detail-thumb{height:90px}
   .grid-section{padding:0 1.5rem}
   .expand-panel,.row-expand{padding:2rem 1.5rem}
   .footer-top{grid-template-columns:1fr;gap:2rem}
@@ -348,19 +362,19 @@ const T={
     flags:'Collected in',feat_label:"Artist's selection",grid_label:'More works',loadmore:'Load more',
     tag:'Original · Vayu Collection · Pedro Honeker Gallinger',
     conc:'Interested in a similar work or a new commission?',
-    btn_wa:'WhatsApp Concierge',btn_em:'Private Email',close:'Close',tooltip:"Chat with Pedro's studio"},
+    btn_wa:'WhatsApp',btn_em:'Private Email',close:'Close',tooltip:"Chat with Pedro's studio"},
   es:{eyebrow:'Colección Vayu · 2015–2025',title:'Obras vendidas a coleccionistas de más de 15 países',
     sub:'Estas piezas originales forman parte del legado de Pedro como VAYU — cada una encontró su hogar con un coleccionista alrededor del mundo.',
     flags:'Coleccionado en',feat_label:'Selección del artista',grid_label:'Más obras',loadmore:'Ver más',
     tag:'Original · Colección Vayu · Pedro Honeker Gallinger',
     conc:'¿Interesado en una obra similar o una nueva comisión?',
-    btn_wa:'WhatsApp Concierge',btn_em:'Email Privado',close:'Cerrar',tooltip:'Conversa con el estudio de Pedro'},
+    btn_wa:'WhatsApp',btn_em:'Email Privado',close:'Cerrar',tooltip:'Conversa con el estudio de Pedro'},
   pt:{eyebrow:'Coleção Vayu · 2015–2025',title:'Obras vendidas a colecionadores de mais de 15 países',
     sub:'Estas peças originais fazem parte do legado de Pedro como VAYU — cada uma encontrou seu lar com um colecionador ao redor do mundo.',
     flags:'Colecionado em',feat_label:'Seleção do artista',grid_label:'Mais obras',loadmore:'Ver mais',
     tag:'Original · Coleção Vayu · Pedro Honeker Gallinger',
     conc:'Interessado em uma obra similar ou uma nova comissão?',
-    btn_wa:'WhatsApp Concierge',btn_em:'Email Privado',close:'Fechar',tooltip:'Converse com o estúdio de Pedro'},
+    btn_wa:'WhatsApp',btn_em:'Email Privado',close:'Fechar',tooltip:'Converse com o estúdio de Pedro'},
   ar:{eyebrow:'مجموعة فايو · 2015–2025',title:'أعمال بيعت لهواة جمع في أكثر من 15 دولة',
     sub:'هذه القطع الأصلية جزء من إرث بيدرو بوصفه VAYU — وجدت كل منها مكانها لدى جامع محترف حول العالم.',
     flags:'تم تجميعها في',feat_label:'اختيار الفنان',grid_label:'المزيد من الأعمال',loadmore:'تحميل المزيد',
@@ -372,13 +386,13 @@ const T={
     flags:'収蔵国',feat_label:'アーティスト厳選作品',grid_label:'その他の作品',loadmore:'さらに読み込む',
     tag:'オリジナル · バイユ・コレクション · ペドロ・オネケル・ガリンガー',
     conc:'類似作品や新しい依頼作品にご興味はありますか？',
-    btn_wa:'WhatsAppコンシェルジュ',btn_em:'プライベートメール',close:'閉じる',tooltip:'ペドロのスタジオへ'},
+    btn_wa:'WhatsApp',btn_em:'プライベートメール',close:'閉じる',tooltip:'ペドロのスタジオへ'},
   zh:{eyebrow:'Vayu 系列 · 2015–2025',title:'作品已售往15个以上国家的收藏家',
     sub:'这些原创作品是Pedro以VAYU身份创作的珍贵遗产——每一件都找到了属于自己的收藏家。',
     flags:'收藏于',feat_label:'艺术家精选',grid_label:'更多作品',loadmore:'加载更多',
     tag:'原作 · Vayu系列 · 佩德罗·奥内克尔·加林格尔',
     conc:'对类似作品或新定制作品感兴趣？',
-    btn_wa:'WhatsApp礼宾',btn_em:'私人邮件',close:'关闭',tooltip:'联系Pedro的工作室'},
+    btn_wa:'WhatsApp',btn_em:'私人邮件',close:'关闭',tooltip:'联系Pedro的工作室'},
 };
 
 /* ══════════════════════════════════════════════════════════════
@@ -471,7 +485,8 @@ function panelHTML(obra){
   var t=T[lang]||T['en'];
   var det=obra.details.length
     ? '<div class="expand-details-row">'+obra.details.map(function(d){
-        return '<img src="'+img(obra.slug,d)+'" class="expand-detail-thumb" alt="'+obra.title+' detail" loading="lazy">';
+        var detSrc=img(obra.slug,d);
+        return '<img src="'+detSrc+'" class="expand-detail-thumb" alt="'+obra.title+' detail" loading="lazy" onclick="showDetailFull(this,\''+detSrc+'\')" style="cursor:zoom-in;">';
       }).join('')+'</div>'
     : '';
   var dims=obra.w+' × '+obra.h+' cm';
@@ -495,6 +510,16 @@ function panelHTML(obra){
     +'</div>';
 }
 
+function showDetailFull(el, src){
+  var mainImg=el.closest('.expand-inner').querySelector('.expand-img');
+  if(mainImg){
+    mainImg.src=src;
+    mainImg.scrollIntoView({behavior:'smooth',block:'center'});
+    // highlight selected thumb
+    el.closest('.expand-details-row').querySelectorAll('.expand-detail-thumb').forEach(function(t){t.style.borderColor='transparent';});
+    el.style.borderColor='var(--gold)';
+  }
+}
 function closeExpand(){
   document.querySelectorAll('.expand-panel,.row-expand').forEach(function(p){p.classList.remove('open');p.innerHTML='';});
   activeKey=null;
@@ -661,7 +686,7 @@ window.addEventListener('load',init);
     <a href="live-painting.html">Live Art</a>
     <a href="vayu-collection.html">Vayu Collection</a>
     <a href="bio.html">Biography</a>
-    <a href="index.html#concierge">Concierge</a>
+    <a href="index.html#contacto">Contact</a>
   </nav>
   <div class="qn-foot">
     <a href="https://www.instagram.com/pedrohonekergallinger/" target="_blank" rel="noopener" class="qn-ig">
@@ -724,7 +749,7 @@ window.addEventListener('load',init);
       <h5 style="margin-top:1.5rem">Studio</h5>
       <a href="corporate.html">Institutional</a>
       <a href="bio.html">Biography</a>
-      <a href="index.html#concierge">Concierge</a>
+      <a href="index.html#contacto">Contact</a>
     </div>
     <div class="footer-col">
       <h5>Legal</h5>
