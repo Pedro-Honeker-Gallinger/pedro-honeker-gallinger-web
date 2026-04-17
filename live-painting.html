@@ -36,18 +36,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0.8rem
 .nav-ig:hover{color:var(--blue)}
 .nav-btn{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:#fff;background:var(--gold);border:none;padding:0.55rem 1.3rem;cursor:pointer;text-decoration:none;transition:background 0.2s;font-family:'DM Sans',sans-serif}
 .nav-btn:hover{background:var(--gold2)}
-/* LANG DROPDOWN */
-.lang-drop{position:relative}
-.lang-toggle{font-size:0.65rem;letter-spacing:0.15em;font-weight:300;color:var(--text-mid);background:transparent;border:0.5px solid var(--border);padding:0.4rem 0.7rem;cursor:pointer;text-transform:uppercase;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:0.35rem;transition:border-color 0.2s,color 0.2s}
-.lang-toggle:hover{border-color:var(--gold);color:var(--blue)}
-.lang-toggle svg{width:10px;height:10px;transition:transform 0.2s}
-.lang-drop.open .lang-toggle svg{transform:rotate(180deg)}
-.lang-menu{position:absolute;top:calc(100% + 6px);right:0;background:#fff;border:1px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,0.1);min-width:160px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all 0.2s;z-index:300}
-.lang-drop.open .lang-menu{opacity:1;visibility:visible;transform:translateY(0)}
-.lang-option{display:flex;align-items:center;gap:0.7rem;padding:0.6rem 1rem;font-size:0.7rem;letter-spacing:0.08em;color:var(--text-mid);cursor:pointer;transition:background 0.15s,color 0.15s;font-family:'DM Sans',sans-serif;border:none;background:none;width:100%;text-align:left}
-.lang-option:hover{background:var(--cream2);color:var(--blue)}
-.lang-option.active{color:var(--gold);font-weight:400}
-.lang-option-code{font-size:0.58rem;letter-spacing:0.12em;color:var(--text-light);min-width:1.6rem;text-transform:uppercase}
+/* legacy lang CSS removed — qn- system is used */
 /* RTL */
 html[dir="rtl"] body{direction:rtl;text-align:right}
 html[dir="rtl"] .hero-content{margin-left:6rem;margin-right:auto}
@@ -918,15 +907,22 @@ const T = {
 
 let lang='en';
 
-function detectLang(){
-  // 1) Stored preference wins
-  try {
-    var stored = localStorage.getItem('phg_lang');
-    if(stored && ['en','es','pt','ar','ja','zh'].includes(stored)) return stored;
-  } catch(e){}
-  // 2) Timezone-based detection (Brazil priority)
-  var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone||'').toLowerCase();
-  var nv = (navigator.language||'').toLowerCase();
+/* ── Country → language map ── */
+const COUNTRY_LANG = {
+  BR:'pt',PT:'pt',AO:'pt',MZ:'pt',CV:'pt',GW:'pt',ST:'pt',TL:'pt',
+  AR:'es',MX:'es',CO:'es',CL:'es',PE:'es',VE:'es',EC:'es',BO:'es',
+  PY:'es',UY:'es',GT:'es',HN:'es',SV:'es',NI:'es',CR:'es',PA:'es',
+  CU:'es',DO:'es',PR:'es',ES:'es',
+  SA:'ar',AE:'ar',QA:'ar',KW:'ar',BH:'ar',OM:'ar',JO:'ar',LB:'ar',
+  SY:'ar',IQ:'ar',EG:'ar',MA:'ar',DZ:'ar',TN:'ar',LY:'ar',
+  JP:'ja',
+  CN:'zh',TW:'zh',HK:'zh',MO:'zh',SG:'zh',
+};
+
+/* ── Local (timezone + browser) fallback ── */
+function detectLangLocal(){
+  var tz=(Intl.DateTimeFormat().resolvedOptions().timeZone||'').toLowerCase();
+  var nv=(navigator.language||'').toLowerCase();
   if(/brazil|sao_paulo|brasilia|belem|manaus|fortaleza|recife|bahia|maceio|cuiaba|porto_velho|rio_branco|boa_vista|noronha|araguaina/.test(tz)) return 'pt';
   if(nv.startsWith('pt')) return 'pt';
   if(/argentina|chile|colombia|mexico|peru|uruguay|venezuela|bolivia|ecuador|paraguay|cuba|panama|costa_rica|guatemala|honduras|nicaragua|salvador|santo_domingo|asuncion|montevideo|caracas|bogota|lima|santiago|madrid|tegucigalpa|managua/.test(tz)) return 'es';
@@ -940,34 +936,71 @@ function detectLang(){
   return 'en';
 }
 
-function selectLang(l){applyLang(l);document.getElementById('lang-drop').classList.remove('open');}
+/* ── Main detect: stored → IP country → local → 'en' ── */
+function detectLang(){
+  try {
+    var stored=localStorage.getItem('phg_lang');
+    if(stored&&['en','es','pt','ar','ja','zh'].includes(stored)) return stored;
+  } catch(e){}
+  return detectLangLocal(); // sync fallback; IP check runs async below
+}
+
+/* ── Async IP-country upgrade (fires once, no stored pref) ── */
+(function ipCheck(){
+  try {
+    var stored=localStorage.getItem('phg_lang');
+    if(stored&&['en','es','pt','ar','ja','zh'].includes(stored)) return; // user chose already
+  } catch(e){ return; }
+  fetch('https://ipapi.co/json/',{cache:'no-store'})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      var cc=(d&&d.country_code)||'';
+      var detected=COUNTRY_LANG[cc]||null;
+      if(!detected){
+        // fallback to language field from IP API
+        var ipLang=(d&&d.languages||'').split(',')[0].split('-')[0].toLowerCase();
+        if(['en','es','pt','ar','ja','zh'].includes(ipLang)) detected=ipLang;
+      }
+      if(detected&&detected!==lang){applyLang(detected);}
+    })
+    .catch(function(){/* silent — keep current lang */});
+})();
+
+/* ── applyLang: works exclusively with the qn- nav system ── */
 function applyLang(l){
   try { localStorage.setItem('phg_lang', l); } catch(e){}
-  var qnCode = document.getElementById('qnLangCode');
-  if(qnCode) qnCode.textContent = l.toUpperCase();
-  document.querySelectorAll('.qn-lang-opt').forEach(function(b){b.classList.toggle('active', b.dataset.lang === l);});
-
   lang=l;
-  const t=T[l];
-  if(!t)return;
-  document.querySelectorAll('[data-t]').forEach(el=>{
-    const k=el.getAttribute('data-t');
+  // Update lang-code badge in qn nav
+  var qnCode=document.getElementById('qnLangCode');
+  if(qnCode) qnCode.textContent=l.toUpperCase();
+  // Mark active option in qn dropdown
+  document.querySelectorAll('.qn-lang-opt').forEach(function(b){
+    b.classList.toggle('active', b.dataset.lang===l);
+  });
+  // Apply translations
+  var t=T[l];
+  if(!t) return;
+  document.querySelectorAll('[data-t]').forEach(function(el){
+    var k=el.getAttribute('data-t');
     if(t[k]!==undefined) el.innerHTML=t[k];
   });
-  document.querySelectorAll('.lang-option').forEach(b=>{
-    const code=b.querySelector('.lang-option-code').textContent.trim().toLowerCase();
-    b.classList.toggle('active',code===l);
-  });
-  document.getElementById('lang-code').textContent=l.toUpperCase();
-  const tip=document.getElementById('wa-tooltip');if(tip)tip.textContent=t.tooltip;
+  // WA tooltip
+  var tip=document.getElementById('wa-tooltip');
+  if(tip) tip.textContent=t.tooltip||'';
+  // RTL
   document.documentElement.dir=l==='ar'?'rtl':'ltr';
   document.documentElement.lang=l;
 }
 
-document.addEventListener('click',e=>{
-  const d=document.getElementById('lang-drop');
-  if(d&&!d.contains(e.target))d.classList.remove('open');
-});
+/* ── selectLang: called by any programmatic selection ── */
+function selectLang(l){
+  applyLang(l);
+  // close qn dropdown if open
+  var d=document.getElementById('qnLangDrop');
+  if(d) d.classList.remove('open');
+  var t=document.getElementById('qnLangToggle');
+  if(t) t.setAttribute('aria-expanded','false');
+}
 
 // Block right-click, drag, keyboard save shortcuts
 document.addEventListener('contextmenu',e=>e.preventDefault());
@@ -977,44 +1010,40 @@ document.addEventListener('keydown',e=>{
   if(e.key==='F12'){e.preventDefault();}
 });
 
-// Init
+// Init — apply detected lang immediately
 applyLang(detectLang());
-
 
 // ============ QUIET LUXURY NAV CONTROLS ============
 (function(){
-  const burger = document.getElementById('qnBurger');
-  const backdrop = document.getElementById('qnBackdrop');
-  const body = document.body;
+  var burger=document.getElementById('qnBurger');
+  var backdrop=document.getElementById('qnBackdrop');
+  var body=document.body;
   if(!burger||!backdrop) return;
   function openMenu(){body.classList.add('menu-open');burger.setAttribute('aria-expanded','true');}
   function closeMenu(){body.classList.remove('menu-open');burger.setAttribute('aria-expanded','false');}
   function toggleMenu(){body.classList.contains('menu-open')?closeMenu():openMenu();}
   burger.addEventListener('click',toggleMenu);
-  document.querySelectorAll('.qn-menu a').forEach(a=>a.addEventListener('click',closeMenu));
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&body.classList.contains('menu-open'))closeMenu();});
+  document.querySelectorAll('.qn-menu a').forEach(function(a){a.addEventListener('click',closeMenu);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&body.classList.contains('menu-open'))closeMenu();});
   backdrop.addEventListener('click',closeMenu);
 })();
 
-// ============ NEW LANG DROPDOWN BINDINGS ============
+// ============ LANG DROPDOWN BINDINGS ============
 (function(){
-  const langDrop = document.getElementById('qnLangDrop');
-  const langToggle = document.getElementById('qnLangToggle');
+  var langDrop=document.getElementById('qnLangDrop');
+  var langToggle=document.getElementById('qnLangToggle');
   if(!langDrop||!langToggle) return;
-  langToggle.addEventListener('click', e=>{
+  langToggle.addEventListener('click',function(e){
     e.stopPropagation();
     langDrop.classList.toggle('open');
-    langToggle.setAttribute('aria-expanded', langDrop.classList.contains('open'));
+    langToggle.setAttribute('aria-expanded',langDrop.classList.contains('open'));
   });
-  document.querySelectorAll('.qn-lang-opt').forEach(b=>{
-    b.addEventListener('click', ()=>{
-      if(typeof selectLang==='function'){selectLang(b.dataset.lang);}
-      else if(typeof applyLang==='function'){applyLang(b.dataset.lang);}
-      langDrop.classList.remove('open');
-      langToggle.setAttribute('aria-expanded','false');
+  document.querySelectorAll('.qn-lang-opt').forEach(function(b){
+    b.addEventListener('click',function(){
+      selectLang(b.dataset.lang);
     });
   });
-  document.addEventListener('click', e=>{
+  document.addEventListener('click',function(e){
     if(!langDrop.contains(e.target)){
       langDrop.classList.remove('open');
       langToggle.setAttribute('aria-expanded','false');
