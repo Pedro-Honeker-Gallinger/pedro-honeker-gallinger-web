@@ -1416,7 +1416,7 @@ function openVid(i,cardEl){
   closeVid();activeVid=i;
   const v=VIDEOS[i];
   const src=v.src==='yt'
-    ?`https://www.youtube.com/embed/${v.id}?rel=0&modestbranding=1&playsinline=1`
+    ?`https://www.youtube.com/embed/${v.id}?rel=0&modestbranding=1&playsinline=1&enablejsapi=1`
     :`https://player.vimeo.com/video/${v.id}?playsinline=1`;
   const section=document.getElementById('videos');
   let exp=document.getElementById('vid-expand');
@@ -1428,6 +1428,23 @@ function openVid(i,cardEl){
   exp.innerHTML=`<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:4px;"><iframe id="active-vid-iframe" src="${src}" allowfullscreen allow="fullscreen; picture-in-picture" loading="eager" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"></iframe></div>`;
   section.appendChild(exp);
   setTimeout(()=>exp.scrollIntoView({behavior:'smooth',block:'nearest'}),80);
+  // Stop video when scrolled out of view
+  const iframe=document.getElementById('active-vid-iframe');
+  if(iframe&&'IntersectionObserver' in window){
+    const obs=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(!entry.isIntersecting){
+          try{
+            iframe.src=v.src==='yt'
+              ?`https://www.youtube.com/embed/${v.id}?rel=0&modestbranding=1&playsinline=1&enablejsapi=1`
+              :`https://player.vimeo.com/video/${v.id}?playsinline=1`;
+            obs.disconnect();
+          }catch(e){}
+        }
+      });
+    },{threshold:0.05});
+    obs.observe(iframe);
+  }
 }
 function closeVid(){
   const e=document.getElementById('vid-expand');
