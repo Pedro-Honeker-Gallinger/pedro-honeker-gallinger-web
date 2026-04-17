@@ -288,13 +288,13 @@ body.menu-open nav.qn{z-index:160}
 body.menu-open .qn-burger span:nth-child(1){transform:translateY(6px) rotate(45deg);width:24px}
 body.menu-open .qn-burger span:nth-child(2){opacity:0;transform:scaleX(0)}
 body.menu-open .qn-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg);width:24px}
-.qn-overlay{position:fixed;top:0;right:0;width:340px;max-width:88vw;max-height:100vh;z-index:150;background:linear-gradient(180deg,rgba(20,33,55,0.985) 0%,rgba(27,46,75,0.985) 100%);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-left:0.5px solid rgba(201,161,85,0.18);border-bottom:0.5px solid rgba(201,161,85,0.18);box-shadow:-20px 20px 60px rgba(0,0,0,0.25);transform:translateX(100%);transition:transform 0.45s cubic-bezier(0.65,0,0.35,1);display:flex;flex-direction:column;padding:calc(var(--nav-h) + 2rem) 2.5rem 2rem;overflow-y:auto}
+.qn-overlay{position:fixed;top:0;right:0;width:340px;max-width:88vw;max-height:100vh;z-index:150;background:#fff;border-left:0.5px solid var(--border);box-shadow:-20px 0 60px rgba(0,0,0,0.10);transform:translateX(100%);transition:transform 0.45s cubic-bezier(0.65,0,0.35,1);display:flex;flex-direction:column;padding:calc(var(--nav-h) + 2rem) 2.5rem 2rem;overflow-y:auto}
 body.menu-open .qn-overlay{transform:translateX(0)}
-.qn-overlay::before{content:'';position:absolute;width:300px;height:300px;top:-80px;right:-100px;background:radial-gradient(circle,rgba(201,161,85,0.10) 0%,transparent 65%);pointer-events:none}
+
 .qn-backdrop{position:fixed;inset:0;z-index:140;background:rgba(15,22,38,0.35);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:opacity 0.4s ease,visibility 0s linear 0.4s}
 body.menu-open .qn-backdrop{opacity:1;visibility:visible;transition:opacity 0.4s ease,visibility 0s linear 0s}
 .qn-menu{position:relative;z-index:2;display:flex;flex-direction:column;gap:0.2rem}
-.qn-menu a{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:400;color:rgba(255,255,255,0.85);text-decoration:none;letter-spacing:0.06em;position:relative;display:inline-block;padding:0.85rem 0;border-bottom:0.5px solid rgba(255,255,255,0.06);transition:color 0.25s,padding-left 0.3s cubic-bezier(0.65,0,0.35,1);opacity:0;transform:translateX(15px)}
+.qn-menu a{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:400;color:var(--blue);text-decoration:none;letter-spacing:0.06em;position:relative;display:inline-block;padding:0.85rem 0;border-bottom:0.5px solid var(--border);transition:color 0.25s,padding-left 0.3s cubic-bezier(0.65,0,0.35,1);opacity:0;transform:translateX(15px)}
 body.menu-open .qn-menu a{opacity:1;transform:translateX(0)}
 body.menu-open .qn-menu a:nth-child(1){transition:opacity 0.4s 0.18s,transform 0.5s 0.18s,color 0.25s,padding-left 0.3s}
 body.menu-open .qn-menu a:nth-child(2){transition:opacity 0.4s 0.22s,transform 0.5s 0.22s,color 0.25s,padding-left 0.3s}
@@ -303,11 +303,11 @@ body.menu-open .qn-menu a:nth-child(4){transition:opacity 0.4s 0.30s,transform 0
 body.menu-open .qn-menu a:nth-child(5){transition:opacity 0.4s 0.34s,transform 0.5s 0.34s,color 0.25s,padding-left 0.3s}
 body.menu-open .qn-menu a:nth-child(6){transition:opacity 0.4s 0.38s,transform 0.5s 0.38s,color 0.25s,padding-left 0.3s}
 body.menu-open .qn-menu a:nth-child(7){transition:opacity 0.4s 0.42s,transform 0.5s 0.42s,color 0.25s,padding-left 0.3s}
-.qn-menu a:hover{color:#e8c95a;padding-left:0.6rem}
-.qn-foot{position:relative;z-index:2;display:flex;flex-direction:column;gap:1.2rem;padding-top:1.8rem;margin-top:1.2rem;border-top:0.5px solid rgba(232,201,90,0.25);opacity:0;transition:opacity 0.4s 0.5s}
+.qn-menu a:hover{color:var(--gold2);padding-left:0.6rem}
+.qn-foot{position:relative;z-index:2;display:flex;flex-direction:column;gap:1.2rem;padding-top:1.8rem;margin-top:1.2rem;border-top:0.5px solid var(--border-gold);opacity:0;transition:opacity 0.4s 0.5s}
 body.menu-open .qn-foot{opacity:1}
-.qn-ig{display:flex;align-items:center;gap:0.55rem;font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;transition:color 0.25s}
-.qn-ig:hover{color:#e8c95a}
+.qn-ig{display:flex;align-items:center;gap:0.55rem;font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-mid);text-decoration:none;transition:color 0.25s}
+.qn-ig:hover{color:var(--gold2)}
 .qn-ig svg{width:14px;height:14px}
 body.menu-open{overflow:hidden}
 @media(max-width:768px){nav.qn{padding:0 1.2rem}.qn-logo{font-size:0.72rem;letter-spacing:0.16em}}
@@ -343,13 +343,13 @@ body.menu-open{overflow:hidden}
 <div class="qn-backdrop" id="qnBackdrop"></div>
 <div class="qn-overlay" id="qnOverlay">
   <nav class="qn-menu" aria-label="Main navigation">
-    <a href="index.html">Home</a>
-    <a href="index.html#works">Available Works</a>
-    <a href="index.html#murals">Murals</a>
-    <a href="live-painting.html">Live Art</a>
-    <a href="vayu-collection.html">Vayu Collection</a>
-    <a href="bio.html">Biography</a>
-    <a href="index.html#concierge">Concierge</a>
+    <a href="index.html" data-t="nav_home">Home</a>
+    <a href="index.html#works" data-t="nav_works">Available Works</a>
+    <a href="index.html#murals" data-t="nav_murals">Murals</a>
+    <a href="live-painting.html" data-t="nav_live">Live Art</a>
+    <a href="vayu-collection.html" data-t="nav_vayu">Vayu Collection</a>
+    <a href="bio.html" data-t="nav_bio">Biography</a>
+    <a href="index.html#contact" data-t="nav_conc">Contact</a>
   </nav>
   <div class="qn-foot">
     <a href="https://www.instagram.com/pedrohonekergallinger/" target="_blank" rel="noopener" class="qn-ig">
@@ -558,7 +558,7 @@ body.menu-open{overflow:hidden}
       <h5 data-t="f_s" style="margin-top:1.5rem">Studio</h5>
       <a href="/institutional.html" data-t="f_corp">Institutional</a>
       <a href="bio.html" data-t="f_bio2">Biography</a>
-      <a href="index.html#concierge" data-t="f_conc">Concierge</a>
+      <a href="index.html#contact" data-t="f_conc">Contact</a>
     </div>
     <div class="footer-col">
       <h5 data-t="f_l">Legal</h5>
@@ -586,7 +586,7 @@ body.menu-open{overflow:hidden}
 <script>
 const T = {
   en:{
-    nav_works:'Works',nav_murals:'Murals',nav_live:'Live Art',nav_bio:'Bio',nav_conc:'Concierge',nav_btn:'Enquire',
+    nav_works:'Works',nav_murals:'Murals',nav_live:'Live Art',nav_bio:'Bio',nav_conc:'Contact',nav_btn:'Enquire',
     hero_ey:'Live Art · A Singular Experience',
     hero_t:'Sublime <em>Live</em> Painting',
     hero_q:'"The canvas unfolding in real time — an original work born in the presence of those gathered, carrying within it the breath of the occasion."',
@@ -633,14 +633,14 @@ const T = {
     ft_tag:'Inspiritual Art · Trancoso, Bahia, Brasil',
     f_w:'Works',f_s:'Studio',f_l:'Legal',
     f_avail:'Available Works',f_mur:'Murals',f_vayu:'Vayu Collection',f_live:'Live Art',
-    f_corp:'Institutional',f_bio2:'Biography',f_conc:'Concierge',
+    f_corp:'Institutional',f_bio2:'Biography',f_conc:'Contact',
     f_priv:'Privacy Policy',f_del:'Delivery',f_ret:'Returns',f_copy:'Copyright',f_legal:'Legal Information',
     f_cr:'© 2026 Pedro Honeker Gallinger. All rights reserved.',
     f_seo:'Live Painting · Luxury Events · Charity Galas · Weddings · Corporate · Concerts · Trancoso',
     tooltip:'Chat with Pedro\'s studio',
   },
   es:{
-    nav_works:'Obras',nav_murals:'Murales',nav_live:'Arte en Vivo',nav_bio:'Bio',nav_conc:'Concierge',nav_btn:'Consultar',
+    nav_works:'Obras',nav_murals:'Murales',nav_live:'Arte en Vivo',nav_bio:'Bio',nav_conc:'Contacto',nav_btn:'Consultar',
     hero_ey:'Arte en Vivo · Una Experiencia Singular',
     hero_t:'Pintura en Vivo <em>Sublime</em>',
     hero_q:'"El lienzo revelándose en tiempo real — una obra original nacida en presencia de los reunidos, portadora del aliento del momento."',
@@ -687,14 +687,14 @@ const T = {
     ft_tag:'Arte Inspiritual · Trancoso, Bahía, Brasil',
     f_w:'Obras',f_s:'Estudio',f_l:'Legal',
     f_avail:'Obras Disponibles',f_mur:'Murales',f_vayu:'Colección Vayu',f_live:'Arte en Vivo',
-    f_corp:'Institucional',f_bio2:'Biografía',f_conc:'Concierge',
+    f_corp:'Institucional',f_bio2:'Biografía',f_conc:'Contacto',
     f_priv:'Política de Privacidad',f_del:'Entregas',f_ret:'Devoluciones',f_copy:'Copyright',f_legal:'Información Legal',
     f_cr:'© 2026 Pedro Honeker Gallinger. Todos los derechos reservados.',
     f_seo:'Pintura en Vivo · Eventos de Lujo · Galas Benéficas · Bodas · Corporativo · Conciertos · Trancoso',
     tooltip:'Conversa con el estudio de Pedro',
   },
   pt:{
-    nav_works:'Obras',nav_murals:'Murais',nav_live:'Arte ao Vivo',nav_bio:'Bio',nav_conc:'Concierge',nav_btn:'Consultar',
+    nav_works:'Obras',nav_murals:'Murais',nav_live:'Arte ao Vivo',nav_bio:'Bio',nav_conc:'Contacto',nav_btn:'Consultar',
     hero_ey:'Arte ao Vivo · Uma Experiência Singular',
     hero_t:'Pintura ao Vivo <em>Sublime</em>',
     hero_q:'"A tela revelando-se em tempo real — uma obra original nascida na presença dos reunidos, carregando em si o sopro do momento."',
@@ -741,14 +741,14 @@ const T = {
     ft_tag:'Arte Inspiritual · Trancoso, Bahia, Brasil',
     f_w:'Obras',f_s:'Estúdio',f_l:'Legal',
     f_avail:'Obras Disponíveis',f_mur:'Murais',f_vayu:'Coleção Vayu',f_live:'Arte ao Vivo',
-    f_corp:'Institucional',f_bio2:'Biografia',f_conc:'Concierge',
+    f_corp:'Institucional',f_bio2:'Biografia',f_conc:'Contacto',
     f_priv:'Política de Privacidade',f_del:'Entregas',f_ret:'Devoluções',f_copy:'Copyright',f_legal:'Informação Legal',
     f_cr:'© 2026 Pedro Honeker Gallinger. Todos os direitos reservados.',
     f_seo:'Pintura ao Vivo · Eventos de Luxo · Galas Beneficentes · Casamentos · Corporativo · Concertos · Trancoso',
     tooltip:'Converse com o estúdio de Pedro',
   },
   ar:{
-    nav_works:'الأعمال',nav_murals:'الجداريات',nav_live:'الفن الحي',nav_bio:'السيرة',nav_conc:'الخدمة الخاصة',nav_btn:'استفسار',
+    nav_works:'الأعمال',nav_murals:'الجداريات',nav_live:'الفن الحي',nav_bio:'السيرة',nav_conc:'تواصل معنا',nav_btn:'استفسار',
     hero_ey:'الفن الحي · تجربة فريدة',
     hero_t:'الرسم الحي <em>السامي</em>',
     hero_q:'"اللوحة تتكشّف في الزمن الحقيقي — عمل أصلي يُولد بحضور المجتمعين، حاملاً في ثناياه نَفَس المناسبة."',
@@ -795,14 +795,14 @@ const T = {
     ft_tag:'الفن الإلهامي · ترانكوزو، باهيا، البرازيل',
     f_w:'الأعمال',f_s:'الاستوديو',f_l:'قانوني',
     f_avail:'الأعمال المتاحة',f_mur:'الجداريات',f_vayu:'مجموعة فايو',f_live:'الفن الحي',
-    f_corp:'المؤسسي',f_bio2:'السيرة الذاتية',f_conc:'الخدمة الخاصة',
+    f_corp:'المؤسسي',f_bio2:'السيرة الذاتية',f_conc:'تواصل',
     f_priv:'سياسة الخصوصية',f_del:'التوصيل',f_ret:'الإرجاع',f_copy:'حقوق النشر',f_legal:'معلومات قانونية',
     f_cr:'© 2026 Pedro Honeker Gallinger. جميع الحقوق محفوظة.',
     f_seo:'الرسم الحي · فعاليات الفخامة · حفلات خيرية · أعراس · شركات · حفلات موسيقية · ترانكوزو',
     tooltip:'تحدث مع استوديو بيدرو',
   },
   ja:{
-    nav_works:'作品',nav_murals:'壁画',nav_live:'ライブアート',nav_bio:'略歴',nav_conc:'コンシェルジュ',nav_btn:'お問い合わせ',
+    nav_works:'作品',nav_murals:'壁画',nav_live:'ライブアート',nav_bio:'略歴',nav_conc:'お問い合わせ先',nav_btn:'お問い合わせ',
     hero_ey:'ライブアート · 唯一無二の体験',
     hero_t:'崇高なる<em>ライブ</em>ペインティング',
     hero_q:'"キャンバスがリアルタイムで立ち現れる — その場に集う人々の前で生まれるオリジナル作品が、その瞬間の息遣いを宿す。"',
@@ -849,14 +849,14 @@ const T = {
     ft_tag:'インスピリチュアル・アート · トランコーゾ、バイーア、ブラジル',
     f_w:'作品',f_s:'スタジオ',f_l:'法務',
     f_avail:'入手可能な作品',f_mur:'壁画',f_vayu:'ヴァーユ・コレクション',f_live:'ライブアート',
-    f_corp:'法人向け',f_bio2:'経歴',f_conc:'コンシェルジュ',
+    f_corp:'法人向け',f_bio2:'経歴',f_conc:'連絡先',
     f_priv:'プライバシーポリシー',f_del:'配送',f_ret:'返品',f_copy:'著作権',f_legal:'法的情報',
     f_cr:'© 2026 Pedro Honeker Gallinger. All rights reserved.',
     f_seo:'ライブペインティング · 高級イベント · 慈善ガラ · 結婚式 · 企業 · コンサート · トランコーゾ',
     tooltip:'Pedroのスタジオとチャット',
   },
   zh:{
-    nav_works:'作品',nav_murals:'壁画',nav_live:'现场艺术',nav_bio:'简介',nav_conc:'私人礼宾',nav_btn:'咨询',
+    nav_works:'作品',nav_murals:'壁画',nav_live:'现场艺术',nav_bio:'简介',nav_conc:'联系我们',nav_btn:'咨询',
     hero_ey:'现场艺术 · 独一无二的体验',
     hero_t:'崇高的<em>现场</em>绘画',
     hero_q:'"画布在实时中徐徐展开 — 一幅原创作品在在场者面前诞生，承载着此刻的气息。"',
@@ -903,7 +903,7 @@ const T = {
     ft_tag:'启灵艺术 · 特兰科索，巴伊亚，巴西',
     f_w:'作品',f_s:'画室',f_l:'法律',
     f_avail:'可购作品',f_mur:'壁画',f_vayu:'Vayu系列',f_live:'现场艺术',
-    f_corp:'机构',f_bio2:'简介',f_conc:'礼宾',
+    f_corp:'机构',f_bio2:'简介',f_conc:'联系',
     f_priv:'隐私政策',f_del:'运送',f_ret:'退货',f_copy:'版权',f_legal:'法律信息',
     f_cr:'© 2026 Pedro Honeker Gallinger. 版权所有。',
     f_seo:'现场绘画 · 高端活动 · 慈善晚会 · 婚礼 · 企业 · 音乐会 · 特兰科索',
