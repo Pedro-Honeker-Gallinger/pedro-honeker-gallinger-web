@@ -25,9 +25,9 @@
 html,body{overflow-x:hidden;max-width:100%}body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);font-weight:300;overflow-x:hidden}
 
 /* ===== QN NAV ===== */
-.qn{display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:58px;background:rgba(250,247,242,0.97);border-bottom:0.5px solid var(--border);position:sticky;top:0;z-index:200;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.qn-logo{font-family:'Playfair Display',serif;font-size:0.82rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);text-decoration:none;white-space:nowrap}
-.qn-right{display:flex;align-items:center;gap:0.6rem}
+.qn{display:flex;align-items:center;justify-content:space-between;padding:0 1.2rem;height:54px;background:rgba(250,247,242,0.97);border-bottom:0.5px solid var(--border);position:sticky;top:0;z-index:200;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);flex-wrap:nowrap;gap:0.5rem}
+.qn-logo{font-family:'Playfair Display',serif;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);text-decoration:none;white-space:nowrap;flex-shrink:1;min-width:0}
+.qn-right{display:flex;align-items:center;gap:0.5rem;flex-shrink:0}
 /* Lang dropdown */
 .qn-lang-drop{position:relative}
 .qn-lang-toggle{display:flex;align-items:center;gap:0.3rem;font-family:'DM Sans',sans-serif;font-size:0.62rem;font-weight:300;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-mid);background:transparent;border:0.5px solid var(--border);padding:0.38rem 0.65rem;cursor:pointer;transition:border-color 0.2s,color 0.2s}
@@ -142,8 +142,9 @@ section{padding:6rem 3rem}
   section{padding:3rem 1.5rem}
   .hero{min-height:100vh}
   .hero-bg{background-position:30% 30%}
-  .hero-content{margin-right:1.5rem;margin-left:auto;max-width:85%;padding:2rem 2rem}
-  .hero-title{font-size:clamp(2rem,8vw,2.8rem);line-height:1.2}
+  .hero-content{margin:0 auto;max-width:92%;padding:2rem 1.5rem;text-align:left}
+  .hero-title{font-size:clamp(1.7rem,7vw,2.4rem);line-height:1.25}
+  .hero-title em{color:#ffd966;text-shadow:0 0 20px rgba(0,0,0,0.9),0 2px 8px rgba(0,0,0,0.8),0 1px 2px rgba(0,0,0,0.9) !important;font-size:inherit}
   .hero-quote{font-size:0.88rem;line-height:1.7}
   .hero-stats{gap:1.5rem}
   .hero-ctas{flex-direction:column}
@@ -169,8 +170,9 @@ section{padding:6rem 3rem}
   .institutional-content{padding:2rem;max-width:90%}
   .inst-title{line-height:1.35}
   .mural-item{height:280px}
-  .vid-expand{padding:1.5rem}
-  .vid-iframe-wrap{max-width:100%}
+  .vid-expand{padding:0.5rem 0 1.5rem;margin-left:-1.5rem;margin-right:-1.5rem;width:calc(100% + 3rem)}
+  .vid-iframe-wrap{max-width:100%;margin:0}
+  .vid-expand-close{margin:1rem 1rem 0.8rem}
   .lp-section{min-height:60vh !important}
 }
 
@@ -417,7 +419,7 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
 <nav class="qn">
   <a href="index.html" class="qn-logo">Pedro Honeker Gallinger</a>
   <div class="qn-right">
-    <a href="https://www.instagram.com/pedrohonekergallinger/" target="_blank" style="display:flex;align-items:center;margin-right:15px;color:var(--text);transition:color 0.3s;" aria-label="Instagram">
+    <a href="https://www.instagram.com/pedrohonekergallinger/" target="_blank" style="display:flex;align-items:center;color:var(--text);transition:color 0.3s;" aria-label="Instagram">
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
 </a>
       <div class="qn-lang-drop" id="qnLangDrop">
