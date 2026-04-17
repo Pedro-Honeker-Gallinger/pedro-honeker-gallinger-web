@@ -1415,9 +1415,9 @@ function openVid(i,cardEl){
   if(activeVid===i){closeVid();return;}
   closeVid();activeVid=i;
   const v=VIDEOS[i];
-  // mute=1 required for autoplay on mobile browsers
+  // mute=1 + playsinline=1 required for autoplay on mobile
   const src=v.src==='yt'
-    ?`https://www.youtube.com/embed/${v.id}?autoplay=1&mute=1&rel=0&modestbranding=1&playsinline=1`
+    ?`https://www.youtube.com/embed/${v.id}?autoplay=1&mute=1&rel=0&modestbranding=1&playsinline=1&enablejsapi=1`
     :`https://player.vimeo.com/video/${v.id}?autoplay=1&muted=1&playsinline=1`;
   const section=document.getElementById('videos');
   let exp=document.getElementById('vid-expand');
@@ -1425,22 +1425,24 @@ function openVid(i,cardEl){
   exp=document.createElement('div');
   exp.id='vid-expand';
   exp.className='vid-expand open';
-  // negative margin cancels section padding so video goes edge-to-edge
-  exp.style.cssText='display:block;margin:1rem -3rem 0;padding:0;background:transparent;';
-  exp.innerHTML=`<div class="vid-iframe-wrap" style="margin:0;padding-bottom:56.25%;position:relative;height:0;overflow:hidden;width:100%;"><iframe id="active-vid-iframe" src="${src}" allowfullscreen allow="autoplay; fullscreen; picture-in-picture" loading="eager" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"></iframe></div>`;
+  // Use vw-based full bleed: width 100vw, offset by section's left position
+  exp.innerHTML=`<div id="vid-iframe-wrap-inner" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;"><iframe id="active-vid-iframe" src="${src}" allowfullscreen allow="autoplay; fullscreen; picture-in-picture" loading="eager" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" sandbox="allow-scripts allow-same-origin allow-presentation allow-forms"></iframe></div>`;
   section.appendChild(exp);
+  // Position full-bleed after append
+  const rect=section.getBoundingClientRect();
+  const sectionLeft=rect.left;
+  exp.style.cssText=`display:block;position:relative;left:-${sectionLeft}px;width:100vw;margin-top:1rem;padding:0;background:transparent;`;
   setTimeout(()=>exp.scrollIntoView({behavior:'smooth',block:'nearest'}),80);
-  // IntersectionObserver: pause when out of view
+  // Pause when scrolled out
   const iframe=document.getElementById('active-vid-iframe');
   if(iframe&&'IntersectionObserver' in window){
     const obs=new IntersectionObserver((entries)=>{
       entries.forEach(entry=>{
         if(!entry.isIntersecting){
           try{
-            const pausedSrc=v.src==='yt'
+            iframe.src=v.src==='yt'
               ?`https://www.youtube.com/embed/${v.id}?autoplay=0&rel=0&modestbranding=1`
               :`https://player.vimeo.com/video/${v.id}?autoplay=0`;
-            iframe.src=pausedSrc;
             obs.disconnect();
           }catch(e){}
         }
