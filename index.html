@@ -170,9 +170,8 @@ section{padding:6rem 3rem}
   .institutional-content{padding:2rem;max-width:90%}
   .inst-title{line-height:1.35}
   .mural-item{height:280px}
-  .vid-expand{padding:0 0 1rem}
-  .vid-iframe-wrap{max-width:100%;margin:0;width:100%}
-  .vid-expand-close{margin:0.8rem 1rem}
+  .vid-expand{padding:0}
+  .vid-iframe-wrap{width:100%;margin:0}
   .lp-section{min-height:60vh !important}
 }
 
@@ -247,9 +246,9 @@ section{padding:6rem 3rem}
 .vid-play-btn{width:2.2rem;height:2.2rem;border-radius:8px;background:rgba(255,0,0,0.88);display:flex;align-items:center;justify-content:center;transition:transform 0.2s,background 0.2s}
 .vid-card:hover .vid-play-btn{transform:scale(1.1);background:#ff0000}
 .vid-title-bar{padding:0.5rem 0.7rem;font-family:'Playfair Display',serif;font-size:0.82rem;color:rgba(255,255,255,0.8);font-style:italic;background:transparent}
-.vid-expand{display:none;background:var(--blue2);border-top:2px solid var(--gold);padding:2rem 3rem 3.5rem;text-align:center;width:100%;box-sizing:border-box}
+.vid-expand{display:none;background:transparent;border-top:none;padding:0;width:100%;box-sizing:border-box}
 .vid-expand.open{display:block}
-.vid-iframe-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;width:100%;margin:0 auto}
+.vid-iframe-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;width:100%;margin:0}
 .vid-iframe-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
 .vid-expand-close{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.5);cursor:pointer;background:none;border:none;font-family:'DM Sans',sans-serif;padding:0;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:2rem;transition:color 0.2s}
 .vid-expand-close:hover{color:var(--gold)}
@@ -1415,22 +1414,23 @@ function renderVideos(){
 function openVid(i,cardEl){
   if(activeVid===i){closeVid();return;}
   closeVid();activeVid=i;
-  const t=T[lang];const v=VIDEOS[i];
+  const v=VIDEOS[i];
+  // mute=1 required for autoplay on mobile browsers
   const src=v.src==='yt'
-    ?`https://www.youtube.com/embed/${v.id}?autoplay=1&rel=0&modestbranding=1`
-    :`https://player.vimeo.com/video/${v.id}?autoplay=1`;
-  // Move exp outside grid into the section so it spans full width naturally
+    ?`https://www.youtube.com/embed/${v.id}?autoplay=1&mute=1&rel=0&modestbranding=1&playsinline=1`
+    :`https://player.vimeo.com/video/${v.id}?autoplay=1&muted=1&playsinline=1`;
   const section=document.getElementById('videos');
   let exp=document.getElementById('vid-expand');
   if(exp) exp.remove();
   exp=document.createElement('div');
   exp.id='vid-expand';
   exp.className='vid-expand open';
-  exp.style.cssText='display:block;margin:0 -3rem;padding:0 0 2rem;';
-  exp.innerHTML=`<button class="vid-expand-close" onclick="closeVid()" style="display:block;padding:0.8rem 1.5rem;">← ${t.close}</button><div class="vid-iframe-wrap"><iframe id="active-vid-iframe" src="${src}" allowfullscreen allow="autoplay; fullscreen" loading="eager"></iframe></div><div style="padding:0.8rem 1.5rem;font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;color:rgba(255,255,255,0.6)">${v.title}</div>`;
+  // negative margin cancels section padding so video goes edge-to-edge
+  exp.style.cssText='display:block;margin:1rem -3rem 0;padding:0;background:transparent;';
+  exp.innerHTML=`<div class="vid-iframe-wrap" style="margin:0;padding-bottom:56.25%;position:relative;height:0;overflow:hidden;width:100%;"><iframe id="active-vid-iframe" src="${src}" allowfullscreen allow="autoplay; fullscreen; picture-in-picture" loading="eager" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"></iframe></div>`;
   section.appendChild(exp);
   setTimeout(()=>exp.scrollIntoView({behavior:'smooth',block:'nearest'}),80);
-  // IntersectionObserver: pause when scrolled out
+  // IntersectionObserver: pause when out of view
   const iframe=document.getElementById('active-vid-iframe');
   if(iframe&&'IntersectionObserver' in window){
     const obs=new IntersectionObserver((entries)=>{
@@ -1445,7 +1445,7 @@ function openVid(i,cardEl){
           }catch(e){}
         }
       });
-    },{threshold:0.15});
+    },{threshold:0.1});
     obs.observe(iframe);
   }
 }
