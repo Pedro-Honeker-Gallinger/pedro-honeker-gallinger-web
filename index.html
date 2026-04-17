@@ -170,9 +170,9 @@ section{padding:6rem 3rem}
   .institutional-content{padding:2rem;max-width:90%}
   .inst-title{line-height:1.35}
   .mural-item{height:280px}
-  .vid-expand{padding:0.5rem 0 1.5rem;margin-left:-1.5rem;margin-right:-1.5rem;width:calc(100% + 3rem)}
-  .vid-iframe-wrap{max-width:100%;margin:0}
-  .vid-expand-close{margin:1rem 1rem 0.8rem}
+  .vid-expand{padding:0 0 1rem}
+  .vid-iframe-wrap{max-width:100%;margin:0;width:100%}
+  .vid-expand-close{margin:0.8rem 1rem}
   .lp-section{min-height:60vh !important}
 }
 
@@ -247,9 +247,9 @@ section{padding:6rem 3rem}
 .vid-play-btn{width:2.2rem;height:2.2rem;border-radius:8px;background:rgba(255,0,0,0.88);display:flex;align-items:center;justify-content:center;transition:transform 0.2s,background 0.2s}
 .vid-card:hover .vid-play-btn{transform:scale(1.1);background:#ff0000}
 .vid-title-bar{padding:0.5rem 0.7rem;font-family:'Playfair Display',serif;font-size:0.82rem;color:rgba(255,255,255,0.8);font-style:italic;background:transparent}
-.vid-expand{display:none;background:var(--blue2);border-top:2px solid var(--gold);padding:3rem 3rem 3.5rem;grid-column:1/-1;text-align:center}
+.vid-expand{display:none;background:var(--blue2);border-top:2px solid var(--gold);padding:2rem 3rem 3.5rem;text-align:center;width:100vw;position:relative;left:50%;transform:translateX(-50%)}
 .vid-expand.open{display:block}
-.vid-iframe-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:1100px;margin:0 auto}
+.vid-iframe-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;width:100%;margin:0 auto}
 .vid-iframe-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
 .vid-expand-close{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.5);cursor:pointer;background:none;border:none;font-family:'DM Sans',sans-serif;padding:0;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:2rem;transition:color 0.2s}
 .vid-expand-close:hover{color:var(--gold)}
@@ -1419,13 +1419,38 @@ function openVid(i,cardEl){
   closeVid();activeVid=i;
   const t=T[lang];const v=VIDEOS[i];
   const exp=document.getElementById('vid-expand');
-  exp.innerHTML=`<button class="vid-expand-close" onclick="closeVid()">← ${t.close}</button><div class="vid-iframe-wrap"><iframe src="${getEmbed(v)}" allowfullscreen loading="lazy"></iframe></div><div style="margin-top:1.5rem;font-family:'Playfair Display',serif;font-size:1.15rem;font-style:italic;color:rgba(255,255,255,0.6)">${v.title}</div>`;
+  // autoplay=1&mute=0 for YouTube, autoplay=1 for Vimeo
+  const src=v.src==='yt'
+    ?`https://www.youtube.com/embed/${v.id}?autoplay=1&rel=0&modestbranding=1`
+    :`https://player.vimeo.com/video/${v.id}?autoplay=1`;
+  exp.innerHTML=`<button class="vid-expand-close" onclick="closeVid()">← ${t.close}</button><div class="vid-iframe-wrap"><iframe id="active-vid-iframe" src="${src}" allowfullscreen allow="autoplay; fullscreen" loading="eager"></iframe></div><div style="padding:1rem 1.5rem;font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;color:rgba(255,255,255,0.6)">${v.title}</div>`;
   exp.classList.add('open');
+  // Insert after last card in current row (desktop) or after clicked card (mobile)
   const grid=document.getElementById('vid-grid');
   const cards=[...grid.querySelectorAll('.vid-card')];
-  const rowEnd=Math.min(Math.floor(i/3)*3+2,cards.length-1);
+  const cols=window.innerWidth<=768?1:3;
+  const rowEnd=Math.min(Math.floor(i/cols)*cols+cols-1,cards.length-1);
   cards[rowEnd].after(exp);
-  setTimeout(()=>exp.scrollIntoView({behavior:'smooth',block:'center'}),80);
+  setTimeout(()=>exp.scrollIntoView({behavior:'smooth',block:'nearest'}),80);
+  // IntersectionObserver: pause iframe when scrolled out of view
+  const iframe=document.getElementById('active-vid-iframe');
+  if(iframe&&'IntersectionObserver' in window){
+    const obs=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(!entry.isIntersecting){
+          // Pause by reloading src without autoplay
+          try{
+            const pausedSrc=v.src==='yt'
+              ?`https://www.youtube.com/embed/${v.id}?autoplay=0&rel=0&modestbranding=1`
+              :`https://player.vimeo.com/video/${v.id}?autoplay=0`;
+            iframe.src=pausedSrc;
+            obs.disconnect();
+          }catch(e){}
+        }
+      });
+    },{threshold:0.15});
+    obs.observe(iframe);
+  }
 }
 function closeVid(){
   const e=document.getElementById('vid-expand');
