@@ -41,7 +41,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 3
 .flag{font-size:1rem}
 .header-divider{height:0.5px;background:var(--border)}
 .featured-section{padding:2rem 3rem 0}
-.section-label{font-size:0.58rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--text-light);margin-bottom:1rem;padding-bottom:0.8rem;border-bottom:0.5px solid var(--border)}
+.section-label{display:none}
 .featured-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
 .feat-card{cursor:pointer;overflow:hidden;position:relative}
 .feat-card img{width:100%;height:100%;display:block;object-fit:cover;filter:saturate(0.85);transition:transform 0.5s,filter 0.4s;background:transparent}
@@ -75,7 +75,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 3
 .grid-section{display:block;padding:0 3rem}
 .grid-section{display:block}
 .grid-divider{height:0.5px;background:var(--border);margin:0 0 1.5rem}
-.grid-label{font-size:0.58rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--text-light);margin-bottom:1.2rem}
+.grid-label{display:none}
 .justified-gallery{width:100%}
 .justrow{display:flex;gap:6px;margin-bottom:6px;align-items:stretch}
 /* Cada item: fondo cremoso, imagen con object-fit:contain = nunca recortada */
@@ -138,8 +138,9 @@ html,body{overflow-x:hidden;max-width:100%}
   .gallery-header{padding:2rem 1.5rem 1.5rem}
   .featured-section{padding:1.5rem 1.5rem 0}
   .featured-grid{grid-template-columns:1fr}
-  .justrow-item{width:100% !important;height:auto !important;flex:none !important}
-  .justrow-item img{width:100%;height:auto !important;object-fit:contain}
+  .justrow{flex-direction:column !important;height:auto !important}
+  .justrow-item{width:100% !important;height:auto !important;flex:none !important;min-height:0 !important}
+  .justrow-item img{width:100% !important;height:auto !important;object-fit:contain !important}
   .justified-row{flex-direction:column !important;height:auto !important}
   .expand-panel,.row-expand{padding:1.5rem 1rem}
   .expand-detail-thumb{height:90px}
@@ -420,7 +421,7 @@ const ALL=[
   {title:'Txana Ixa',                  slug:'Txana-Ixa',                                           w:60, h:80, t:'ac',  coll:'Rio Grande do Sul, Brasil', details:[]},
   {title:'Nectar Amrita',              slug:'Nectar-Amrita',                                       w:60, h:80, t:'ac',  coll:'Mexico DF',                 details:[]},
   {title:'Jai Bolo',                   slug:'Jai-Bolo',                                            w:100,h:100,t:'ac',  coll:'Buenos Aires, Argentina',   details:[]},
-  {title:'Pushkar',                    slug:'Pushkar',                                             w:200,h:100,t:'oc',  coll:'Buenos Aires, Argentina',   details:[]},
+  {title:'Pushkar',                    slug:'Pushkar',                                             w:120,h:90, t:'oc',  coll:'Buenos Aires, Argentina',   details:[]},
   {title:'Nueva Era',                  slug:'Nueva-Era',                                           w:100,h:100,t:'ac',  coll:'Buenos Aires, Argentina',   details:['jpg-detail']},
   {title:'Nueva Era 2',                slug:'Nueva-era-2',                                         w:100,h:100,t:'ac',  coll:'Buenos Aires, Argentina',   details:[]},
   {title:'Flower of Life',             slug:'Flower-of-life',                                      w:100,h:100,t:'silk',coll:'Vitoria, Brasil',           details:['detail']},
@@ -448,7 +449,7 @@ const ALL=[
   {title:'Arut Perum Jhoti',           slug:'Arut-perum-jhoti',                                    w:80, h:60, t:'ac',  coll:'Vitoria, Brasil',           details:[]},
   {title:'Co-li-bri',                  slug:'Co-li-bri',                                           w:80, h:60, t:'ac',  coll:'Curitiba, Brasil',          details:[]},
   {title:'Equilibrio',                 slug:'equilibrio',                                          w:70, h:70, t:'ac',  coll:'Palmeira, Brasil',          details:[]},
-  {title:'La Noche del Cielo',         slug:'La-noche-del-cielo',                                  w:140,h:100,t:'ac',  coll:'Buenos Aires, Argentina',   details:[]},
+  {title:'La Noche del Cielo',         slug:'La-noche-del-cielo',                                  w:120,h:90, t:'ac',  coll:'Buenos Aires, Argentina',   details:[]},
   {title:'Light Network',              slug:'Light-Network',                                       w:200,h:100,t:'ac',  coll:'Ciudad de Guatemala',       details:[]},
   {title:'Metamorfosis',               slug:'Metamorfosis-2020',                                   w:60, h:70, t:'ac',  coll:'Hawaii, USA',               details:[]},
   {title:'O Chamado',                  slug:'O-chamado',                                           w:90, h:90, t:'ac',  coll:'Florianópolis, Brasil',      details:[]},
@@ -551,6 +552,10 @@ function showGrid(){
 }
 
 function buildRows(items,cw){
+  // Mobile: single column
+  if(window.innerWidth<=768){
+    return items.map(function(item){return {items:[item],sum:item.r||1};});
+  }
   var rows=[]; var i=0;
   while(i<items.length){
     var row=[],sum=0;
