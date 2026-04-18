@@ -77,16 +77,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0.8rem
   animation:fadeUp 0.8s ease both;
 }
 .bio-hero-eyebrow span{display:block;width:2rem;height:0.5px;background:var(--gold)}
-.bio-hero-name{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2.8rem,5vw,4.2rem);
-  font-weight:500;
-  color:#fff;
-  line-height:1.05;
-  margin-bottom:1.2rem;
-  text-shadow:0 2px 12px rgba(0,0,0,0.4);
-  animation:fadeUp 0.8s 0.1s ease both;
-}
+.bio-hero-name{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:300;color:#fff;letter-spacing:0.18em;text-transform:uppercase;line-height:1.15;margin-bottom:0.6rem}
 .bio-hero-subtitle{
   font-family:'Playfair Display',serif;
   font-size:clamp(1.1rem,1.8vw,1.4rem);
@@ -290,6 +281,14 @@ body.menu-open .qn-foot{opacity:1}
 body.menu-open{overflow:hidden}
 @media(max-width:768px){nav.qn{padding:0 1.2rem}.qn-logo{font-size:0.72rem;letter-spacing:0.16em}}
 
+
+/* ── Contact buttons: 3 equal-width on one line ── */
+.conc-btns{display:flex!important;flex-direction:row!important;gap:1rem;justify-content:center;align-items:stretch;flex-wrap:nowrap}
+.conc-btns .btn-gold{flex:1 1 0;max-width:220px;min-width:100px;text-align:center;justify-content:center;display:inline-flex!important;align-items:center;gap:0.5rem;box-sizing:border-box}
+@media(max-width:500px){
+  .conc-btns{gap:0.4rem}
+  .conc-btns .btn-gold{padding:0.75rem 0.4rem;font-size:0.58rem;letter-spacing:0.1em}
+}
 </style>
 <style>
 /* ── Contact + Footer CSS (from index) ── */
