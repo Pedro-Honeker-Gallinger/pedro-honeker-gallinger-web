@@ -423,8 +423,10 @@ document.querySelectorAll('img').forEach(img => {
   img.addEventListener('dragstart', e => e.preventDefault());
 });
 
-// Lang dropdown
+// ── GLOBAL lang variable ──────────────────────────────────
+var lang = 'en';
 
+// ── Nav translations ──────────────────────────────────────
 var NAV_T={
   en:{nav_home:'Home',nav_works:'Available Works',nav_murals:'Murals',nav_live:'Live Art',nav_vayu:'Vayu Collection',nav_bio:'Biography',nav_conc:'Contact'},
   es:{nav_home:'Inicio',nav_works:'Obras Disponibles',nav_murals:'Murales',nav_live:'Arte en Vivo',nav_vayu:'Colección Vayu',nav_bio:'Biografía',nav_conc:'Contacto'},
@@ -433,6 +435,7 @@ var NAV_T={
   ja:{nav_home:'ホーム',nav_works:'利用可能な作品',nav_murals:'壁画',nav_live:'ライブアート',nav_vayu:'バイユコレクション',nav_bio:'略歴',nav_conc:'お問い合わせ'},
   zh:{nav_home:'首页',nav_works:'可用作品',nav_murals:'壁画',nav_live:'现场艺术',nav_vayu:'Vayu系列',nav_bio:'简介',nav_conc:'联系'}
 };
+
 function translateNav(l){
   var t=NAV_T[l]||NAV_T['en'];
   document.querySelectorAll('[data-t]').forEach(function(el){
@@ -455,22 +458,8 @@ function switchLang(l){
   if(d) d.classList.remove('open');
   var qd=document.getElementById('qnLangDrop');
   if(qd) qd.classList.remove('open');
-  // Refresh all static texts immediately
-  var t=T[l]||T['en'];
-  var map={'eyebrow-text':'eyebrow','gallery-title':'title','gallery-sub':'sub','flags-label':'flags','feat-label':'feat_label','grid-label':'grid_label','wa-tooltip':'tooltip'};
-  Object.keys(map).forEach(function(id){
-    var el=document.getElementById(id);
-    if(el) el.textContent=t[map[id]]||'';
-  });
-  var btn=document.getElementById('load-btn');
-  if(btn&&!btn.classList.contains('hidden')) btn.textContent=t.loadmore;
-  var lb=document.getElementById('feat-loadmore-btn');
-  if(lb) lb.textContent=t.loadmore;
   // Translate nav drawer links
-  document.querySelectorAll('[data-t]').forEach(function(el){
-    var key=el.getAttribute('data-t');
-    if(t[key]) el.textContent=t[key];
-  });
+  translateNav(l);
 }
 
 // Close lang dropdown on outside click
@@ -492,11 +481,7 @@ document.addEventListener('click', function(e){
   burger.addEventListener('click',toggleMenu);
   document.querySelectorAll('.qn-menu a').forEach(a=>a.addEventListener('click',closeMenu));
   // Translate nav menu
-  var t2=T[lang]||T['en'];
-  document.querySelectorAll('[data-t]').forEach(function(el){
-    var key=el.getAttribute('data-t');
-    if(t2[key]) el.textContent=t2[key];
-  });
+  translateNav(lang);
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&body.classList.contains('menu-open'))closeMenu();});
   backdrop.addEventListener('click',closeMenu);
 })();
@@ -526,6 +511,48 @@ document.addEventListener('click', function(e){
   });
 })();
 
+// ── Language detection & init ─────────────────────────────
+(function(){
+  var stored=null;
+  try{stored=localStorage.getItem('phg_lang');}catch(e){}
+  var detected=stored&&['en','es','pt','ar','ja','zh'].includes(stored)?stored:null;
+  if(!detected){
+    var tz=(Intl.DateTimeFormat().resolvedOptions().timeZone||'').toLowerCase();
+    var nv=(navigator.language||'').toLowerCase();
+    if(/brazil|sao_paulo|brasilia|belem|manaus|fortaleza|recife|bahia|maceio/.test(tz)) detected='pt';
+    else if(nv.startsWith('pt')) detected='pt';
+    else if(/argentina|chile|colombia|mexico|peru|uruguay|venezuela|bolivia|ecuador|paraguay|cuba|panama|costa_rica|guatemala|honduras|nicaragua|salvador|madrid/.test(tz)) detected='es';
+    else if(nv.startsWith('es')) detected='es';
+    else if(/dubai|riyadh|qatar|bahrain|kuwait|muscat|baghdad|cairo|amman|beirut|damascus/.test(tz)) detected='ar';
+    else if(nv.startsWith('ar')) detected='ar';
+    else if(/tokyo/.test(tz)||nv.startsWith('ja')) detected='ja';
+    else if(/shanghai|hong_kong|taipei/.test(tz)||nv.startsWith('zh')) detected='zh';
+    else detected='en';
+  }
+  lang=detected;
+  var qn=document.getElementById('qnLangCode');
+  if(qn) qn.textContent=lang.toUpperCase();
+  document.querySelectorAll('.qn-lang-opt').forEach(function(b){
+    b.classList.toggle('active',b.dataset.lang===lang);
+  });
+  document.documentElement.lang=lang;
+  document.documentElement.dir=(lang==='ar')?'rtl':'ltr';
+  translateNav(lang);
+})();
+
+// ── Close menu on scroll ──────────────────────────────────
+(function(){
+  var lastY=window.scrollY;
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY;
+    if(Math.abs(y-lastY)>40&&document.body.classList.contains('menu-open')){
+      document.body.classList.remove('menu-open');
+      var b=document.getElementById('qnBurger');
+      if(b) b.setAttribute('aria-expanded','false');
+    }
+    lastY=y;
+  },{passive:true});
+})();
 
 </script>
 
