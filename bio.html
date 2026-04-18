@@ -2,6 +2,14 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E3Y2C40KEM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E3Y2C40KEM');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Biografía — Pedro Honeker Gallinger · Inspiritual Art</title>
 <meta name="description" content="Biografía de Pedro Honeker Gallinger — artista argentino radicado en Trancoso, Brasil. Geometría sagrada, figura humana y arte que transforma.">
@@ -288,6 +296,9 @@ body.menu-open{overflow:hidden}
 <nav class="qn">
   <a href="index.html" class="qn-logo">Pedro Honeker Gallinger</a>
   <div class="qn-right">
+    <a href="https://www.instagram.com/pedrohonekergallinger/" target="_blank" rel="noopener" style="display:flex;align-items:center;color:var(--text-mid);transition:color 0.2s;" aria-label="Instagram">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
     <div class="qn-lang-drop" id="qnLangDrop">
       <button class="qn-lang-toggle" id="qnLangToggle" aria-haspopup="true" aria-expanded="false">
         <span id="qnLangCode">EN</span>
@@ -311,13 +322,13 @@ body.menu-open{overflow:hidden}
 <div class="qn-backdrop" id="qnBackdrop"></div>
 <div class="qn-overlay" id="qnOverlay">
   <nav class="qn-menu" aria-label="Main navigation">
-    <a href="index.html">Home</a>
-    <a href="index.html#works">Available Works</a>
-    <a href="index.html#murals">Murals</a>
-    <a href="live-painting.html">Live Art</a>
-    <a href="vayu-collection.html">Vayu Collection</a>
-    <a href="bio.html">Biography</a>
-    <a href="index.html#concierge">Concierge</a>
+    <a href="index.html" data-t="nav_home">Home</a>
+    <a href="index.html#works" data-t="nav_works">Available Works</a>
+    <a href="index.html#murals" data-t="nav_murals">Murals</a>
+    <a href="live-painting.html" data-t="nav_live">Live Art</a>
+    <a href="vayu-collection.html" data-t="nav_vayu">Vayu Collection</a>
+    <a href="bio.html" data-t="nav_bio">Biography</a>
+    <a href="index.html#contacto" data-t="nav_conc">Contact</a>
   </nav>
   <div class="qn-foot">
     <a href="https://www.instagram.com/pedrohonekergallinger/" target="_blank" rel="noopener" class="qn-ig">
@@ -410,6 +421,22 @@ document.querySelectorAll('img').forEach(img => {
 });
 
 // Lang dropdown
+
+var NAV_T={
+  en:{nav_home:'Home',nav_works:'Available Works',nav_murals:'Murals',nav_live:'Live Art',nav_vayu:'Vayu Collection',nav_bio:'Biography',nav_conc:'Contact'},
+  es:{nav_home:'Inicio',nav_works:'Obras Disponibles',nav_murals:'Murales',nav_live:'Arte en Vivo',nav_vayu:'Colección Vayu',nav_bio:'Biografía',nav_conc:'Contacto'},
+  pt:{nav_home:'Início',nav_works:'Obras Disponíveis',nav_murals:'Murais',nav_live:'Arte ao Vivo',nav_vayu:'Coleção Vayu',nav_bio:'Biografia',nav_conc:'Contacto'},
+  ar:{nav_home:'الرئيسية',nav_works:'الأعمال المتاحة',nav_murals:'الجداريات',nav_live:'الفن الحي',nav_vayu:'مجموعة فايو',nav_bio:'السيرة',nav_conc:'تواصل'},
+  ja:{nav_home:'ホーム',nav_works:'利用可能な作品',nav_murals:'壁画',nav_live:'ライブアート',nav_vayu:'バイユコレクション',nav_bio:'略歴',nav_conc:'お問い合わせ'},
+  zh:{nav_home:'首页',nav_works:'可用作品',nav_murals:'壁画',nav_live:'现场艺术',nav_vayu:'Vayu系列',nav_bio:'简介',nav_conc:'联系'}
+};
+function translateNav(l){
+  var t=NAV_T[l]||NAV_T['en'];
+  document.querySelectorAll('[data-t]').forEach(function(el){
+    var key=el.getAttribute('data-t');
+    if(t[key]) el.textContent=t[key];
+  });
+}
 function selectLang(l){
   try { localStorage.setItem('phg_lang', l); } catch(e){}
   var qnCode = document.getElementById('qnLangCode');
@@ -419,6 +446,7 @@ function selectLang(l){
   });
   document.documentElement.lang = l;
   document.documentElement.dir = (l === 'ar') ? 'rtl' : 'ltr';
+  translateNav(l);
 }
 
 // Close lang dropdown on outside click
@@ -484,6 +512,8 @@ document.addEventListener('click', function(e){
   function toggleMenu(){body.classList.contains('menu-open')?closeMenu():openMenu();}
   burger.addEventListener('click',toggleMenu);
   document.querySelectorAll('.qn-menu a').forEach(a=>a.addEventListener('click',closeMenu));
+  // Translate nav on load
+  translateNav(lang);
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&body.classList.contains('menu-open'))closeMenu();});
   backdrop.addEventListener('click',closeMenu);
 })();
