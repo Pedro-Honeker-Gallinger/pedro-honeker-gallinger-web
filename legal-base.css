@@ -1,0 +1,384 @@
+/* ============================================================
+   LEGAL-BASE.CSS — Pedro Honeker Gallinger
+   Shared stylesheet for all legal pages.
+   Includes: Quiet Luxury Nav (hamburger + side drawer),
+   Language dropdown, Footer, Typography, Layout.
+   ============================================================ */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --cream:#FAF7F2;
+  --cream2:#F2EDE3;
+  --blue:#1B2E4B;
+  --blue2:#243858;
+  --gold:#C9A155;
+  --gold2:#B88C3F;
+  --text:#2A2215;
+  --text-mid:#5A5040;
+  --text-light:#8A7D6A;
+  --border:rgba(27,46,75,0.1);
+  --border-gold:rgba(201,161,85,0.25);
+  --wa:#25D366;
+  --nav-h:64px;
+}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  font-weight:300;
+  overflow-x:hidden;
+  line-height:1.7;
+}
+
+/* ============================================================
+   QUIET LUXURY NAV
+   ============================================================ */
+nav.qn{
+  position:sticky;top:0;z-index:200;
+  height:var(--nav-h);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2.5rem;
+  background:rgba(250,247,242,0.92);
+  backdrop-filter:blur(14px) saturate(1.2);
+  -webkit-backdrop-filter:blur(14px) saturate(1.2);
+  border-bottom:0.5px solid var(--border);
+}
+body.menu-open nav.qn{z-index:160}
+.qn-logo{
+  font-family:'Playfair Display',serif;
+  font-size:0.88rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--blue);text-decoration:none;font-weight:400;
+  transition:color 0.25s;
+}
+.qn-logo:hover{color:var(--gold)}
+.qn-right{display:flex;align-items:center;gap:0.9rem}
+
+/* Compact language dropdown */
+.qn-lang-drop{position:relative}
+.qn-lang-toggle{
+  display:flex;align-items:center;gap:0.35rem;
+  font-family:'DM Sans',sans-serif;
+  font-size:0.66rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:300;
+  color:var(--text-mid);
+  background:transparent;border:0.5px solid var(--border);
+  padding:0.42rem 0.72rem;cursor:pointer;
+  transition:border-color 0.25s,color 0.25s;
+}
+.qn-lang-toggle:hover{border-color:var(--gold);color:var(--blue)}
+.qn-lang-toggle svg{width:9px;height:9px;transition:transform 0.25s}
+.qn-lang-drop.open .qn-lang-toggle svg{transform:rotate(180deg)}
+.qn-lang-drop.open .qn-lang-toggle{border-color:var(--gold);color:var(--blue)}
+.qn-lang-menu{
+  position:absolute;top:calc(100% + 6px);right:0;
+  background:#fff;border:0.5px solid var(--border);
+  box-shadow:0 10px 28px rgba(27,46,75,0.10);
+  min-width:160px;
+  opacity:0;visibility:hidden;transform:translateY(-6px);
+  transition:opacity 0.25s,transform 0.25s,visibility 0s linear 0.25s;
+  z-index:210;
+}
+.qn-lang-drop.open .qn-lang-menu{
+  opacity:1;visibility:visible;transform:translateY(0);
+  transition:opacity 0.25s,transform 0.25s,visibility 0s linear 0s;
+}
+.qn-lang-opt{
+  display:flex;align-items:center;gap:0.7rem;
+  width:100%;text-align:left;
+  padding:0.6rem 1rem;
+  font-family:'DM Sans',sans-serif;
+  font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:300;
+  color:var(--text-light);
+  background:none;border:none;cursor:pointer;
+  transition:background 0.15s,color 0.15s;
+}
+.qn-lang-opt span{
+  font-size:0.72rem;letter-spacing:0.04em;text-transform:none;
+  color:var(--text-mid);font-weight:300;
+}
+.qn-lang-opt:hover{background:var(--cream2);color:var(--blue)}
+.qn-lang-opt:hover span{color:var(--blue)}
+.qn-lang-opt.active{color:var(--gold)}
+.qn-lang-opt.active span{color:var(--gold)}
+
+/* Hamburger 3-line button */
+.qn-burger{
+  width:34px;height:34px;
+  background:none;border:none;cursor:pointer;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;
+  padding:0;position:relative;
+}
+.qn-burger span{
+  display:block;width:22px;height:1px;
+  background:var(--blue);
+  transition:transform 0.4s cubic-bezier(0.65,0,0.35,1),opacity 0.3s,background 0.25s,width 0.4s;
+  transform-origin:center;
+}
+.qn-burger:hover span{background:var(--gold)}
+body.menu-open .qn-burger span:nth-child(1){
+  transform:translateY(6px) rotate(45deg);width:24px;
+}
+body.menu-open .qn-burger span:nth-child(2){
+  opacity:0;transform:scaleX(0);
+}
+body.menu-open .qn-burger span:nth-child(3){
+  transform:translateY(-6px) rotate(-45deg);width:24px;
+}
+
+/* Side Drawer */
+.qn-overlay{
+  position:fixed;top:0;right:0;
+  width:340px;max-width:88vw;
+  max-height:100vh;
+  z-index:150;
+  background:linear-gradient(180deg,rgba(20,33,55,0.985) 0%,rgba(27,46,75,0.985) 100%);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-left:0.5px solid rgba(201,161,85,0.18);
+  border-bottom:0.5px solid rgba(201,161,85,0.18);
+  box-shadow:-20px 20px 60px rgba(0,0,0,0.25);
+  transform:translateX(100%);
+  transition:transform 0.45s cubic-bezier(0.65,0,0.35,1);
+  display:flex;flex-direction:column;
+  padding:calc(var(--nav-h) + 2rem) 2.5rem 2rem;
+  overflow-y:auto;
+}
+body.menu-open .qn-overlay{transform:translateX(0)}
+.qn-overlay::before{
+  content:'';position:absolute;
+  width:300px;height:300px;
+  top:-80px;right:-100px;
+  background:radial-gradient(circle,rgba(201,161,85,0.10) 0%,transparent 65%);
+  pointer-events:none;
+}
+.qn-backdrop{
+  position:fixed;inset:0;z-index:140;
+  background:rgba(15,22,38,0.35);
+  backdrop-filter:blur(2px);
+  -webkit-backdrop-filter:blur(2px);
+  opacity:0;visibility:hidden;
+  transition:opacity 0.4s ease,visibility 0s linear 0.4s;
+}
+body.menu-open .qn-backdrop{
+  opacity:1;visibility:visible;
+  transition:opacity 0.4s ease,visibility 0s linear 0s;
+}
+.qn-menu{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;gap:0.2rem;
+}
+.qn-menu a{
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;
+  font-weight:400;
+  color:rgba(255,255,255,0.85);
+  text-decoration:none;
+  letter-spacing:0.06em;
+  position:relative;display:inline-block;
+  padding:0.85rem 0;
+  border-bottom:0.5px solid rgba(255,255,255,0.06);
+  transition:color 0.25s,padding-left 0.3s cubic-bezier(0.65,0,0.35,1);
+  opacity:0;transform:translateX(15px);
+}
+body.menu-open .qn-menu a{opacity:1;transform:translateX(0)}
+body.menu-open .qn-menu a:nth-child(1){transition:opacity 0.4s 0.18s,transform 0.5s 0.18s,color 0.25s,padding-left 0.3s}
+body.menu-open .qn-menu a:nth-child(2){transition:opacity 0.4s 0.22s,transform 0.5s 0.22s,color 0.25s,padding-left 0.3s}
+body.menu-open .qn-menu a:nth-child(3){transition:opacity 0.4s 0.26s,transform 0.5s 0.26s,color 0.25s,padding-left 0.3s}
+body.menu-open .qn-menu a:nth-child(4){transition:opacity 0.4s 0.30s,transform 0.5s 0.30s,color 0.25s,padding-left 0.3s}
+body.menu-open .qn-menu a:nth-child(5){transition:opacity 0.4s 0.34s,transform 0.5s 0.34s,color 0.25s,padding-left 0.3s}
+body.menu-open .qn-menu a:nth-child(6){transition:opacity 0.4s 0.38s,transform 0.5s 0.38s,color 0.25s,padding-left 0.3s}
+body.menu-open .qn-menu a:nth-child(7){transition:opacity 0.4s 0.42s,transform 0.5s 0.42s,color 0.25s,padding-left 0.3s}
+.qn-menu a:hover{color:#e8c95a;padding-left:0.6rem}
+.qn-foot{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;gap:1.2rem;
+  padding-top:1.8rem;margin-top:1.2rem;
+  border-top:0.5px solid rgba(232,201,90,0.25);
+  opacity:0;transition:opacity 0.4s 0.5s;
+}
+body.menu-open .qn-foot{opacity:1}
+.qn-ig{
+  display:flex;align-items:center;gap:0.55rem;
+  font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;
+  color:rgba(255,255,255,0.6);text-decoration:none;
+  transition:color 0.25s;
+}
+.qn-ig:hover{color:#e8c95a}
+.qn-ig svg{width:14px;height:14px}
+body.menu-open{overflow:hidden}
+
+/* ============================================================
+   LEGAL CONTENT
+   ============================================================ */
+.legal-wrap{
+  max-width:780px;
+  margin:0 auto;
+  padding:5rem 2rem 6rem;
+}
+.legal-back-top{margin-bottom:2.5rem}
+.btn-back{
+  display:inline-block;
+  font-family:'DM Sans',sans-serif;
+  font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:300;
+  color:var(--text-mid);text-decoration:none;
+  border:0.5px solid var(--border);
+  padding:0.55rem 1.2rem;
+  transition:border-color 0.25s,color 0.25s;
+}
+.btn-back:hover{border-color:var(--gold);color:var(--gold)}
+
+.legal-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.2rem,4vw,3rem);
+  font-weight:400;
+  color:var(--blue);
+  line-height:1.15;
+  margin-bottom:0.6rem;
+}
+.legal-updated{
+  font-size:0.78rem;
+  color:var(--text-light);
+  font-style:italic;
+  font-family:'Playfair Display',serif;
+  margin-bottom:3rem;
+  padding-bottom:1.5rem;
+  border-bottom:0.5px solid var(--border);
+}
+.legal-updated a{color:var(--gold);text-decoration:none}
+.legal-updated a:hover{color:var(--gold2)}
+
+.legal-wrap p{
+  font-size:0.95rem;
+  line-height:1.85;
+  color:var(--text-mid);
+  margin-bottom:1.2rem;
+}
+.legal-wrap p strong{color:var(--text);font-weight:400}
+.legal-wrap a{color:var(--gold);text-decoration:none;border-bottom:0.5px dotted var(--gold);transition:color 0.2s,border-color 0.2s}
+.legal-wrap a:hover{color:var(--gold2);border-color:var(--gold2)}
+
+.legal-wrap h2{
+  font-family:'Playfair Display',serif;
+  font-size:1.45rem;
+  font-weight:400;
+  color:var(--blue);
+  margin:3rem 0 1.2rem;
+  padding-top:0.5rem;
+}
+.legal-wrap h3{
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;
+  font-style:italic;
+  font-weight:400;
+  color:var(--blue2);
+  margin:1.5rem 0 0.8rem;
+}
+
+.legal-wrap ul{
+  list-style:none;
+  padding-left:0;
+  margin:1.2rem 0 1.5rem;
+}
+.legal-wrap ul li{
+  position:relative;
+  padding-left:1.4rem;
+  margin-bottom:0.8rem;
+  font-size:0.93rem;
+  line-height:1.8;
+  color:var(--text-mid);
+}
+.legal-wrap ul li::before{
+  content:'';
+  position:absolute;
+  left:0;top:0.85rem;
+  width:0.6rem;
+  height:0.5px;
+  background:var(--gold);
+}
+
+.notice{
+  background:#fff;
+  border-left:2px solid var(--gold);
+  padding:1.4rem 1.7rem;
+  margin:2rem 0;
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:0.95rem;
+  line-height:1.75;
+  color:var(--text-mid);
+  box-shadow:0 4px 14px rgba(27,46,75,0.04);
+}
+.notice strong{color:var(--blue);font-style:normal;font-weight:500}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer.legal-footer{
+  background:var(--blue);
+  color:#fff;
+  padding:3.5rem 3rem 2rem;
+  margin-top:4rem;
+}
+.legal-footer-inner{
+  max-width:1280px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:2rem;
+  align-items:start;
+  margin-bottom:2.5rem;
+}
+.legal-footer-logo{
+  font-family:'Playfair Display',serif;
+  font-size:1rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:#fff;
+  margin-bottom:0.4rem;
+}
+.legal-footer-tag{
+  font-size:0.75rem;
+  color:rgba(255,255,255,0.55);
+  margin-bottom:1rem;
+}
+.legal-footer-contact{
+  font-size:0.78rem;
+  color:rgba(255,255,255,0.7);
+}
+.legal-footer-contact a{
+  color:#e8c95a;
+  text-decoration:none;
+  border-bottom:0.5px dotted rgba(232,201,90,0.4);
+}
+.legal-footer-contact a:hover{color:#fff;border-color:rgba(255,255,255,0.5)}
+.legal-footer-links{
+  display:flex;flex-direction:column;gap:0.5rem;
+  text-align:right;
+}
+.legal-footer-links a{
+  font-size:0.72rem;
+  letter-spacing:0.1em;
+  color:rgba(255,255,255,0.6);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+.legal-footer-links a:hover{color:#e8c95a}
+.legal-footer-bottom{
+  max-width:1280px;
+  margin:0 auto;
+  padding-top:1.6rem;
+  border-top:0.5px solid rgba(255,255,255,0.1);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+  font-size:0.7rem;color:rgba(255,255,255,0.4);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:768px){
+  nav.qn{padding:0 1.2rem}
+  .qn-logo{font-size:0.72rem;letter-spacing:0.16em}
+  .legal-wrap{padding:3rem 1.2rem 4rem}
+  .legal-footer-inner{grid-template-columns:1fr;gap:1.5rem}
+  .legal-footer-links{text-align:left}
+  footer.legal-footer{padding:3rem 1.5rem 1.5rem}
+}
