@@ -31,7 +31,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 3
 .nav-links a:hover{color:var(--blue)}
 .nav-btn{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:#fff;background:var(--gold);border:none;padding:0.55rem 1.3rem;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif}
 .gallery-header{padding:3.5rem 3rem 2rem}
-.eyebrow{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:0.7rem}
+.eyebrow{font-size:0.72rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:0.7rem}
 .eyebrow-line{display:block;width:1.4rem;height:0.5px;background:var(--gold)}
 .gallery-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;color:var(--blue);margin-bottom:0.7rem;max-width:42rem;line-height:1.25}
 .gallery-sub{font-size:0.86rem;color:var(--text-light);max-width:38rem;line-height:1.7;margin-bottom:1.8rem}
@@ -44,9 +44,9 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 3
 .section-label{font-size:0.58rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--text-light);margin-bottom:1rem;padding-bottom:0.8rem;border-bottom:0.5px solid var(--border)}
 .featured-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
 .feat-card{cursor:pointer;overflow:hidden;position:relative}
-.feat-card img{width:100%;height:100%;display:block;object-fit:contain;filter:saturate(0.85);transition:transform 0.5s,filter 0.4s;background:transparent}
+.feat-card img{width:100%;height:100%;display:block;object-fit:cover;filter:saturate(0.85);transition:transform 0.5s,filter 0.4s;background:transparent}
 .feat-card:hover img{transform:scale(1.02);filter:saturate(1)}
-.card-hover{position:absolute;bottom:0;left:0;right:0;padding:1.1rem 1.3rem;background:linear-gradient(transparent,rgba(11,20,35,0.82));opacity:0;transition:opacity 0.35s}
+.card-hover{position:absolute;bottom:0;left:0;right:0;padding:0.7rem 1rem;background:none;opacity:0;transition:opacity 0.35s}
 .feat-card:hover .card-hover,.justrow-item:hover .card-hover{opacity:1}
 .card-title{font-family:'Playfair Display',serif;font-size:1rem;color:#fff;font-style:italic}
 .card-cta{font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-top:0.2rem}
@@ -357,37 +357,37 @@ function tech(t,l){
    TRANSLATIONS
    ══════════════════════════════════════════════════════════════ */
 const T={
-  en:{eyebrow:'Vayu Collection · 2015–2025',title:'Works sold to collectors in 15+ countries',
+  en:{nav_home:'Home',nav_works:'Available Works',nav_murals:'Murals',nav_live:'Live Art',nav_vayu:'Vayu Collection',nav_bio:'Biography',nav_conc:'Contact',eyebrow:'Vayu Collection · 2008–2025',title:'Works sold to collectors in 15+ countries',
     sub:"These original pieces are part of Pedro's legacy as VAYU — each found its home with a discerning collector around the world.",
     flags:'Collected in',feat_label:"Artist's selection",grid_label:'More works',loadmore:'Load more',
     tag:'Original · Vayu Collection · Pedro Honeker Gallinger',
     conc:'Interested in a similar work or a new commission?',
     btn_wa:'WhatsApp',btn_em:'Private Email',close:'Close',tooltip:"Chat with Pedro's studio"},
-  es:{eyebrow:'Colección Vayu · 2015–2025',title:'Obras vendidas a coleccionistas de más de 15 países',
+  es:{nav_home:'Inicio',nav_works:'Obras Disponibles',nav_murals:'Murales',nav_live:'Arte en Vivo',nav_vayu:'Colección Vayu',nav_bio:'Biografía',nav_conc:'Contacto',eyebrow:'Colección Vayu · 2008–2025',title:'Obras vendidas a coleccionistas de más de 15 países',
     sub:'Estas piezas originales forman parte del legado de Pedro como VAYU — cada una encontró su hogar con un coleccionista alrededor del mundo.',
     flags:'Coleccionado en',feat_label:'Selección del artista',grid_label:'Más obras',loadmore:'Ver más',
     tag:'Original · Colección Vayu · Pedro Honeker Gallinger',
     conc:'¿Interesado en una obra similar o una nueva comisión?',
     btn_wa:'WhatsApp',btn_em:'Email Privado',close:'Cerrar',tooltip:'Conversa con el estudio de Pedro'},
-  pt:{eyebrow:'Coleção Vayu · 2015–2025',title:'Obras vendidas a colecionadores de mais de 15 países',
+  pt:{nav_home:'Início',nav_works:'Obras Disponíveis',nav_murals:'Murais',nav_live:'Arte ao Vivo',nav_vayu:'Coleção Vayu',nav_bio:'Biografia',nav_conc:'Contacto',eyebrow:'Coleção Vayu · 2008–2025',title:'Obras vendidas a colecionadores de mais de 15 países',
     sub:'Estas peças originais fazem parte do legado de Pedro como VAYU — cada uma encontrou seu lar com um colecionador ao redor do mundo.',
     flags:'Colecionado em',feat_label:'Seleção do artista',grid_label:'Mais obras',loadmore:'Ver mais',
     tag:'Original · Coleção Vayu · Pedro Honeker Gallinger',
     conc:'Interessado em uma obra similar ou uma nova comissão?',
     btn_wa:'WhatsApp',btn_em:'Email Privado',close:'Fechar',tooltip:'Converse com o estúdio de Pedro'},
-  ar:{eyebrow:'مجموعة فايو · 2015–2025',title:'أعمال بيعت لهواة جمع في أكثر من 15 دولة',
+  ar:{nav_home:'الرئيسية',nav_works:'الأعمال المتاحة',nav_murals:'الجداريات',nav_live:'الفن الحي',nav_vayu:'مجموعة فايو',nav_bio:'السيرة',nav_conc:'تواصل',eyebrow:'مجموعة فايو · 2008–2025',title:'أعمال بيعت لهواة جمع في أكثر من 15 دولة',
     sub:'هذه القطع الأصلية جزء من إرث بيدرو بوصفه VAYU — وجدت كل منها مكانها لدى جامع محترف حول العالم.',
     flags:'تم تجميعها في',feat_label:'اختيار الفنان',grid_label:'المزيد من الأعمال',loadmore:'تحميل المزيد',
     tag:'أصلي · مجموعة فايو · بيدرو هونيكر غالينغر',
     conc:'هل أنت مهتم بعمل مماثل أو لوحة جديدة بالطلب؟',
     btn_wa:'واتساب كونسيرج',btn_em:'بريد إلكتروني خاص',close:'إغلاق',tooltip:'تحدث مع استوديو بيدرو'},
-  ja:{eyebrow:'バイユ・コレクション · 2015–2025',title:'15カ国以上のコレクターに渡った作品',
+  ja:{nav_home:'ホーム',nav_works:'利用可能な作品',nav_murals:'壁画',nav_live:'ライブアート',nav_vayu:'バイユコレクション',nav_bio:'略歴',nav_conc:'お問い合わせ',eyebrow:'バイユ・コレクション · 2008–2025',title:'15カ国以上のコレクターに渡った作品',
     sub:'これらのオリジナル作品はVAYUとしてのペドロの遺産であり、世界中の目の肥えたコレクターたちのもとへと旅立ちました。',
     flags:'収蔵国',feat_label:'アーティスト厳選作品',grid_label:'その他の作品',loadmore:'さらに読み込む',
     tag:'オリジナル · バイユ・コレクション · ペドロ・オネケル・ガリンガー',
     conc:'類似作品や新しい依頼作品にご興味はありますか？',
     btn_wa:'WhatsApp',btn_em:'プライベートメール',close:'閉じる',tooltip:'ペドロのスタジオへ'},
-  zh:{eyebrow:'Vayu 系列 · 2015–2025',title:'作品已售往15个以上国家的收藏家',
+  zh:{nav_home:'首页',nav_works:'可用作品',nav_murals:'壁画',nav_live:'现场艺术',nav_vayu:'Vayu系列',nav_bio:'简介',nav_conc:'联系',eyebrow:'Vayu 系列 · 2008–2025',title:'作品已售往15个以上国家的收藏家',
     sub:'这些原创作品是Pedro以VAYU身份创作的珍贵遗产——每一件都找到了属于自己的收藏家。',
     flags:'收藏于',feat_label:'艺术家精选',grid_label:'更多作品',loadmore:'加载更多',
     tag:'原作 · Vayu系列 · 佩德罗·奥内克尔·加林格尔',
@@ -421,7 +421,7 @@ const ALL=[
   {title:'Jai Bolo',                   slug:'Jai-Bolo',                                            w:100,h:100,t:'ac',  coll:'Buenos Aires, Argentina',   details:[]},
   {title:'Pushkar',                    slug:'Pushkar',                                             w:200,h:100,t:'oc',  coll:'Buenos Aires, Argentina',   details:[]},
   {title:'Nueva Era',                  slug:'Nueva-Era',                                           w:100,h:100,t:'ac',  coll:'Buenos Aires, Argentina',   details:['jpg-detail']},
-  {title:'Nueva Era 2',                slug:'Nueva-era-2',                                         w:100,h:100,t:'ac',  coll:'Buenos Aires, Argentina',   details:['detail2']},
+  {title:'Nueva Era 2',                slug:'Nueva-era-2',                                         w:100,h:100,t:'ac',  coll:'Buenos Aires, Argentina',   details:[]},
   {title:'Flower of Life',             slug:'Flower-of-life',                                      w:100,h:100,t:'silk',coll:'Vitoria, Brasil',           details:['detail']},
   {title:'Anahata',                    slug:'Anahata',                                             w:90, h:90, t:'ac',  coll:'Rio de Janeiro, Brasil',    details:[]},
   {title:'Todo',                       slug:'Todo',                                                w:90, h:90, t:'ac',  coll:'Buenos Aires, Argentina',   details:[]},
@@ -588,7 +588,7 @@ function loadMore(){
       item.style.width=itemW+'px'; item.style.height=rowH+'px'; item.style.flexGrow='1';
       var ci=obra.idx, cr=rowEl;
       item.onclick=function(){openGrid(ci,cr);};
-      item.innerHTML='<img src="'+img(obra.slug)+'" alt="'+obra.title+' — Pedro Honeker Gallinger" loading="lazy"><div class="card-hover"><div class="card-title">'+obra.title+'</div><div class="card-cta">Explore →</div></div>';
+      item.innerHTML='<img src="'+img(obra.slug)+'" alt="'+obra.title+' — Pedro Honeker Gallinger" loading="lazy"><div class="card-hover"><div class="card-title">'+obra.title+'</div></div>';
       rowEl.appendChild(item);
     });
     var expandEl=document.createElement('div');
@@ -639,7 +639,7 @@ function init(){
   FEATURED.forEach(function(obra,i){
     var r=obra.w/obra.h;
     var card=document.createElement('div');
-    card.className='feat-card'; card.style.aspectRatio=r;
+    card.className='feat-card'; card.style.aspectRatio='4/3';
     card.onclick=function(){openFeat(i);};
     card.innerHTML='<img src="'+img(obra.slug)+'" alt="'+obra.title+' — Pedro Honeker Gallinger"><div class="card-hover"><div class="card-title">'+obra.title+'</div><div class="card-cta">Explore →</div></div>';
     featGrid.appendChild(card);
@@ -680,13 +680,13 @@ window.addEventListener('load',init);
 <div class="qn-backdrop" id="qnBackdrop"></div>
 <div class="qn-overlay" id="qnOverlay">
   <nav class="qn-menu" aria-label="Main navigation">
-    <a href="index.html">Home</a>
-    <a href="index.html#works">Available Works</a>
-    <a href="index.html#murals">Murals</a>
-    <a href="live-painting.html">Live Art</a>
-    <a href="vayu-collection.html">Vayu Collection</a>
-    <a href="bio.html">Biography</a>
-    <a href="index.html#contacto">Contact</a>
+    <a href="index.html" data-t="nav_home">Home</a>
+    <a href="index.html#works" data-t="nav_works">Available Works</a>
+    <a href="index.html#murals" data-t="nav_murals">Murals</a>
+    <a href="live-painting.html" data-t="nav_live">Live Art</a>
+    <a href="vayu-collection.html" data-t="nav_vayu">Vayu Collection</a>
+    <a href="bio.html" data-t="nav_bio">Biography</a>
+    <a href="index.html#contacto" data-t="nav_conc">Contact</a>
   </nav>
   <div class="qn-foot">
     <a href="https://www.instagram.com/pedrohonekergallinger/" target="_blank" rel="noopener" class="qn-ig">
@@ -826,6 +826,12 @@ document.addEventListener('click', function(e){
   function toggleMenu(){body.classList.contains('menu-open')?closeMenu():openMenu();}
   burger.addEventListener('click',toggleMenu);
   document.querySelectorAll('.qn-menu a').forEach(a=>a.addEventListener('click',closeMenu));
+  // Translate nav menu
+  var t2=T[lang]||T['en'];
+  document.querySelectorAll('[data-t]').forEach(function(el){
+    var key=el.getAttribute('data-t');
+    if(t2[key]) el.textContent=t2[key];
+  });
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&body.classList.contains('menu-open'))closeMenu();});
   backdrop.addEventListener('click',closeMenu);
 })();
