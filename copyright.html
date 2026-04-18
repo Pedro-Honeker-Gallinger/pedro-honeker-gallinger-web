@@ -5,19 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Copyright — Pedro Honeker Gallinger</title>
 <meta name="description" content="Copyright — Pedro Honeker Gallinger. Inspiritual Art. Trancoso, Bahia, Brazil.">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E3Y2C40KEM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date()); gtag('config', 'G-E3Y2C40KEM');
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="legal-base.css">
 </head>
 <body>
 
-<!-- SITE NAV -->
 <nav class="qn">
   <a href="index.html" class="qn-logo">Pedro Honeker Gallinger</a>
   <div class="qn-right">
-    <a href="https://www.instagram.com/pedrohonekergallinger/" target="_blank" rel="noopener" class="qn-ig-nav" title="Instagram · @pedrohonekergallinger" aria-label="Instagram">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-    </a>
-    <div class="qn-lang-drop" id="qnLangDrop">
+    <a href="https://www.instagram.com/pedrohonekergallinger/" target="_blank" style="display:flex;align-items:center;color:var(--text);transition:color 0.3s;" aria-label="Instagram">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+</a>
+      <div class="qn-lang-drop" id="qnLangDrop">
       <button class="qn-lang-toggle" id="qnLangToggle" aria-haspopup="true" aria-expanded="false">
         <span id="qnLangCode">EN</span>
         <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M1 1l4 4 4-4"/></svg>
@@ -45,7 +51,7 @@
     <a href="index.html#murals" data-t="nav_murals">Murals</a>
     <a href="live-painting.html" data-t="nav_live">Live Art</a>
     <a href="vayu-collection.html" data-t="nav_vayu">Vayu Collection</a>
-    <a href="bio.html" data-t="nav_bio">Biography</a>
+    <a href="index.html#bio" data-t="nav_bio">Biography</a>
     <a href="index.html#contacto" data-t="nav_conc">Contact</a>
   </nav>
   <div class="qn-foot">
@@ -56,40 +62,25 @@
   </div>
 </div>
 
-<!-- HERO PORTRAIT -->
-
-
 <div class="legal-wrap">
-  <div class="legal-back-top">
-    <a href="index.html" class="btn-back" data-t="btn_back">← Back to Home</a>
-  </div>
-
+  <div class="legal-back-top"><a href="index.html" class="btn-back" data-t="btn_back">← Back to Home</a></div>
   <h1 class="legal-title" data-t="page_title">Copyright</h1>
-  <p class="legal-updated" data-t="legal_updated">&copy; 2026 Pedro Honeker Gallinger. All rights reserved.</p>
-
-  <p data-t="intro"></p>
-
+  <p class="legal-updated" data-t="legal_updated">© 2026 Pedro Honeker Gallinger. All rights reserved.</p>
+  <p data-t="intro"></p>
   <h2 data-t="h2_1">License Type</h2>
-  <h3 data-t="h3_1">Attribution &mdash; Non-Commercial &mdash; No Derivative Works (BY-NC-ND)</h3>
-  <p data-t="p_license"></p>
-
-  <div class="notice" data-t="notice_1"></div>
-
+  <h3 data-t="h3_1">Attribution — Non-Commercial — No Derivative Works (BY-NC-ND)</h3>
+  <p data-t="p_license"></p>
+  <div class="notice" data-t="notice_1"></div>
   <h2 data-t="h2_2">Reproduction Rights</h2>
-  <p data-t="p_repro"></p>
-
+  <p data-t="p_repro"></p>
   <h2 data-t="h2_3">Digital Use</h2>
-  <p data-t="p_digital"></p>
-
+  <p data-t="p_digital"></p>
   <h2 data-t="h2_4">AICOA Registration</h2>
-  <p data-t="p_aicoa"></p>
-
+  <p data-t="p_aicoa"></p>
   <h2 data-t="h2_5">Photography &amp; Image Rights</h2>
-  <p data-t="p_photo"></p>
-
+  <p data-t="p_photo"></p>
   <h2 data-t="h2_6">Contact for Licensing</h2>
-  <p data-t="p_contact"></p>
-
+  <p data-t="p_contact"></p>
   <div style="margin-top:3.5rem;padding-top:2rem;border-top:0.5px solid var(--border)">
     <a href="index.html" class="btn-back" data-t="btn_back">← Back to Home</a>
   </div>
@@ -120,7 +111,9 @@
 </footer>
 
 <script>
-var T={
+let lang='en';
+
+const T={
   en:{
   nav_home:'Home',
   nav_works:'Available Works',
@@ -131,23 +124,23 @@ var T={
   nav_conc:'Contact',
   btn_back:'← Back to Home',
   page_title:'Copyright',
-  legal_updated:'&copy; 2026 Pedro Honeker Gallinger. All rights reserved.',
-  intro:'All paintings, murals, drawings, and visual works created by <strong>Pedro Honeker Gallinger</strong> (formerly signed as VAYU, 2008&ndash;2025) are protected under copyright of the following type:',
+  legal_updated:'© 2026 Pedro Honeker Gallinger. All rights reserved.',
+  intro:'All paintings, murals, drawings, and visual works created by <strong>Pedro Honeker Gallinger</strong> (formerly signed as VAYU, 2008–2025) are protected under copyright of the following type:',
   h2_1:'License Type',
-  h3_1:'Attribution &mdash; Non-Commercial &mdash; No Derivative Works (BY-NC-ND)',
-  p_license:'This license does not allow the generation of derivative works or making commercial use of the original work. Only non-commercial uses and purposes are permitted. These works may not be modified, altered, or adapted in any way.',
+  h3_1:'Attribution — Non-Commercial — No Derivative Works (BY-NC-ND)',
+  p_license:'This license does not allow the generation of derivative works or making commercial use of the original work. Only non-commercial uses are permitted. These works may not be modified, altered, or adapted in any way.',
   notice_1:'Purchasing an original artwork grants you ownership of the physical piece, but does not transfer copyright or reproduction rights. The artist retains all intellectual property rights.',
   h2_2:'Reproduction Rights',
-  p_repro:'The artist reserves the right to sell reproductions of each of their works. Any reproduction, printing, digital distribution, or commercial use of any image of Pedro Honeker Gallinger\'s work requires prior written authorization.',
+  p_repro:'The artist reserves the right to sell reproductions of each of their works. Any reproduction, printing, digital distribution, or commercial use of any image requires prior written authorization.',
   h2_3:'Digital Use',
-  p_digital:'Images of artworks shared on social media or used for personal, non-commercial purposes must always credit the artist: <strong>Pedro Honeker Gallinger</strong>. Commercial use of any image without prior authorization is strictly prohibited.',
+  p_digital:'Images of artworks shared on social media or used for personal, non-commercial purposes must always credit the artist: <strong>Pedro Honeker Gallinger</strong>. Commercial use without authorization is strictly prohibited.',
   h2_4:'AICOA Registration',
   p_aicoa:'The works of Pedro Honeker Gallinger are registered with the <strong>Central International Archive of Art Objects (AICOA)</strong>, the first Copyright archive with Authorship Guarantee specialized in documenting art objects online.',
   h2_5:'Photography &amp; Image Rights',
-  p_photo:'All photographs of artworks displayed on this website, including studio shots, live painting performances, and exhibition images, are the property of Pedro Honeker Gallinger and protected under the same copyright terms. Unauthorized reproduction is prohibited.',
+  p_photo:'All photographs of artworks displayed on this website are the property of Pedro Honeker Gallinger and protected under the same copyright terms. Unauthorized reproduction is prohibited.',
   h2_6:'Contact for Licensing',
   p_contact:'For licensing, reproduction rights, or any copyright-related enquiry: <a href="mailto:artist@pedrohonekergallinger.art">artist@pedrohonekergallinger.art</a>'
-  }},
+  },
   es:{
   nav_home:'Inicio',
   nav_works:'Obras Disponibles',
@@ -158,23 +151,23 @@ var T={
   nav_conc:'Contacto',
   btn_back:'← Volver al Inicio',
   page_title:'Derechos de Autor',
-  legal_updated:'&copy; 2026 Pedro Honeker Gallinger. Todos los derechos reservados.',
-  intro:'Todas las pinturas, murales, dibujos y obras visuales creadas por <strong>Pedro Honeker Gallinger</strong> (anteriormente firmadas como VAYU, 2008&ndash;2025) están protegidas bajo los siguientes derechos de autor:',
+  legal_updated:'© 2026 Pedro Honeker Gallinger. Todos los derechos reservados.',
+  intro:'Todas las pinturas, murales, dibujos y obras visuales creadas por <strong>Pedro Honeker Gallinger</strong> (anteriormente firmadas como VAYU, 2008–2025) están protegidas bajo los siguientes derechos de autor:',
   h2_1:'Tipo de Licencia',
-  h3_1:'Atribución &mdash; No Comercial &mdash; Sin Obras Derivadas (BY-NC-ND)',
-  p_license:'Esta licencia no permite la generación de obras derivadas ni el uso comercial de la obra original. Solo se permiten usos y fines no comerciales. Estas obras no pueden modificarse, alterarse ni adaptarse de ninguna manera.',
-  notice_1:'La compra de una obra original otorga la propiedad de la pieza física, pero no transfiere los derechos de autor ni los derechos de reproducción. El artista conserva todos los derechos de propiedad intelectual.',
+  h3_1:'Atribución — No Comercial — Sin Obras Derivadas (BY-NC-ND)',
+  p_license:'Esta licencia no permite obras derivadas ni uso comercial. Solo se permiten usos no comerciales. Estas obras no pueden modificarse de ninguna manera.',
+  notice_1:'La compra de una obra original otorga la propiedad de la pieza física, pero no transfiere los derechos de autor. El artista conserva todos los derechos de propiedad intelectual.',
   h2_2:'Derechos de Reproducción',
-  p_repro:'El artista se reserva el derecho de vender reproducciones de cada una de sus obras. Cualquier reproducción, impresión, distribución digital o uso comercial de imágenes de la obra de Pedro Honeker Gallinger requiere autorización previa por escrito.',
+  p_repro:'El artista se reserva el derecho de vender reproducciones. Cualquier reproducción o uso comercial requiere autorización previa por escrito.',
   h2_3:'Uso Digital',
-  p_digital:'Las imágenes de obras compartidas en redes sociales o utilizadas con fines personales no comerciales deben acreditar siempre al artista: <strong>Pedro Honeker Gallinger</strong>. El uso comercial de cualquier imagen sin autorización previa está estrictamente prohibido.',
+  p_digital:'Las imágenes compartidas en redes sociales deben siempre acreditar al artista: <strong>Pedro Honeker Gallinger</strong>. El uso comercial sin autorización está prohibido.',
   h2_4:'Registro AICOA',
-  p_aicoa:'Las obras de Pedro Honeker Gallinger están registradas en el <strong>Archivo Internacional Central de Objetos de Arte (AICOA)</strong>, el primer archivo de Derechos de Autor con Garantía de Autoría especializado en documentar objetos de arte en línea.',
+  p_aicoa:'Las obras están registradas en el <strong>Archivo Internacional Central de Objetos de Arte (AICOA)</strong>, primer archivo con Garantía de Autoría.',
   h2_5:'Fotografías y Derechos de Imagen',
-  p_photo:'Todas las fotografías de obras expuestas en este sitio web, incluyendo tomas de estudio, actuaciones de pintura en vivo e imágenes de exposiciones, son propiedad de Pedro Honeker Gallinger y están protegidas bajo los mismos términos de derechos de autor. La reproducción no autorizada está prohibida.',
+  p_photo:'Todas las fotografías de obras en este sitio son propiedad de Pedro Honeker Gallinger. La reproducción no autorizada está prohibida.',
   h2_6:'Contacto para Licencias',
-  p_contact:'Para licencias, derechos de reproducción o cualquier consulta relacionada con derechos de autor: <a href="mailto:artist@pedrohonekergallinger.art">artist@pedrohonekergallinger.art</a>'
-  }},
+  p_contact:'Para licencias o consultas sobre derechos de autor: <a href="mailto:artist@pedrohonekergallinger.art">artist@pedrohonekergallinger.art</a>'
+  },
   pt:{
   nav_home:'Início',
   nav_works:'Obras Disponíveis',
@@ -185,23 +178,23 @@ var T={
   nav_conc:'Contacto',
   btn_back:'← Voltar ao Início',
   page_title:'Direitos Autorais',
-  legal_updated:'&copy; 2026 Pedro Honeker Gallinger. Todos os direitos reservados.',
-  intro:'Todas as pinturas, murais, desenhos e obras visuais criadas por <strong>Pedro Honeker Gallinger</strong> (anteriormente assinadas como VAYU, 2008&ndash;2025) são protegidas pelos seguintes direitos autorais:',
+  legal_updated:'© 2026 Pedro Honeker Gallinger. Todos os direitos reservados.',
+  intro:'Todas as pinturas, murais, desenhos e obras visuais criadas por <strong>Pedro Honeker Gallinger</strong> (anteriormente assinadas como VAYU, 2008–2025) são protegidas pelos seguintes direitos autorais:',
   h2_1:'Tipo de Licença',
-  h3_1:'Atribuição &mdash; Não Comercial &mdash; Sem Obras Derivadas (BY-NC-ND)',
-  p_license:'Esta licença não permite a geração de obras derivadas nem o uso comercial da obra original. Apenas usos e fins não comerciais são permitidos. Estas obras não podem ser modificadas, alteradas ou adaptadas de nenhuma forma.',
-  notice_1:'A compra de uma obra original concede a propriedade da peça física, mas não transfere os direitos autorais nem os direitos de reprodução. O artista retém todos os direitos de propriedade intelectual.',
+  h3_1:'Atribuição — Não Comercial — Sem Obras Derivadas (BY-NC-ND)',
+  p_license:'Esta licença não permite obras derivadas nem uso comercial. Apenas usos não comerciais são permitidos. Estas obras não podem ser modificadas de nenhuma forma.',
+  notice_1:'A compra de uma obra original concede a propriedade da peça física, mas não transfere os direitos autorais. O artista retém todos os direitos de propriedade intelectual.',
   h2_2:'Direitos de Reprodução',
-  p_repro:'O artista reserva-se o direito de vender reproduções de cada uma das suas obras. Qualquer reprodução, impressão, distribuição digital ou uso comercial de imagens da obra de Pedro Honeker Gallinger requer autorização prévia por escrito.',
+  p_repro:'O artista reserva-se o direito de vender reproduções. Qualquer reprodução ou uso comercial requer autorização prévia por escrito.',
   h2_3:'Uso Digital',
-  p_digital:'Imagens de obras compartilhadas em redes sociais ou usadas para fins pessoais não comerciais devem sempre creditar o artista: <strong>Pedro Honeker Gallinger</strong>. O uso comercial de qualquer imagem sem autorização prévia é estritamente proibido.',
+  p_digital:'Imagens compartilhadas em redes sociais devem sempre creditar o artista: <strong>Pedro Honeker Gallinger</strong>. O uso comercial sem autorização é proibido.',
   h2_4:'Registro AICOA',
-  p_aicoa:'As obras de Pedro Honeker Gallinger estão registradas no <strong>Arquivo Internacional Central de Objetos de Arte (AICOA)</strong>, o primeiro arquivo de Direitos Autorais com Garantia de Autoria especializado em documentar objetos de arte online.',
+  p_aicoa:'As obras estão registradas no <strong>Arquivo Internacional Central de Objetos de Arte (AICOA)</strong>, primeiro arquivo com Garantia de Autoria.',
   h2_5:'Fotografias e Direitos de Imagem',
-  p_photo:'Todas as fotografias de obras exibidas neste site, incluindo fotos de estúdio, performances de pintura ao vivo e imagens de exposições, são propriedade de Pedro Honeker Gallinger e protegidas pelos mesmos termos de direitos autorais. A reprodução não autorizada é proibida.',
+  p_photo:'Todas as fotografias de obras exibidas neste site são propriedade de Pedro Honeker Gallinger. A reprodução não autorizada é proibida.',
   h2_6:'Contato para Licenciamento',
-  p_contact:'Para licenciamento, direitos de reprodução ou qualquer consulta relacionada a direitos autorais: <a href="mailto:artist@pedrohonekergallinger.art">artist@pedrohonekergallinger.art</a>'
-  }},
+  p_contact:'Para licenciamento ou consultas sobre direitos autorais: <a href="mailto:artist@pedrohonekergallinger.art">artist@pedrohonekergallinger.art</a>'
+  },
   ar:{
   nav_home:'الرئيسية',
   nav_works:'الأعمال المتاحة',
@@ -212,23 +205,23 @@ var T={
   nav_conc:'تواصل',
   btn_back:'← العودة إلى الرئيسية',
   page_title:'حقوق النشر',
-  legal_updated:'&copy; 2026 بيدرو هونيكر غالينغر. جميع الحقوق محفوظة.',
-  intro:'جميع اللوحات والجداريات والرسومات والأعمال البصرية التي أبدعها <strong>بيدرو هونيكر غالينغر</strong> (الموقعة سابقاً باسم VAYU، 2008&ndash;2025) محمية بموجب حقوق النشر التالية:',
+  legal_updated:'© 2026 بيدرو هونيكر غالينغر. جميع الحقوق محفوظة.',
+  intro:'جميع الأعمال البصرية التي أبدعها <strong>بيدرو هونيكر غالينغر</strong> (الموقعة سابقاً باسم VAYU، 2008–2025) محمية بموجب حقوق النشر التالية:',
   h2_1:'نوع الترخيص',
-  h3_1:'نسب العمل &mdash; غير تجاري &mdash; بدون أعمال مشتقة (BY-NC-ND)',
-  p_license:'لا يسمح هذا الترخيص بإنشاء أعمال مشتقة أو الاستخدام التجاري للعمل الأصلي. يُسمح فقط بالاستخدامات والأغراض غير التجارية. لا يجوز تعديل هذه الأعمال أو تغييرها أو تكييفها بأي شكل.',
-  notice_1:'يمنح شراء عمل فني أصلي ملكية القطعة المادية، لكنه لا ينقل حقوق النشر أو حقوق الاستنساخ. يحتفظ الفنان بجميع حقوق الملكية الفكرية.',
+  h3_1:'نسب العمل — غير تجاري — بدون أعمال مشتقة (BY-NC-ND)',
+  p_license:'لا يسمح هذا الترخيص بإنشاء أعمال مشتقة أو الاستخدام التجاري. يُسمح فقط بالاستخدامات غير التجارية.',
+  notice_1:'يمنح شراء عمل فني أصلي ملكية القطعة المادية، لكنه لا ينقل حقوق النشر. يحتفظ الفنان بجميع حقوق الملكية الفكرية.',
   h2_2:'حقوق الاستنساخ',
-  p_repro:'يحتفظ الفنان بحق بيع نسخ من كل أعماله. يتطلب أي استنساخ أو طباعة أو توزيع رقمي أو استخدام تجاري لأي صورة من أعمال بيدرو هونيكر غالينغر تفويضاً مسبقاً كتابياً.',
+  p_repro:'يحتفظ الفنان بحق بيع نسخ من أعماله. يتطلب أي استنساخ أو استخدام تجاري تفويضاً مسبقاً كتابياً.',
   h2_3:'الاستخدام الرقمي',
-  p_digital:'يجب أن تنسب الصور المشتركة على وسائل التواصل الاجتماعي أو المستخدمة لأغراض شخصية غير تجارية إلى الفنان دائماً: <strong>بيدرو هونيكر غالينغر</strong>. يُحظر تماماً الاستخدام التجاري لأي صورة دون إذن مسبق.',
+  p_digital:'يجب أن تنسب الصور المشتركة على وسائل التواصل إلى الفنان: <strong>بيدرو هونيكر غالينغر</strong>. يُحظر الاستخدام التجاري دون إذن.',
   h2_4:'تسجيل AICOA',
-  p_aicoa:'أعمال بيدرو هونيكر غالينغر مسجلة في <strong>الأرشيف الدولي المركزي للأشياء الفنية (AICOA)</strong>، أول أرشيف لحقوق النشر مع ضمان المؤلف متخصص في توثيق الأشياء الفنية عبر الإنترنت.',
-  h2_5:'حقوق التصوير والصورة',
-  p_photo:'جميع صور الأعمال الفنية المعروضة على هذا الموقع، بما في ذلك لقطات الاستوديو وعروض الرسم الحي وصور المعارض، هي ملك لبيدرو هونيكر غالينغر ومحمية بنفس شروط حقوق النشر. يُحظر الاستنساخ غير المصرح به.',
+  p_aicoa:'أعمال الفنان مسجلة في <strong>الأرشيف الدولي المركزي للأشياء الفنية (AICOA)</strong>.',
+  h2_5:'حقوق التصوير',
+  p_photo:'جميع صور الأعمال الفنية على هذا الموقع محمية بحقوق النشر. يُحظر الاستنساخ غير المصرح به.',
   h2_6:'التواصل للترخيص',
-  p_contact:'للترخيص أو حقوق الاستنساخ أو أي استفسار متعلق بحقوق النشر: <a href="mailto:artist@pedrohonekergallinger.art">artist@pedrohonekergallinger.art</a>'
-  }},
+  p_contact:'للترخيص أو أي استفسار: <a href="mailto:artist@pedrohonekergallinger.art">artist@pedrohonekergallinger.art</a>'
+  },
   ja:{
   nav_home:'ホーム',
   nav_works:'利用可能な作品',
@@ -239,23 +232,23 @@ var T={
   nav_conc:'お問い合わせ',
   btn_back:'← ホームに戻る',
   page_title:'著作権',
-  legal_updated:'&copy; 2026 ペドロ・ホネカー・ガリンジェル。無断転載禁止。',
-  intro:'<strong>ペドロ・ホネカー・ガリンジェル</strong>（2008&ndash;2025年にVAYUとして署名）が制作した全ての絵画、壁画、素描、視覚作品は以下の著作権に基づいて保護されています：',
+  legal_updated:'© 2026 ペドロ・ホネカー・ガリンジェル。無断転載禁止。',
+  intro:'<strong>ペドロ・ホネカー・ガリンジェル</strong>（2008–2025年はVAYUとして署名）が制作した全ての視覚作品は著作権で保護されています：',
   h2_1:'ライセンスの種類',
-  h3_1:'表示 &mdash; 非営利 &mdash; 改変禁止（BY-NC-ND）',
-  p_license:'このライセンスは、派生作品の作成や原作の商業的利用を許可しません。非商業的な使用と目的のみが許可されます。これらの作品はいかなる方法でも改変、変更、または翻案することはできません。',
-  notice_1:'オリジナル作品の購入は物理的な作品の所有権を付与しますが、著作権や複製権は移転しません。芸術家は全ての知的財産権を保持します。',
+  h3_1:'表示 — 非営利 — 改変禁止（BY-NC-ND）',
+  p_license:'このライセンスは派生作品の作成や商業的利用を許可しません。非商業的な使用のみが許可されます。',
+  notice_1:'オリジナル作品の購入は所有権を付与しますが、著作権は移転しません。芸術家は全ての知的財産権を保持します。',
   h2_2:'複製権',
-  p_repro:'芸術家は各作品の複製物を販売する権利を保有します。ペドロ・ホネカー・ガリンジェルの作品の画像の複製、印刷、デジタル配布、または商業的使用には事前の書面による許可が必要です。',
+  p_repro:'芸術家は複製物を販売する権利を保有します。画像の複製や商業的使用には事前の書面による許可が必要です。',
   h2_3:'デジタル使用',
-  p_digital:'ソーシャルメディアで共有されたり個人的・非商業的目的で使用される作品の画像は、常に芸術家にクレジットを付与する必要があります：<strong>ペドロ・ホネカー・ガリンジェル</strong>。事前の許可なく画像を商業的に使用することは固く禁じられています。',
+  p_digital:'SNSで共有する場合は常にクレジットが必要：<strong>ペドロ・ホネカー・ガリンジェル</strong>。無許可の商業的使用は禁止。',
   h2_4:'AICOA登録',
-  p_aicoa:'ペドロ・ホネカー・ガリンジェルの作品は<strong>中央国際美術品アーカイブ（AICOA）</strong>に登録されています。これはオンラインで美術品を文書化することを専門とする、著作者保証付き著作権アーカイブです。',
+  p_aicoa:'作品は<strong>中央国際美術品アーカイブ（AICOA）</strong>に登録されています。',
   h2_5:'写真・画像権',
-  p_photo:'このウェブサイトに掲載されている全ての作品写真（スタジオ撮影、ライブペインティング、展覧会画像を含む）はペドロ・ホネカー・ガリンジェルの所有物であり、同じ著作権条件で保護されています。無断複製は禁止されています。',
-  h2_6:'ライセンスに関するお問い合わせ',
-  p_contact:'ライセンス、複製権、または著作権に関するお問い合わせ：<a href="mailto:artist@pedrohonekergallinger.art">artist@pedrohonekergallinger.art</a>'
-  }},
+  p_photo:'このサイトの全作品写真は著作権で保護されています。無断複製は禁止。',
+  h2_6:'ライセンスお問い合わせ',
+  p_contact:'ライセンスに関するお問い合わせ：<a href="mailto:artist@pedrohonekergallinger.art">artist@pedrohonekergallinger.art</a>'
+  },
   zh:{
   nav_home:'首页',
   nav_works:'可用作品',
@@ -266,101 +259,112 @@ var T={
   nav_conc:'联系',
   btn_back:'← 返回首页',
   page_title:'版权声明',
-  legal_updated:'&copy; 2026 佩德罗·洪内克尔·加林格尔。保留所有权利。',
-  intro:'<strong>佩德罗·洪内克尔·加林格尔</strong>（2008&ndash;2025年以VAYU署名）创作的所有绘画、壁画、素描和视觉作品均受以下版权保护：',
+  legal_updated:'© 2026 佩德罗·洪内克尔·加林格尔。保留所有权利。',
+  intro:'<strong>佩德罗·洪内克尔·加林格尔</strong>（2008–2025年以VAYU署名）创作的所有视觉作品均受以下版权保护：',
   h2_1:'许可证类型',
-  h3_1:'署名 &mdash; 非商业性 &mdash; 禁止演绎（BY-NC-ND）',
-  p_license:'此许可证不允许创作演绎作品或对原作进行商业使用。仅允许非商业性使用和目的。这些作品不得以任何方式修改、更改或改编。',
-  notice_1:'购买原版艺术品授予您对实物作品的所有权，但不转让版权或复制权。艺术家保留所有知识产权。',
+  h3_1:'署名 — 非商业性 — 禁止演绎（BY-NC-ND）',
+  p_license:'此许可证不允许创作演绎作品或商业使用。仅允许非商业性使用。',
+  notice_1:'购买原版作品授予实物所有权，但不转让版权。艺术家保留所有知识产权。',
   h2_2:'复制权',
-  p_repro:'艺术家保留销售每件作品复制品的权利。任何对佩德罗·洪内克尔·加林格尔作品图像的复制、印刷、数字分发或商业使用均需事先获得书面授权。',
+  p_repro:'艺术家保留销售复制品的权利。任何复制或商业使用均需事先书面授权。',
   h2_3:'数字使用',
-  p_digital:'在社交媒体上分享或用于个人非商业目的的作品图像必须始终注明艺术家：<strong>佩德罗·洪内克尔·加林格尔</strong>。未经事先授权商业使用任何图像严格禁止。',
+  p_digital:'在社交媒体上分享时必须注明艺术家：<strong>佩德罗·洪内克尔·加林格尔</strong>。未经授权商业使用严禁。',
   h2_4:'AICOA注册',
-  p_aicoa:'佩德罗·洪内克尔·加林格尔的作品已在<strong>国际艺术品中央档案馆（AICOA）</strong>注册，这是第一个专门在线记录艺术品的版权档案馆，具有作者身份保证。',
+  p_aicoa:'作品已在<strong>国际艺术品中央档案馆（AICOA）</strong>注册。',
   h2_5:'摄影和图像权利',
-  p_photo:'本网站展示的所有艺术品照片，包括工作室拍摄、现场绘画表演和展览图像，均为佩德罗·洪内克尔·加林格尔的财产，受相同版权条款保护。未经授权的复制被禁止。',
+  p_photo:'本网站所有作品照片均受版权保护。未经授权的复制被禁止。',
   h2_6:'许可联系方式',
-  p_contact:'有关许可、复制权或任何版权相关咨询：<a href="mailto:artist@pedrohonekergallinger.art">artist@pedrohonekergallinger.art</a>'
-  }},
+  p_contact:'有关许可咨询：<a href="mailto:artist@pedrohonekergallinger.art">artist@pedrohonekergallinger.art</a>'
+  },
 };
 
 function applyLang(l){
   if(!T[l]) l='en';
-  try{localStorage.setItem('phg_lang',l);}catch(e){}
-  var t=T[l];
-  document.querySelectorAll('[data-t]').forEach(function(el){
-    var key=el.getAttribute('data-t');
-    if(t[key]!==undefined) el.innerHTML=t[key];
+  lang=l;
+  const t=T[l];
+  document.querySelectorAll('[data-t]').forEach(el=>{
+    const k=el.getAttribute('data-t');
+    if(t[k]!==undefined) el.innerHTML=t[k];
   });
-  var qn=document.getElementById('qnLangCode');
-  if(qn) qn.textContent=l.toUpperCase();
-  document.querySelectorAll('.qn-lang-opt').forEach(function(b){
-    b.classList.toggle('active',b.dataset.lang===l);
-  });
+  const qnCode=document.getElementById('qnLangCode');
+  if(qnCode)qnCode.textContent=l.toUpperCase();
+  document.querySelectorAll('.qn-lang-opt').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));
+  document.documentElement.dir=l==='ar'?'rtl':'ltr';
   document.documentElement.lang=l;
-  document.documentElement.dir=(l==='ar')?'rtl':'ltr';
-  var d=document.getElementById('qnLangDrop');
+  const d=document.getElementById('qnLangDrop');
   if(d) d.classList.remove('open');
 }
+
+// ============ QUIET LUXURY NAV ============
 (function(){
-  var stored=null;
-  try{stored=localStorage.getItem('phg_lang');}catch(e){}
-  if(stored&&T[stored]){applyLang(stored);return;}
-  var tz=(Intl.DateTimeFormat().resolvedOptions().timeZone||'').toLowerCase();
-  var nv=(navigator.language||navigator.userLanguage||'').toLowerCase();
-  var d='en';
-  if(/brazil|sao_paulo|brasilia|belem|manaus|fortaleza|recife|bahia|maceio/.test(tz)) d='pt';
-  else if(nv.startsWith('pt')) d='pt';
-  else if(/argentina|chile|colombia|mexico|peru|uruguay|venezuela|bolivia|ecuador|paraguay|cuba|panama|costa_rica|guatemala|honduras|nicaragua|salvador|madrid|bogota|lima|santiago/.test(tz)) d='es';
-  else if(nv.startsWith('es')) d='es';
-  else if(/dubai|riyadh|qatar|bahrain|kuwait|muscat|baghdad|cairo|amman|beirut|damascus/.test(tz)) d='ar';
-  else if(nv.startsWith('ar')) d='ar';
-  else if(/tokyo/.test(tz)||nv.startsWith('ja')) d='ja';
-  else if(/shanghai|hong_kong|taipei|chongqing|macau/.test(tz)||nv.startsWith('zh')) d='zh';
-  applyLang(d);
-})();
-(function(){
-  var burger=document.getElementById('qnBurger');
-  var backdrop=document.getElementById('qnBackdrop');
-  var body=document.body;
-  if(!burger||!backdrop) return;
+  const burger = document.getElementById('qnBurger');
+  const backdrop = document.getElementById('qnBackdrop');
+  const body = document.body;
   function openMenu(){body.classList.add('menu-open');burger.setAttribute('aria-expanded','true');}
   function closeMenu(){body.classList.remove('menu-open');burger.setAttribute('aria-expanded','false');}
-  burger.addEventListener('click',function(){body.classList.contains('menu-open')?closeMenu():openMenu();});
-  document.querySelectorAll('.qn-menu a').forEach(function(a){a.addEventListener('click',closeMenu);});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&body.classList.contains('menu-open'))closeMenu();});
+  function toggleMenu(){body.classList.contains('menu-open')?closeMenu():openMenu();}
+  burger.addEventListener('click',toggleMenu);
+  document.querySelectorAll('.qn-menu a').forEach(a=>a.addEventListener('click',closeMenu));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&body.classList.contains('menu-open'))closeMenu();});
   backdrop.addEventListener('click',closeMenu);
-  var lastY=window.scrollY;
-  window.addEventListener('scroll',function(){
-    var y=window.scrollY;
-    if(Math.abs(y-lastY)>60&&body.classList.contains('menu-open')) closeMenu();
-    lastY=y;
-  },{passive:true});
+  // Close on scroll
+  let _sy=window.scrollY;
+  window.addEventListener('scroll',()=>{const _y=window.scrollY;if(Math.abs(_y-_sy)>60&&body.classList.contains('menu-open'))closeMenu();_sy=_y;},{passive:true});
 })();
+
+// ============ LANGUAGE DROPDOWN + PERSISTENCE ============
 (function(){
-  var langDrop=document.getElementById('qnLangDrop');
-  var langToggle=document.getElementById('qnLangToggle');
-  if(!langDrop||!langToggle) return;
-  langToggle.addEventListener('click',function(e){
+  const LANG_KEY = 'phg_lang';
+  const langDrop = document.getElementById('qnLangDrop');
+  const langToggle = document.getElementById('qnLangToggle');
+  const langCode = document.getElementById('qnLangCode');
+
+  function detectLang(){
+    try{const stored=localStorage.getItem(LANG_KEY);if(stored&&['en','es','pt','ar','ja','zh'].includes(stored))return stored;}catch(e){}
+    const tz=(Intl.DateTimeFormat().resolvedOptions().timeZone||'').toLowerCase();
+    const nv=(navigator.language||'').toLowerCase();
+    if(/brazil|sao_paulo|brasilia|belem|manaus|fortaleza|recife|bahia|maceio/.test(tz))return'pt';
+    if(nv.startsWith('pt'))return'pt';
+    if(/argentina|chile|colombia|mexico|peru|uruguay|venezuela|bolivia|ecuador|paraguay|cuba|panama|costa_rica|guatemala|honduras|nicaragua|salvador|santo_domingo|asuncion|montevideo|caracas|bogota|lima|santiago|madrid|tegucigalpa|managua/.test(tz))return'es';
+    if(nv.startsWith('es'))return'es';
+    if(/asia\/dubai|asia\/riyadh|asia\/qatar|asia\/bahrain|asia\/kuwait|asia\/muscat|asia\/baghdad|africa\/cairo|asia\/amman|asia\/beirut|asia\/damascus/.test(tz))return'ar';
+    if(nv.startsWith('ar'))return'ar';
+    if(/asia\/tokyo/.test(tz))return'ja';
+    if(nv.startsWith('ja'))return'ja';
+    if(/asia\/shanghai|asia\/hong_kong|asia\/taipei|asia\/chongqing|asia\/macau/.test(tz))return'zh';
+    if(nv.startsWith('zh'))return'zh';
+    return'en';
+  }
+
+  langToggle.addEventListener('click',e=>{
     e.stopPropagation();
     langDrop.classList.toggle('open');
     langToggle.setAttribute('aria-expanded',langDrop.classList.contains('open'));
   });
-  document.querySelectorAll('.qn-lang-opt').forEach(function(b){
-    b.addEventListener('click',function(){
+
+  document.querySelectorAll('.qn-lang-opt').forEach(b=>{
+    b.addEventListener('click',()=>{
       applyLang(b.dataset.lang);
       langDrop.classList.remove('open');
       langToggle.setAttribute('aria-expanded','false');
+      try{localStorage.setItem(LANG_KEY,b.dataset.lang);}catch(e){}
     });
   });
-  document.addEventListener('click',function(e){
+
+  document.addEventListener('click',e=>{
     if(!langDrop.contains(e.target)){
       langDrop.classList.remove('open');
       langToggle.setAttribute('aria-expanded','false');
     }
   });
-})();
+
+  // Init on load
+  const _l=detectLang();
+  lang=_l;
+  applyLang(_l);
+  langCode.textContent=_l.toUpperCase();
+  document.querySelectorAll('.qn-lang-opt').forEach(b=>b.classList.toggle('active',b.dataset.lang===_l));
+})()
 </script>
 
 </body>
