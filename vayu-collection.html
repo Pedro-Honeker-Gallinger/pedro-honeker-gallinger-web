@@ -249,6 +249,7 @@ body.menu-open{overflow:hidden}
                {Slug}-Pedro-Honeker-Gallinger-Vayu-{detail}.webp
    ══════════════════════════════════════════════════════════════ */
 function img(slug,detail){
+  // Handle pre-encoded slugs
   var base=slug+'-Pedro-Honeker-Gallinger-Vayu';
   return detail ? base+'-'+detail+'.webp' : base+'.webp';
 }
@@ -364,31 +365,31 @@ const T={
     conc:'Interested in a similar work or a new commission?',
     btn_wa:'WhatsApp',btn_em:'Private Email',close:'Close',tooltip:"Chat with Pedro's studio"},
   es:{nav_home:'Inicio',nav_works:'Obras Disponibles',nav_murals:'Murales',nav_live:'Arte en Vivo',nav_vayu:'Colección Vayu',nav_bio:'Biografía',nav_conc:'Contacto',eyebrow:'Colección Vayu · 2008–2025',title:'Obras vendidas a coleccionistas de más de 15 países',
-    sub:'Estas piezas originales forman parte del legado de Pedro como VAYU — cada una encontró su hogar con un coleccionista alrededor del mundo.',
+    sub:'Una selección de 62 obras de entre más de 200 creadas entre 2008 y 2025.',
     flags:'Coleccionado en',feat_label:'Selección del artista',grid_label:'Más obras',loadmore:'Ver más',
     tag:'Original · Colección Vayu · Pedro Honeker Gallinger',
     conc:'¿Interesado en una obra similar o una nueva comisión?',
     btn_wa:'WhatsApp',btn_em:'Email Privado',close:'Cerrar',tooltip:'Conversa con el estudio de Pedro'},
   pt:{nav_home:'Início',nav_works:'Obras Disponíveis',nav_murals:'Murais',nav_live:'Arte ao Vivo',nav_vayu:'Coleção Vayu',nav_bio:'Biografia',nav_conc:'Contacto',eyebrow:'Coleção Vayu · 2008–2025',title:'Obras vendidas a colecionadores de mais de 15 países',
-    sub:'Estas peças originais fazem parte do legado de Pedro como VAYU — cada uma encontrou seu lar com um colecionador ao redor do mundo.',
+    sub:'Uma seleção de 62 obras de mais de 200 criadas entre 2008 e 2025.',
     flags:'Colecionado em',feat_label:'Seleção do artista',grid_label:'Mais obras',loadmore:'Ver mais',
     tag:'Original · Coleção Vayu · Pedro Honeker Gallinger',
     conc:'Interessado em uma obra similar ou uma nova comissão?',
     btn_wa:'WhatsApp',btn_em:'Email Privado',close:'Fechar',tooltip:'Converse com o estúdio de Pedro'},
   ar:{nav_home:'الرئيسية',nav_works:'الأعمال المتاحة',nav_murals:'الجداريات',nav_live:'الفن الحي',nav_vayu:'مجموعة فايو',nav_bio:'السيرة',nav_conc:'تواصل',eyebrow:'مجموعة فايو · 2008–2025',title:'أعمال بيعت لهواة جمع في أكثر من 15 دولة',
-    sub:'هذه القطع الأصلية جزء من إرث بيدرو بوصفه VAYU — وجدت كل منها مكانها لدى جامع محترف حول العالم.',
+    sub:'مختارات من 62 عملاً من أصل أكثر من 200 عمل أُنجز بين 2008 و2025.',
     flags:'تم تجميعها في',feat_label:'اختيار الفنان',grid_label:'المزيد من الأعمال',loadmore:'تحميل المزيد',
     tag:'أصلي · مجموعة فايو · بيدرو هونيكر غالينغر',
     conc:'هل أنت مهتم بعمل مماثل أو لوحة جديدة بالطلب؟',
     btn_wa:'واتساب كونسيرج',btn_em:'بريد إلكتروني خاص',close:'إغلاق',tooltip:'تحدث مع استوديو بيدرو'},
   ja:{nav_home:'ホーム',nav_works:'利用可能な作品',nav_murals:'壁画',nav_live:'ライブアート',nav_vayu:'バイユコレクション',nav_bio:'略歴',nav_conc:'お問い合わせ',eyebrow:'バイユ・コレクション · 2008–2025',title:'15カ国以上のコレクターに渡った作品',
-    sub:'これらのオリジナル作品はVAYUとしてのペドロの遺産であり、世界中の目の肥えたコレクターたちのもとへと旅立ちました。',
+    sub:'2008年から2025年の間に制作された200点以上の作品から選ばれた62点。',
     flags:'収蔵国',feat_label:'アーティスト厳選作品',grid_label:'その他の作品',loadmore:'さらに読み込む',
     tag:'オリジナル · バイユ・コレクション · ペドロ・オネケル・ガリンガー',
     conc:'類似作品や新しい依頼作品にご興味はありますか？',
     btn_wa:'WhatsApp',btn_em:'プライベートメール',close:'閉じる',tooltip:'ペドロのスタジオへ'},
   zh:{nav_home:'首页',nav_works:'可用作品',nav_murals:'壁画',nav_live:'现场艺术',nav_vayu:'Vayu系列',nav_bio:'简介',nav_conc:'联系',eyebrow:'Vayu 系列 · 2008–2025',title:'作品已售往15个以上国家的收藏家',
-    sub:'这些原创作品是Pedro以VAYU身份创作的珍贵遗产——每一件都找到了属于自己的收藏家。',
+    sub:'2008至2025年间创作的200余件作品中精选62件。',
     flags:'收藏于',feat_label:'艺术家精选',grid_label:'更多作品',loadmore:'加载更多',
     tag:'原作 · Vayu系列 · 佩德罗·奥内克尔·加林格尔',
     conc:'对类似作品或新定制作品感兴趣？',
@@ -400,10 +401,10 @@ const T={
    ══════════════════════════════════════════════════════════════ */
 const ALL=[
   // ── FEATURED ─────────────────────────────────────────────────────────────
-  {title:'Ichtus',           slug:'Ichtus',                                                        w:100,h:100,t:'ac',  coll:'Entre Rios, Argentina',     details:[],              featured:true},
-  {title:'Soy Semilla',      slug:'Soy-Semilla',                                                   w:80, h:60, t:'ac',  coll:'Madrid, España',            details:['detail'],      featured:true},
-  {title:'Luz al Instante',  slug:'Luz-Al-Instante',                                               w:80, h:120,t:'ac',  coll:'Paraná, Brasil',            details:[],              featured:true},
-  {title:'Enjoy the Silence',slug:'Enjoy-the-silence-2021',                                        w:80, h:60, t:'ac',  coll:'New York, USA',             details:[],              featured:true},
+  {title:'Ichtus',           slug:'Ichtus',                                                        w:100,h:100,t:'ac',  coll:'Entre Rios, Argentina',     details:[]},
+  {title:'Soy Semilla',      slug:'Soy-Semilla',                                                   w:80, h:60, t:'ac',  coll:'Madrid, España',            details:['detail']},
+  {title:'Luz al Instante',  slug:'Luz-Al-Instante',                                               w:80, h:120,t:'ac',  coll:'Paraná, Brasil',            details:[]},
+  {title:'Enjoy the Silence',slug:'Enjoy-the-silence-2021',                                        w:80, h:60, t:'ac',  coll:'New York, USA',             details:[]},
   // ── GRID ──────────────────────────────────────────────────────────────────
   {title:'Corazón Portal',             slug:'Corazon-portal',                                      w:80, h:70, t:'ac',  coll:'Bogotá, Colombia',          details:[]},
   {title:'Maestro Lobo',               slug:'Maestro-lobo',                                        w:80, h:70, t:'ac',  coll:'Palma de Mallorca, España', details:['detail']},
@@ -412,7 +413,7 @@ const ALL=[
   {title:'Real',                       slug:'Real',                                                w:80, h:60, t:'ac',  coll:'Buenos Aires, Argentina',   details:[]},
   {title:'Ecuanimidad',                slug:'ecuanimidad',                                         w:80, h:60, t:'ac',  coll:'Palma de Mallorca, España', details:[]},
   {title:'Nuevos Despertares',         slug:'Nuevos-despertares',                                  w:80, h:60, t:'ac',  coll:'La Plata, Argentina',       details:[]},
-  {title:'Unidos Siempre',             slug:'Unidos-siempre.-La-raíz-y-las-ramas.-Como-un-solo-cuerpo', w:80,h:60,t:'ac', coll:'Paraná, Argentina',     details:[]},
+  {title:'Unidos Siempre',             slug:'Unidos-siempre.-La-ra%C3%ADz-y-las-ramas.-Como-un-solo-cuerpo', w:80,h:60,t:'ac', coll:'Paraná, Argentina',     details:[]},
   {title:'Millones de Manifestaciones',slug:'millones-de-manifestaciones-una-misma-proporsion',   w:80, h:60, t:'ac',  coll:'Vitoria, Brasil',           details:['detail1','detail2']},
   {title:'Cura y Conciencia',          slug:'Cura-y-conciencia',                                   w:80, h:60, t:'ac',  coll:'Paraná, Argentina',         details:[]},
   {title:'Visión',                     slug:'Vision',                                              w:80, h:60, t:'ac',  coll:'Curitiba, Brasil',          details:[]},
@@ -806,6 +807,11 @@ function switchLang(l){
   if(btn&&!btn.classList.contains('hidden')) btn.textContent=t.loadmore;
   var lb=document.getElementById('feat-loadmore-btn');
   if(lb) lb.textContent=t.loadmore;
+  // Translate nav drawer links
+  document.querySelectorAll('[data-t]').forEach(function(el){
+    var key=el.getAttribute('data-t');
+    if(t[key]) el.textContent=t[key];
+  });
 }
 
 // Close lang dropdown on outside click
