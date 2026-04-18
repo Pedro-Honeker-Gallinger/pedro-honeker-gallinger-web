@@ -244,6 +244,8 @@ body.menu-open nav.qn{z-index:160}
 .qn-logo{font-family:'Playfair Display',serif;font-size:0.88rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);text-decoration:none;font-weight:400;transition:color 0.25s}
 .qn-logo:hover{color:var(--gold)}
 .qn-right{display:flex;align-items:center;gap:0.9rem}
+.qn-ig-nav{color:var(--text-mid);display:flex;align-items:center;transition:color 0.25s;text-decoration:none}
+.qn-ig-nav:hover{color:var(--gold)}
 .qn-lang-drop{position:relative}
 .qn-lang-toggle{display:flex;align-items:center;gap:0.35rem;font-family:'DM Sans',sans-serif;font-size:0.66rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:300;color:var(--text-mid);background:transparent;border:0.5px solid var(--border);padding:0.42rem 0.72rem;cursor:pointer;transition:border-color 0.25s,color 0.25s}
 .qn-lang-toggle:hover{border-color:var(--gold);color:var(--blue)}
@@ -264,13 +266,13 @@ body.menu-open nav.qn{z-index:160}
 body.menu-open .qn-burger span:nth-child(1){transform:translateY(6px) rotate(45deg);width:24px}
 body.menu-open .qn-burger span:nth-child(2){opacity:0;transform:scaleX(0)}
 body.menu-open .qn-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg);width:24px}
-.qn-overlay{position:fixed;top:0;right:0;width:340px;max-width:88vw;max-height:100vh;z-index:150;background:linear-gradient(180deg,rgba(20,33,55,0.985) 0%,rgba(27,46,75,0.985) 100%);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-left:0.5px solid rgba(201,161,85,0.18);border-bottom:0.5px solid rgba(201,161,85,0.18);box-shadow:-20px 20px 60px rgba(0,0,0,0.25);transform:translateX(100%);transition:transform 0.45s cubic-bezier(0.65,0,0.35,1);display:flex;flex-direction:column;padding:calc(var(--nav-h) + 2rem) 2.5rem 2rem;overflow-y:auto}
+.qn-overlay{position:fixed;top:0;right:0;width:340px;max-width:88vw;max-height:100vh;z-index:150;background:#FFFFFF;border-left:0.5px solid var(--border);box-shadow:-12px 0 40px rgba(0,0,0,0.12);transform:translateX(100%);transition:transform 0.45s cubic-bezier(0.65,0,0.35,1);display:flex;flex-direction:column;padding:calc(var(--nav-h) + 2rem) 2.5rem 2rem;overflow-y:auto}
 body.menu-open .qn-overlay{transform:translateX(0)}
-.qn-overlay::before{content:'';position:absolute;width:300px;height:300px;top:-80px;right:-100px;background:radial-gradient(circle,rgba(201,161,85,0.10) 0%,transparent 65%);pointer-events:none}
-.qn-backdrop{position:fixed;inset:0;z-index:140;background:rgba(15,22,38,0.35);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:opacity 0.4s ease,visibility 0s linear 0.4s}
+
+.qn-backdrop{position:fixed;inset:0;z-index:140;background:rgba(0,0,0,0.18);opacity:0;visibility:hidden;transition:opacity 0.4s ease,visibility 0s linear 0.4s}
 body.menu-open .qn-backdrop{opacity:1;visibility:visible;transition:opacity 0.4s ease,visibility 0s linear 0s}
 .qn-menu{position:relative;z-index:2;display:flex;flex-direction:column;gap:0.2rem}
-.qn-menu a{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:400;color:rgba(255,255,255,0.85);text-decoration:none;letter-spacing:0.06em;position:relative;display:inline-block;padding:0.85rem 0;border-bottom:0.5px solid rgba(255,255,255,0.06);transition:color 0.25s,padding-left 0.3s cubic-bezier(0.65,0,0.35,1);opacity:0;transform:translateX(15px)}
+.qn-menu a{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:400;color:var(--blue);text-decoration:none;letter-spacing:0.06em;position:relative;display:inline-block;padding:0.85rem 0;border-bottom:0.5px solid var(--border);transition:color 0.25s,padding-left 0.3s cubic-bezier(0.65,0,0.35,1);opacity:0;transform:translateX(15px)}
 body.menu-open .qn-menu a{opacity:1;transform:translateX(0)}
 body.menu-open .qn-menu a:nth-child(1){transition:opacity 0.4s 0.18s,transform 0.5s 0.18s,color 0.25s,padding-left 0.3s}
 body.menu-open .qn-menu a:nth-child(2){transition:opacity 0.4s 0.22s,transform 0.5s 0.22s,color 0.25s,padding-left 0.3s}
@@ -279,11 +281,11 @@ body.menu-open .qn-menu a:nth-child(4){transition:opacity 0.4s 0.30s,transform 0
 body.menu-open .qn-menu a:nth-child(5){transition:opacity 0.4s 0.34s,transform 0.5s 0.34s,color 0.25s,padding-left 0.3s}
 body.menu-open .qn-menu a:nth-child(6){transition:opacity 0.4s 0.38s,transform 0.5s 0.38s,color 0.25s,padding-left 0.3s}
 body.menu-open .qn-menu a:nth-child(7){transition:opacity 0.4s 0.42s,transform 0.5s 0.42s,color 0.25s,padding-left 0.3s}
-.qn-menu a:hover{color:#e8c95a;padding-left:0.6rem}
-.qn-foot{position:relative;z-index:2;display:flex;flex-direction:column;gap:1.2rem;padding-top:1.8rem;margin-top:1.2rem;border-top:0.5px solid rgba(232,201,90,0.25);opacity:0;transition:opacity 0.4s 0.5s}
+.qn-menu a:hover{color:var(--gold);padding-left:0.6rem}
+.qn-foot{position:relative;z-index:2;display:flex;flex-direction:column;gap:1.2rem;padding-top:1.8rem;margin-top:1.2rem;border-top:0.5px solid var(--border);opacity:0;transition:opacity 0.4s 0.5s}
 body.menu-open .qn-foot{opacity:1}
-.qn-ig{display:flex;align-items:center;gap:0.55rem;font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;transition:color 0.25s}
-.qn-ig:hover{color:#e8c95a}
+.qn-ig{display:flex;align-items:center;gap:0.55rem;font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-mid);text-decoration:none;transition:color 0.25s}
+.qn-ig:hover{color:var(--gold)}
 .qn-ig svg{width:14px;height:14px}
 body.menu-open{overflow:hidden}
 @media(max-width:768px){nav.qn{padding:0 1.2rem}.qn-logo{font-size:0.72rem;letter-spacing:0.16em}}
@@ -293,10 +295,11 @@ body.menu-open{overflow:hidden}
 <body>
 
 <!-- NAV -->
+<!-- SITE NAV -->
 <nav class="qn">
   <a href="index.html" class="qn-logo">Pedro Honeker Gallinger</a>
   <div class="qn-right">
-    <a href="https://www.instagram.com/pedrohonekergallinger/" target="_blank" rel="noopener" style="display:flex;align-items:center;color:var(--text-mid);transition:color 0.2s;" aria-label="Instagram">
+    <a href="https://www.instagram.com/pedrohonekergallinger/" target="_blank" rel="noopener" class="qn-ig-nav" title="Instagram · @pedrohonekergallinger" aria-label="Instagram">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
     </a>
     <div class="qn-lang-drop" id="qnLangDrop">
@@ -437,69 +440,45 @@ function translateNav(l){
     if(t[key]) el.textContent=t[key];
   });
 }
-function selectLang(l){
-  try { localStorage.setItem('phg_lang', l); } catch(e){}
-  var qnCode = document.getElementById('qnLangCode');
-  if(qnCode) qnCode.textContent = l.toUpperCase();
+function switchLang(l){
+  if(!['en','es','pt','ar','ja','zh'].includes(l)) l='en';
+  try{localStorage.setItem('phg_lang',l);}catch(e){}
+  lang=l;
+  var qn=document.getElementById('qnLangCode');
+  if(qn) qn.textContent=l.toUpperCase();
   document.querySelectorAll('.qn-lang-opt').forEach(function(b){
-    b.classList.toggle('active', b.dataset.lang === l);
+    b.classList.toggle('active',b.dataset.lang===l);
   });
-  document.documentElement.lang = l;
-  document.documentElement.dir = (l === 'ar') ? 'rtl' : 'ltr';
-  translateNav(l);
+  document.documentElement.lang=l;
+  document.documentElement.dir=(l==='ar')?'rtl':'ltr';
+  var d=document.getElementById('lang-drop-nav');
+  if(d) d.classList.remove('open');
+  var qd=document.getElementById('qnLangDrop');
+  if(qd) qd.classList.remove('open');
+  // Refresh all static texts immediately
+  var t=T[l]||T['en'];
+  var map={'eyebrow-text':'eyebrow','gallery-title':'title','gallery-sub':'sub','flags-label':'flags','feat-label':'feat_label','grid-label':'grid_label','wa-tooltip':'tooltip'};
+  Object.keys(map).forEach(function(id){
+    var el=document.getElementById(id);
+    if(el) el.textContent=t[map[id]]||'';
+  });
+  var btn=document.getElementById('load-btn');
+  if(btn&&!btn.classList.contains('hidden')) btn.textContent=t.loadmore;
+  var lb=document.getElementById('feat-loadmore-btn');
+  if(lb) lb.textContent=t.loadmore;
+  // Translate nav drawer links
+  document.querySelectorAll('[data-t]').forEach(function(el){
+    var key=el.getAttribute('data-t');
+    if(t[key]) el.textContent=t[key];
+  });
 }
 
 // Close lang dropdown on outside click
 document.addEventListener('click', function(e){
-  const d = document.getElementById('lang-drop');
+  var d = document.getElementById('lang-drop-nav');
   if(d && !d.contains(e.target)) d.classList.remove('open');
 });
 
-// Parallax hero
-(function(){
-  var img = document.querySelector('.parallax-img');
-  if(!img) return;
-  var hero = img.closest('.bio-hero');
-  function onScroll(){
-    var rect = hero.getBoundingClientRect();
-    var visible = rect.bottom > 0 && rect.top < window.innerHeight;
-    if(!visible) return;
-    var progress = -rect.top / window.innerHeight;
-    var offset = progress * 120; // px shift
-    img.style.transform = 'translateY(' + offset + 'px)';
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
-})();
-
-
-
-// ============ LANGUAGE INIT (bio is single-language but stores user preference) ============
-(function(){
-  var stored = null;
-  try { stored = localStorage.getItem('phg_lang'); } catch(e){}
-  var lang = stored && ['en','es','pt','ar','ja','zh'].includes(stored) ? stored : null;
-  if(!lang){
-    var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone||'').toLowerCase();
-    var nv = (navigator.language||'').toLowerCase();
-    if(/brazil|sao_paulo|brasilia|belem|manaus|fortaleza|recife|bahia|maceio/.test(tz)) lang='pt';
-    else if(nv.startsWith('pt')) lang='pt';
-    else if(/argentina|chile|colombia|mexico|peru|uruguay|venezuela|bolivia|ecuador|paraguay|cuba|panama|costa_rica|guatemala|honduras|nicaragua|salvador|santo_domingo|asuncion|montevideo|caracas|bogota|lima|santiago|madrid|tegucigalpa|managua/.test(tz)) lang='es';
-    else if(nv.startsWith('es')) lang='es';
-    else if(/asia\/dubai|asia\/riyadh|asia\/qatar|asia\/bahrain|asia\/kuwait|asia\/muscat|asia\/baghdad|africa\/cairo|asia\/amman|asia\/beirut|asia\/damascus/.test(tz)) lang='ar';
-    else if(nv.startsWith('ar')) lang='ar';
-    else if(/asia\/tokyo/.test(tz)) lang='ja';
-    else if(nv.startsWith('ja')) lang='ja';
-    else if(/asia\/shanghai|asia\/hong_kong|asia\/taipei|asia\/chongqing|asia\/macau/.test(tz)) lang='zh';
-    else if(nv.startsWith('zh')) lang='zh';
-    else lang='en';
-  }
-  var qnCode = document.getElementById('qnLangCode');
-  if(qnCode) qnCode.textContent = lang.toUpperCase();
-  document.querySelectorAll('.qn-lang-opt').forEach(function(b){
-    b.classList.toggle('active', b.dataset.lang === lang);
-  });
-})();
 
 // ============ QUIET LUXURY NAV CONTROLS ============
 (function(){
@@ -512,8 +491,12 @@ document.addEventListener('click', function(e){
   function toggleMenu(){body.classList.contains('menu-open')?closeMenu():openMenu();}
   burger.addEventListener('click',toggleMenu);
   document.querySelectorAll('.qn-menu a').forEach(a=>a.addEventListener('click',closeMenu));
-  // Translate nav on load
-  translateNav(lang);
+  // Translate nav menu
+  var t2=T[lang]||T['en'];
+  document.querySelectorAll('[data-t]').forEach(function(el){
+    var key=el.getAttribute('data-t');
+    if(t2[key]) el.textContent=t2[key];
+  });
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&body.classList.contains('menu-open'))closeMenu();});
   backdrop.addEventListener('click',closeMenu);
 })();
@@ -530,8 +513,7 @@ document.addEventListener('click', function(e){
   });
   document.querySelectorAll('.qn-lang-opt').forEach(b=>{
     b.addEventListener('click', ()=>{
-      if(typeof selectLang==='function'){selectLang(b.dataset.lang);}
-      else if(typeof applyLang==='function'){applyLang(b.dataset.lang);}
+      switchLang(b.dataset.lang);
       langDrop.classList.remove('open');
       langToggle.setAttribute('aria-expanded','false');
     });
@@ -543,6 +525,7 @@ document.addEventListener('click', function(e){
     }
   });
 })();
+
 
 </script>
 
