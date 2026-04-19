@@ -343,8 +343,8 @@ section{padding:6rem 3rem}
 .bio-sig{font-family:'Playfair Display',serif;font-size:0.88rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-light);margin-top:1.8rem;margin-bottom:1.5rem;line-height:2}
 .bio-sig em{display:block;font-size:1.15rem;text-transform:none;letter-spacing:0.06em;color:var(--blue);font-style:italic;margin-top:0.15rem}
 
-/* CONCIERGE */
-.concierge-section{background:var(--blue);padding:6rem 3rem;text-align:center}
+/* */
+.-section{background:var(--blue);padding:6rem 3rem;text-align:center}
 .conc-eyebrow{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;justify-content:center;gap:0.7rem}
 .conc-eyebrow span{display:block;width:1.4rem;height:0.5px;background:var(--gold)}
 .conc-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;color:#fff;margin-bottom:1rem;line-height:1.2}
@@ -410,6 +410,32 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
   .glass-section-wrapper{justify-content:center !important}
   .glass-card-left,.glass-card-right,.glass-card-center{margin:1.5rem !important;max-width:calc(100vw - 3rem) !important}
 }
+
+@media (max-width: 768px) {
+  .hero-glass-card {
+    background: rgba(15, 25, 45, 0.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+  
+  #contacto > div > div:last-child {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 0.5rem !important;
+    width: 100%;
+  }
+  #contacto .btn-gold {
+    flex: 1;
+    padding: 12px 5px !important;
+    font-size: 0.85rem !important;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+  }
+  #contacto .btn-gold svg {
+    margin: 0;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -547,6 +573,32 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
 .vayu-mini-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
 .vayu-mini-item:hover img { transform: scale(1.05); }
 
+
+@media (max-width: 768px) {
+  .hero-glass-card {
+    background: rgba(15, 25, 45, 0.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+  
+  #contacto > div > div:last-child {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 0.5rem !important;
+    width: 100%;
+  }
+  #contacto .btn-gold {
+    flex: 1;
+    padding: 12px 5px !important;
+    font-size: 0.85rem !important;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+  }
+  #contacto .btn-gold svg {
+    margin: 0;
+  }
+}
+
 </style>
 
 <!-- NUEVA SECCIÓN: LIVE PAINTING -->
@@ -608,10 +660,10 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
   </div>
 </section>
 
-<!-- CONCIERGE -->
-<section class="concierge-section" id="contacto">
+<!-- -->
+<section class="-section" id="contacto">
   <div style="text-align:center; margin-bottom:1.5rem; width:100%;"><span data-t="conc_ey" style="font-family:'DM Sans', sans-serif; font-size: 0.85rem; letter-spacing: 2px; text-transform:uppercase; color: var(--gold); margin:0; white-space:nowrap; display:inline-block;">Servicio Privado</span></div>
-  <h2 class="conc-title" data-t="conc_t" style="font-size: 1.6rem; text-align:center; margin-bottom:1.5rem;">Private Art Concierge</h2>
+  <h2 class="conc-title" data-t="conc_t" style="font-size: 1.6rem; text-align:center; margin-bottom:1.5rem;">Servicio Privado</h2>
   <p class="conc-sub" data-t="conc_sub"></p>
   <div class="conc-btns">
     <a href="https://wa.me/5511920150899" class="btn-gold" target="_blank" style="display:flex;align-items:center;gap:0.6rem">
@@ -1091,8 +1143,8 @@ const WORKS=[
     w:100,h:100,tech:'ac',
     img:'https://static.wixstatic.com/media/54f562_5b4dac0ddeed41c5abbdb6aa77153ba4~mv2.jpg/v1/crop/x_0,y_15,w_2198,h_2185/fill/w_800,h_800,al_c,q_85,enc_avif,quality_auto/Despertos%20no%20sonho%20-%20Pedro%20Gallinger%20-%20Vayu.jpg',
     details:[
-      'Despiertos-en-el-sueño-Awake-in-the-dream- Pedro-Honeker-Gallinger-Vayu-detail1.webp',
-      'Despiertos-en-el-sueño-Awake-in-the-dream- Pedro-Honeker-Gallinger-Vayu-mockup.webp'
+      'Despiertos-en-el-sueño-Awake-in-the-dream- Pedro-Honeker-Gallinger-Vayu-mockup.webp',
+      'Despiertos-en-el-sueño-Awake-in-the-dream- Pedro-Honeker-Gallinger-Vayu-detail1.webp'
     ],
     desc_en:"A visual meditation on the unity of polarities. The central tree symbolizes the external world; its reflection in water evokes the inner universe. Two intensely colored birds celebrate uniqueness in brotherhood. At the epicenter, Metatron's Sacred Geometry reveals the fundamental matrix of matter — the divine signature imprinted at the core of form.",
     desc_es:'Una meditación visual sobre la unidad de los opuestos. El árbol central simboliza el mundo externo; su reflejo en el agua evoca el universo interior. Dos aves de colores intensos celebran la unicidad en la fraternidad. En el epicentro, la Geometría Sagrada de Metatrón revela la matriz fundamental de la materia.',
@@ -1338,7 +1390,7 @@ function openWork(i){
     detailsHtml=`<p class="expand-tag-sm" style="margin-top:2rem">${t.details_label||'Details'}</p><div class="expand-details-grid">${w.details.map(d=>`<img src="${d}" alt="${title} detail — Pedro Honeker Gallinger" loading="lazy" class="expand-detail-img">`).join('')}</div>`;
   }
   const expand=document.getElementById('works-expand');
-  expand.innerHTML=`<div class="work-expand-inner"><button class="expand-close-btn" onclick="closeWork()">← ${t.close}</button><img src="${w.img}" class="expand-main-img" alt="${title} — Pedro Honeker Gallinger"><div class="expand-divider"></div><div class="expand-tag-sm">${t.avail_tag} · ${t.avail_label}</div><h2 class="expand-title-lg">${title}</h2><p class="expand-meta-sm">${techStr} · ${dims}</p><div class="expand-divider"></div><p class="expand-desc">${desc}</p>${detailsHtml}<div class="expand-btns" style="margin-top:2rem"><a href="${workWaUrl(title)}" class="btn-wa-s" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.522 5.837L.057 23.215a.75.75 0 00.93.93l5.378-1.465A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.712 9.712 0 01-4.964-1.362l-.356-.212-3.692 1.005 1.005-3.693-.213-.355A9.714 9.714 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>WhatsApp Concierge</a><a href="mailto:artist@pedrohonekergallinger.art?subject=Enquiry: ${encodeURIComponent(title)}" class="btn-em-s">Email Concierge</a></div></div>`;
+  expand.innerHTML=`<div class="work-expand-inner"><button class="expand-close-btn" onclick="closeWork()">← ${t.close}</button><img src="${w.img}" class="expand-main-img" alt="${title} — Pedro Honeker Gallinger"><div class="expand-divider"></div><div class="expand-tag-sm">${t.avail_tag} · ${t.avail_label}</div><h2 class="expand-title-lg">${title}</h2><p class="expand-meta-sm">${techStr} · ${dims}</p><div class="expand-divider"></div><p class="expand-desc">${desc}</p>${detailsHtml}<div class="expand-btns" style="margin-top:2rem"><a href="${workWaUrl(title)}" class="btn-wa-s" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.522 5.837L.057 23.215a.75.75 0 00.93.93l5.378-1.465A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.712 9.712 0 01-4.964-1.362l-.356-.212-3.692 1.005 1.005-3.693-.213-.355A9.714 9.714 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>WhatsApp</a><a href="mailto:artist@pedrohonekergallinger.art?subject=Enquiry: ${encodeURIComponent(title)}" class="btn-em-s">Email</a></div></div>`;
   expand.classList.add('open');
   setTimeout(()=>expand.scrollIntoView({behavior:'smooth',block:'start'}),50);
 }
@@ -1485,5 +1537,30 @@ function applyLang(l){
   renderVideos();
 }
 </script>
+
+<script>
+// AUTO PAUSE VIDEOS
+document.addEventListener("DOMContentLoaded", function() {
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    const iframe = entry.target;
+                    // Resetting src pauses YouTube/Vimeo safely
+                    if (iframe.src) {
+                        const originalSrc = iframe.src;
+                        iframe.src = '';
+                        setTimeout(() => iframe.src = originalSrc, 100);
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        // Observe all iframes
+        document.querySelectorAll('iframe').forEach(iframe => observer.observe(iframe));
+    }
+});
+</script>
+
 </body>
 </html>
