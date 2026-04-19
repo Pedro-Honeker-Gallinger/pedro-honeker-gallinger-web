@@ -412,25 +412,33 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
 }
 
 
-/* CSS EXCLUSIVO PARA MÓVILES (REPARADO) */
+
+/* ESTILOS PARA TABLET Y CELULAR (GLASS CARD + BOTONES CONTACTO) */
+@media (max-width: 1024px) {
+  /* En versión tablet (iPad, etc): aumentar SOLO UN POCO la oscuridad */
+  .hero-glass-card {
+    background: rgba(10, 15, 30, 0.45) !important;
+  }
+}
+
 @media (max-width: 768px) {
+  /* En versión celular (iPhone, etc): aumentar BASTANTE MÁS la oscuridad */
   .hero-glass-card {
     background: rgba(5, 10, 20, 0.95) !important;
     border: 1px solid rgba(255, 255, 255, 0.4) !important;
   }
   
-  /* Target the correct container for contact buttons */
+  /* BOTONES DE CONTACTO: EN UNA SOLA LÍNEA, MISMO ANCHO */
   #contacto .conc-btns,
   .concierge-section .conc-btns {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     width: 100% !important;
-    justify-content: center !important;
-    gap: 5px !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
   }
   
-  /* Slim, delicate buttons */
   #contacto .btn-gold, #contacto .btn-em-s,
   .concierge-section .btn-gold, .concierge-section .btn-em-s {
     flex: 1 1 0 !important;
@@ -438,23 +446,24 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 10px 0 !important;
+    padding: 12px 0 !important;
     font-size: 0.75rem !important;
-    font-weight: 300 !important; /* Thinner text */
+    font-weight: 300 !important;
     text-align: center !important;
     white-space: nowrap !important;
     margin: 0 !important;
-    border-width: 1px !important; /* Delicate border */
+    border-width: 1px !important;
   }
   
   #contacto .btn-gold svg, #contacto .btn-em-s svg,
   .concierge-section .btn-gold svg, .concierge-section .btn-em-s svg {
-    margin: 0 0 4px 0 !important;
-    width: 16px !important;
-    height: 16px !important;
+    margin: 0 0 6px 0 !important;
+    width: 18px !important;
+    height: 18px !important;
   }
 }
 </style>
+
 
 </head>
 <body>
@@ -594,25 +603,33 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
 
 
 
-/* CSS EXCLUSIVO PARA MÓVILES (REPARADO) */
+
+/* ESTILOS PARA TABLET Y CELULAR (GLASS CARD + BOTONES CONTACTO) */
+@media (max-width: 1024px) {
+  /* En versión tablet (iPad, etc): aumentar SOLO UN POCO la oscuridad */
+  .hero-glass-card {
+    background: rgba(10, 15, 30, 0.45) !important;
+  }
+}
+
 @media (max-width: 768px) {
+  /* En versión celular (iPhone, etc): aumentar BASTANTE MÁS la oscuridad */
   .hero-glass-card {
     background: rgba(5, 10, 20, 0.95) !important;
     border: 1px solid rgba(255, 255, 255, 0.4) !important;
   }
   
-  /* Target the correct container for contact buttons */
+  /* BOTONES DE CONTACTO: EN UNA SOLA LÍNEA, MISMO ANCHO */
   #contacto .conc-btns,
   .concierge-section .conc-btns {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     width: 100% !important;
-    justify-content: center !important;
-    gap: 5px !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
   }
   
-  /* Slim, delicate buttons */
   #contacto .btn-gold, #contacto .btn-em-s,
   .concierge-section .btn-gold, .concierge-section .btn-em-s {
     flex: 1 1 0 !important;
@@ -620,23 +637,24 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 10px 0 !important;
+    padding: 12px 0 !important;
     font-size: 0.75rem !important;
-    font-weight: 300 !important; /* Thinner text */
+    font-weight: 300 !important;
     text-align: center !important;
     white-space: nowrap !important;
     margin: 0 !important;
-    border-width: 1px !important; /* Delicate border */
+    border-width: 1px !important;
   }
   
   #contacto .btn-gold svg, #contacto .btn-em-s svg,
   .concierge-section .btn-gold svg, .concierge-section .btn-em-s svg {
-    margin: 0 0 4px 0 !important;
-    width: 16px !important;
-    height: 16px !important;
+    margin: 0 0 6px 0 !important;
+    width: 18px !important;
+    height: 18px !important;
   }
 }
 </style>
+
 
 
 <!-- NUEVA SECCIÓN: LIVE PAINTING -->
@@ -897,7 +915,7 @@ const T={
     lang_tag:'Arte Inspiritual · Pedro Honeker Gallinger',
     nav_works:'Obras Disponíveis',nav_murals:'Murais',nav_corp:'Institucional',nav_bio:'Bio',nav_conc:'Contacto',nav_btn:'Consultar',
     hero_ey:'<span class="hero-eyebrow-styled">Arte Inspiritual<br><span style="font-size:0.8em; opacity:0.9">Arte que Inspira o Espírito</span></span>',
-    hero_t:'<em style="font-size:0.85em">"A beleza é a verdadeira espiritualidade.<br>A beleza está na radiância."</em>',
+    hero_t:'<em style="font-size:0.85em">"A beleza é a verdadeira espiritualidade.<br>A beleza está na radiância."<br>A beleza está na radiância."</em>',
     hero_q:'Essa certeza guia cada pincelada há vinte anos. Em minhas obras convivem a precisão da geometria sagrada e o calor da figura humana, a tradição clássica e a dimensão mais luminosa do que somos. Uma linguagem visual própria que hoje faz parte de coleções privadas e institucionais em mais de 15 países. Cada peça é uma obra original e certificada, disponível para colecionadores privados, galerias e projetos institucionais de grande escala.',
     s1:'Anos',s2:'Países',s3:'Legado',
     b_works:'Ver Obras Disponíveis',b_corp:'Projetos Institucionais',
@@ -1572,6 +1590,9 @@ function applyLang(l){
   renderVideos();
 }
 </script>
+
+
+
 
 <script>
 // AUTO-PAUSA DE VIDEOS AL HACER SCROLL
