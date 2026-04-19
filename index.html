@@ -413,53 +413,66 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
 
 
 
-/* ESTILOS PARA TABLET Y CELULAR (GLASS CARD + BOTONES CONTACTO) */
+/* ESTILOS EXCLUSIVOS PARA DISPOSITIVOS MÓVILES Y TABLETAS */
 @media (max-width: 1024px) {
-  /* En versión tablet (iPad, etc): aumentar SOLO UN POCO la oscuridad */
+  /* Tabletas: Un poco más de oscuridad */
   .hero-glass-card {
     background: rgba(10, 15, 30, 0.45) !important;
   }
 }
 
 @media (max-width: 768px) {
-  /* En versión celular (iPhone, etc): aumentar BASTANTE MÁS la oscuridad */
+  /* Teléfonos: Bastante más oscuro para que la letra blanca destaque perfecto */
   .hero-glass-card {
     background: rgba(5, 10, 20, 0.95) !important;
-    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
   }
   
-  /* BOTONES DE CONTACTO: EN UNA SOLA LÍNEA, MISMO ANCHO */
+  /* Botones de Contacto: En la misma línea horizontal, finos y delicados */
   #contacto .conc-btns,
-  .concierge-section .conc-btns {
+  .-section .conc-btns {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     width: 100% !important;
-    justify-content: space-between !important;
+    justify-content: center !important;
     gap: 8px !important;
+    padding: 0 10px !important;
   }
   
   #contacto .btn-gold, #contacto .btn-em-s,
-  .concierge-section .btn-gold, .concierge-section .btn-em-s {
+  .-section .btn-gold, .-section .btn-em-s {
     flex: 1 1 0 !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 12px 0 !important;
-    font-size: 0.75rem !important;
+    padding: 10px 0 !important;
+    font-size: 0.65rem !important; /* Letra más fina y delicada */
     font-weight: 300 !important;
+    letter-spacing: 1px !important;
     text-align: center !important;
     white-space: nowrap !important;
     margin: 0 !important;
-    border-width: 1px !important;
+    background: transparent !important;
+    color: var(--gold) !important;
+    border: 1px solid rgba(201, 161, 85, 0.4) !important; /* Borde muy fino y elegante */
+    border-radius: 4px !important;
   }
   
   #contacto .btn-gold svg, #contacto .btn-em-s svg,
-  .concierge-section .btn-gold svg, .concierge-section .btn-em-s svg {
+  .-section .btn-gold svg, .-section .btn-em-s svg {
     margin: 0 0 6px 0 !important;
-    width: 18px !important;
-    height: 18px !important;
+    width: 16px !important;
+    height: 16px !important;
+    stroke: var(--gold) !important;
+    fill: none !important;
+  }
+  
+  #contacto .btn-gold svg path, 
+  .-section .btn-gold svg path {
+      fill: var(--gold) !important;
+      stroke: none !important;
   }
 }
 </style>
@@ -519,7 +532,7 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
   <div class="hero-bg"></div>
   <div class="hero-content">
     <div class="hero-eyebrow"><span class="hero-eyebrow-line"></span><span data-t="hero_ey">Inspiritual Art · Arte que Inspira el Espíritu</span></div>
-    <h1 class="hero-title" style="font-size:clamp(1.8rem,2.8vw,2.8rem);line-height:1.25;margin-bottom:1.8rem" data-t="hero_t"><em>"La belleza es la verdadera espiritualidad."</em></h1>
+    <h1 class="hero-title" style="font-size:clamp(1.8rem,2.8vw,2.8rem);line-height:1.25;margin-bottom:1.8rem" data-t="hero_t"><em style="font-size:0.85em">"La belleza es la verdadera espiritualidad.<br>La Belleza está en la radiancia."</em></h1>
     <p style="font-family:'Playfair Display',serif;font-size:0.95rem;line-height:1.85;color:rgba(255,255,255,0.9);text-shadow:0 1px 3px rgba(0,0,0,0.35)" data-t="hero_q">Esa certeza guía cada pincelada desde hace veinte años. En mis obras conviven la precisión de la geometría sagrada y la calidez de la figura humana, la tradición clásica y la dimensión más luminosa de lo que somos. Un lenguaje visual propio que hoy forma parte de colecciones privadas e institucionales en más de 15 países. Cada pieza es una obra original y certificada, disponible para coleccionistas privados, galerías y proyectos institucionales de gran escala.</p>
   </div>
 </div>
@@ -604,53 +617,66 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
 
 
 
-/* ESTILOS PARA TABLET Y CELULAR (GLASS CARD + BOTONES CONTACTO) */
+/* ESTILOS EXCLUSIVOS PARA DISPOSITIVOS MÓVILES Y TABLETAS */
 @media (max-width: 1024px) {
-  /* En versión tablet (iPad, etc): aumentar SOLO UN POCO la oscuridad */
+  /* Tabletas: Un poco más de oscuridad */
   .hero-glass-card {
     background: rgba(10, 15, 30, 0.45) !important;
   }
 }
 
 @media (max-width: 768px) {
-  /* En versión celular (iPhone, etc): aumentar BASTANTE MÁS la oscuridad */
+  /* Teléfonos: Bastante más oscuro para que la letra blanca destaque perfecto */
   .hero-glass-card {
     background: rgba(5, 10, 20, 0.95) !important;
-    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
   }
   
-  /* BOTONES DE CONTACTO: EN UNA SOLA LÍNEA, MISMO ANCHO */
+  /* Botones de Contacto: En la misma línea horizontal, finos y delicados */
   #contacto .conc-btns,
-  .concierge-section .conc-btns {
+  .-section .conc-btns {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     width: 100% !important;
-    justify-content: space-between !important;
+    justify-content: center !important;
     gap: 8px !important;
+    padding: 0 10px !important;
   }
   
   #contacto .btn-gold, #contacto .btn-em-s,
-  .concierge-section .btn-gold, .concierge-section .btn-em-s {
+  .-section .btn-gold, .-section .btn-em-s {
     flex: 1 1 0 !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 12px 0 !important;
-    font-size: 0.75rem !important;
+    padding: 10px 0 !important;
+    font-size: 0.65rem !important; /* Letra más fina y delicada */
     font-weight: 300 !important;
+    letter-spacing: 1px !important;
     text-align: center !important;
     white-space: nowrap !important;
     margin: 0 !important;
-    border-width: 1px !important;
+    background: transparent !important;
+    color: var(--gold) !important;
+    border: 1px solid rgba(201, 161, 85, 0.4) !important; /* Borde muy fino y elegante */
+    border-radius: 4px !important;
   }
   
   #contacto .btn-gold svg, #contacto .btn-em-s svg,
-  .concierge-section .btn-gold svg, .concierge-section .btn-em-s svg {
+  .-section .btn-gold svg, .-section .btn-em-s svg {
     margin: 0 0 6px 0 !important;
-    width: 18px !important;
-    height: 18px !important;
+    width: 16px !important;
+    height: 16px !important;
+    stroke: var(--gold) !important;
+    fill: none !important;
+  }
+  
+  #contacto .btn-gold svg path, 
+  .-section .btn-gold svg path {
+      fill: var(--gold) !important;
+      stroke: none !important;
   }
 }
 </style>
@@ -915,7 +941,7 @@ const T={
     lang_tag:'Arte Inspiritual · Pedro Honeker Gallinger',
     nav_works:'Obras Disponíveis',nav_murals:'Murais',nav_corp:'Institucional',nav_bio:'Bio',nav_conc:'Contacto',nav_btn:'Consultar',
     hero_ey:'<span class="hero-eyebrow-styled">Arte Inspiritual<br><span style="font-size:0.8em; opacity:0.9">Arte que Inspira o Espírito</span></span>',
-    hero_t:'<em style="font-size:0.85em">"A beleza é a verdadeira espiritualidade.<br>A beleza está na radiância."<br>A beleza está na radiância."</em>',
+    hero_t:'<em style="font-size:0.85em">"A beleza é a verdadeira espiritualidade.<br>A beleza está na radiância."</em>',
     hero_q:'Essa certeza guia cada pincelada há vinte anos. Em minhas obras convivem a precisão da geometria sagrada e o calor da figura humana, a tradição clássica e a dimensão mais luminosa do que somos. Uma linguagem visual própria que hoje faz parte de coleções privadas e institucionais em mais de 15 países. Cada peça é uma obra original e certificada, disponível para colecionadores privados, galerias e projetos institucionais de grande escala.',
     s1:'Anos',s2:'Países',s3:'Legado',
     b_works:'Ver Obras Disponíveis',b_corp:'Projetos Institucionais',
@@ -1183,7 +1209,7 @@ const VIDEOS=[
 
 /* === OBRAS DISPONIBLES === */
 /* File names from Disponibles.png screenshots:
-   - Despiertos-en-el-sueño-Awake-in-the-dream-Pedro-Honeker-Gallinger-Vayu.webp
+   - Despiertos-en-el-sueño-Pedro-Honeker-Gallinger-Vayu.webp
    - Idyllium-Pedro-Honeker-Gallinger-Vayu.webp
    - Olhar-da-Vida-Pedro-Honeker-Gallinger-Vayu.webp
    Details:
@@ -1194,7 +1220,7 @@ const VIDEOS=[
 const WORKS=[
   {
     slug:'awake',
-    file:'Despiertos-en-el-sueño-Awake-in-the-dream- Pedro-Honeker-Gallinger-Vayu.webp',
+    file:'Despiertos-en-el-sueño-Pedro-Honeker-Gallinger-Vayu.webp',
     title:'Awake in the Dream',title_es:'Despiertos en el Sueño',title_pt:'Despertos no Sonho',
     w:100,h:100,tech:'ac',
     img:'https://static.wixstatic.com/media/54f562_5b4dac0ddeed41c5abbdb6aa77153ba4~mv2.jpg/v1/crop/x_0,y_15,w_2198,h_2185/fill/w_800,h_800,al_c,q_85,enc_avif,quality_auto/Despertos%20no%20sonho%20-%20Pedro%20Gallinger%20-%20Vayu.jpg',
@@ -1595,7 +1621,7 @@ function applyLang(l){
 
 
 <script>
-// AUTO-PAUSA DE VIDEOS AL HACER SCROLL
+// AUTO-PAUSA DE VIDEOS AL HACER SCROLL (ACTUALIZADO)
 document.addEventListener("DOMContentLoaded", function() {
     if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries) => {
