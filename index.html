@@ -413,64 +413,50 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
 
 
 
-/* ESTILOS EXCLUSIVOS PARA DISPOSITIVOS MÓVILES Y TABLETAS */
+/* ESTILOS EXCLUSIVOS MÓVILES / TABLET */
 @media (max-width: 1024px) {
-  /* Tabletas: Un poco más de oscuridad */
-  .hero-glass-card {
-    background: rgba(10, 15, 30, 0.45) !important;
-  }
+  .hero-glass-card { background: rgba(15, 20, 30, 0.45) !important; }
 }
-
 @media (max-width: 768px) {
-  /* Teléfonos: Bastante más oscuro para que la letra blanca destaque perfecto */
   .hero-glass-card {
     background: rgba(5, 10, 20, 0.95) !important;
     border: 1px solid rgba(255, 255, 255, 0.25) !important;
   }
-  
-  /* Botones de Contacto: En la misma línea horizontal, finos y delicados */
-  #contacto .conc-btns,
-  .-section .conc-btns {
+  #contacto .conc-btns, .-section .conc-btns {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     width: 100% !important;
-    justify-content: center !important;
+    justify-content: space-between !important;
     gap: 8px !important;
-    padding: 0 10px !important;
+    padding: 0 !important;
   }
-  
-  #contacto .btn-gold, #contacto .btn-em-s,
-  .-section .btn-gold, .-section .btn-em-s {
+  #contacto .btn-gold, #contacto .btn-em-s, .-section .btn-gold, .-section .btn-em-s {
     flex: 1 1 0 !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
     padding: 10px 0 !important;
-    font-size: 0.65rem !important; /* Letra más fina y delicada */
+    font-size: 0.65rem !important;
     font-weight: 300 !important;
-    letter-spacing: 1px !important;
+    letter-spacing: 0.5px !important;
     text-align: center !important;
     white-space: nowrap !important;
     margin: 0 !important;
     background: transparent !important;
     color: var(--gold) !important;
-    border: 1px solid rgba(201, 161, 85, 0.4) !important; /* Borde muy fino y elegante */
+    border: 1px solid rgba(201, 161, 85, 0.4) !important;
     border-radius: 4px !important;
   }
-  
-  #contacto .btn-gold svg, #contacto .btn-em-s svg,
-  .-section .btn-gold svg, .-section .btn-em-s svg {
-    margin: 0 0 6px 0 !important;
+  #contacto .btn-gold svg, #contacto .btn-em-s svg, .-section .btn-gold svg, .-section .btn-em-s svg {
+    margin: 0 0 4px 0 !important;
     width: 16px !important;
     height: 16px !important;
     stroke: var(--gold) !important;
     fill: none !important;
   }
-  
-  #contacto .btn-gold svg path, 
-  .-section .btn-gold svg path {
+  #contacto .btn-gold svg path, .-section .btn-gold svg path {
       fill: var(--gold) !important;
       stroke: none !important;
   }
@@ -532,7 +518,7 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
   <div class="hero-bg"></div>
   <div class="hero-content">
     <div class="hero-eyebrow"><span class="hero-eyebrow-line"></span><span data-t="hero_ey">Inspiritual Art · Arte que Inspira el Espíritu</span></div>
-    <h1 class="hero-title" style="font-size:clamp(1.8rem,2.8vw,2.8rem);line-height:1.25;margin-bottom:1.8rem" data-t="hero_t"><em style="font-size:0.85em">"La belleza es la verdadera espiritualidad.<br>La Belleza está en la radiancia."</em></h1>
+    <h1 class="hero-title" style="font-size:clamp(1.8rem,2.8vw,2.8rem);line-height:1.25;margin-bottom:1.8rem" data-t="hero_t"><em style="font-size:0.85em; display:block;">"La belleza es la verdadera espiritualidad.<br>La Belleza está en la radiancia."</em></h1>
     <p style="font-family:'Playfair Display',serif;font-size:0.95rem;line-height:1.85;color:rgba(255,255,255,0.9);text-shadow:0 1px 3px rgba(0,0,0,0.35)" data-t="hero_q">Esa certeza guía cada pincelada desde hace veinte años. En mis obras conviven la precisión de la geometría sagrada y la calidez de la figura humana, la tradición clásica y la dimensión más luminosa de lo que somos. Un lenguaje visual propio que hoy forma parte de colecciones privadas e institucionales en más de 15 países. Cada pieza es una obra original y certificada, disponible para coleccionistas privados, galerías y proyectos institucionales de gran escala.</p>
   </div>
 </div>
@@ -617,64 +603,50 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
 
 
 
-/* ESTILOS EXCLUSIVOS PARA DISPOSITIVOS MÓVILES Y TABLETAS */
+/* ESTILOS EXCLUSIVOS MÓVILES / TABLET */
 @media (max-width: 1024px) {
-  /* Tabletas: Un poco más de oscuridad */
-  .hero-glass-card {
-    background: rgba(10, 15, 30, 0.45) !important;
-  }
+  .hero-glass-card { background: rgba(15, 20, 30, 0.45) !important; }
 }
-
 @media (max-width: 768px) {
-  /* Teléfonos: Bastante más oscuro para que la letra blanca destaque perfecto */
   .hero-glass-card {
     background: rgba(5, 10, 20, 0.95) !important;
     border: 1px solid rgba(255, 255, 255, 0.25) !important;
   }
-  
-  /* Botones de Contacto: En la misma línea horizontal, finos y delicados */
-  #contacto .conc-btns,
-  .-section .conc-btns {
+  #contacto .conc-btns, .-section .conc-btns {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     width: 100% !important;
-    justify-content: center !important;
+    justify-content: space-between !important;
     gap: 8px !important;
-    padding: 0 10px !important;
+    padding: 0 !important;
   }
-  
-  #contacto .btn-gold, #contacto .btn-em-s,
-  .-section .btn-gold, .-section .btn-em-s {
+  #contacto .btn-gold, #contacto .btn-em-s, .-section .btn-gold, .-section .btn-em-s {
     flex: 1 1 0 !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
     padding: 10px 0 !important;
-    font-size: 0.65rem !important; /* Letra más fina y delicada */
+    font-size: 0.65rem !important;
     font-weight: 300 !important;
-    letter-spacing: 1px !important;
+    letter-spacing: 0.5px !important;
     text-align: center !important;
     white-space: nowrap !important;
     margin: 0 !important;
     background: transparent !important;
     color: var(--gold) !important;
-    border: 1px solid rgba(201, 161, 85, 0.4) !important; /* Borde muy fino y elegante */
+    border: 1px solid rgba(201, 161, 85, 0.4) !important;
     border-radius: 4px !important;
   }
-  
-  #contacto .btn-gold svg, #contacto .btn-em-s svg,
-  .-section .btn-gold svg, .-section .btn-em-s svg {
-    margin: 0 0 6px 0 !important;
+  #contacto .btn-gold svg, #contacto .btn-em-s svg, .-section .btn-gold svg, .-section .btn-em-s svg {
+    margin: 0 0 4px 0 !important;
     width: 16px !important;
     height: 16px !important;
     stroke: var(--gold) !important;
     fill: none !important;
   }
-  
-  #contacto .btn-gold svg path, 
-  .-section .btn-gold svg path {
+  #contacto .btn-gold svg path, .-section .btn-gold svg path {
       fill: var(--gold) !important;
       stroke: none !important;
   }
@@ -1209,7 +1181,7 @@ const VIDEOS=[
 
 /* === OBRAS DISPONIBLES === */
 /* File names from Disponibles.png screenshots:
-   - Despiertos-en-el-sueño-Pedro-Honeker-Gallinger-Vayu.webp
+   - Despiertos-en-el-sueño-Awake-in-the-dream-Pedro-Honeker-Gallinger-Vayu.webp
    - Idyllium-Pedro-Honeker-Gallinger-Vayu.webp
    - Olhar-da-Vida-Pedro-Honeker-Gallinger-Vayu.webp
    Details:
@@ -1220,7 +1192,7 @@ const VIDEOS=[
 const WORKS=[
   {
     slug:'awake',
-    file:'Despiertos-en-el-sueño-Pedro-Honeker-Gallinger-Vayu.webp',
+    file:'Despiertos-en-el-sueño-Awake-in-the-dream- Pedro-Honeker-Gallinger-Vayu.webp',
     title:'Awake in the Dream',title_es:'Despiertos en el Sueño',title_pt:'Despertos no Sonho',
     w:100,h:100,tech:'ac',
     img:'https://static.wixstatic.com/media/54f562_5b4dac0ddeed41c5abbdb6aa77153ba4~mv2.jpg/v1/crop/x_0,y_15,w_2198,h_2185/fill/w_800,h_800,al_c,q_85,enc_avif,quality_auto/Despertos%20no%20sonho%20-%20Pedro%20Gallinger%20-%20Vayu.jpg',
@@ -1617,11 +1589,8 @@ function applyLang(l){
 }
 </script>
 
-
-
-
 <script>
-// AUTO-PAUSA DE VIDEOS AL HACER SCROLL (ACTUALIZADO)
+// AUTO-PAUSA DE VIDEOS AL HACER SCROLL
 document.addEventListener("DOMContentLoaded", function() {
     if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries) => {
