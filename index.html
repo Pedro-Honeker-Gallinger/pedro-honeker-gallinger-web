@@ -411,48 +411,51 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
   .glass-card-left,.glass-card-right,.glass-card-center{margin:1.5rem !important;max-width:calc(100vw - 3rem) !important}
 }
 
-/* CSS EXCLUSIVO PARA MÓVILES (VERSION DEFINITIVA) */
+
+/* CSS EXCLUSIVO PARA MÓVILES (REPARADO) */
 @media (max-width: 768px) {
   .hero-glass-card {
     background: rgba(5, 10, 20, 0.95) !important;
     border: 1px solid rgba(255, 255, 255, 0.4) !important;
   }
   
-  #contacto > div > div:last-child,
-  .concierge-section > div > div:last-child {
+  /* Target the correct container for contact buttons */
+  #contacto .conc-btns,
+  .concierge-section .conc-btns {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     width: 100% !important;
-    justify-content: space-between !important;
-    gap: 10px !important;
+    justify-content: center !important;
+    gap: 5px !important;
   }
   
+  /* Slim, delicate buttons */
   #contacto .btn-gold, #contacto .btn-em-s,
-  .concierge-section .btn-gold, .concierge-section .btn-em-s,
-  #contacto a.btn-gold, .concierge-section a.btn-gold,
-  #contacto a.btn-em-s, .concierge-section a.btn-em-s {
+  .concierge-section .btn-gold, .concierge-section .btn-em-s {
     flex: 1 1 0 !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 12px 2px !important;
+    padding: 10px 0 !important;
     font-size: 0.75rem !important;
+    font-weight: 300 !important; /* Thinner text */
     text-align: center !important;
     white-space: nowrap !important;
     margin: 0 !important;
+    border-width: 1px !important; /* Delicate border */
   }
   
   #contacto .btn-gold svg, #contacto .btn-em-s svg,
   .concierge-section .btn-gold svg, .concierge-section .btn-em-s svg {
-    margin: 0 0 6px 0 !important;
-    width: 20px !important;
-    height: 20px !important;
+    margin: 0 0 4px 0 !important;
+    width: 16px !important;
+    height: 16px !important;
   }
 }
-
 </style>
+
 </head>
 <body>
 
@@ -491,7 +494,7 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
     <a href="#murals" data-t="nav_murals">Murals</a>
     <a href="live-painting.html" data-t="nav_live">Live Art</a>
     <a href="vayu-collection.html" data-t="nav_vayu">Vayu Collection</a>
-    <a href="#bio" data-t="nav_bio">Biography</a>
+    <a href="bio.html" data-t="menu_bio">Biography</a>
     <a href="#contacto" data-t="nav_conc">Contact</a>
   </nav>
   <div class="qn-foot">
@@ -590,48 +593,51 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
 .vayu-mini-item:hover img { transform: scale(1.05); }
 
 
-/* CSS EXCLUSIVO PARA MÓVILES (VERSION DEFINITIVA) */
+
+/* CSS EXCLUSIVO PARA MÓVILES (REPARADO) */
 @media (max-width: 768px) {
   .hero-glass-card {
     background: rgba(5, 10, 20, 0.95) !important;
     border: 1px solid rgba(255, 255, 255, 0.4) !important;
   }
   
-  #contacto > div > div:last-child,
-  .concierge-section > div > div:last-child {
+  /* Target the correct container for contact buttons */
+  #contacto .conc-btns,
+  .concierge-section .conc-btns {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     width: 100% !important;
-    justify-content: space-between !important;
-    gap: 10px !important;
+    justify-content: center !important;
+    gap: 5px !important;
   }
   
+  /* Slim, delicate buttons */
   #contacto .btn-gold, #contacto .btn-em-s,
-  .concierge-section .btn-gold, .concierge-section .btn-em-s,
-  #contacto a.btn-gold, .concierge-section a.btn-gold,
-  #contacto a.btn-em-s, .concierge-section a.btn-em-s {
+  .concierge-section .btn-gold, .concierge-section .btn-em-s {
     flex: 1 1 0 !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 12px 2px !important;
+    padding: 10px 0 !important;
     font-size: 0.75rem !important;
+    font-weight: 300 !important; /* Thinner text */
     text-align: center !important;
     white-space: nowrap !important;
     margin: 0 !important;
+    border-width: 1px !important; /* Delicate border */
   }
   
   #contacto .btn-gold svg, #contacto .btn-em-s svg,
   .concierge-section .btn-gold svg, .concierge-section .btn-em-s svg {
-    margin: 0 0 6px 0 !important;
-    width: 20px !important;
-    height: 20px !important;
+    margin: 0 0 4px 0 !important;
+    width: 16px !important;
+    height: 16px !important;
   }
 }
-
 </style>
+
 
 <!-- NUEVA SECCIÓN: LIVE PAINTING -->
 <section id="live-painting" class="glass-section-wrapper" style="background: url('6-concert-live-painting-Pedro-Honeker-Gallinger-2.webp') right center / cover no-repeat fixed; justify-content: center;">
@@ -687,7 +693,7 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
         <p data-t="bio_p3" style="font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:var(--blue);margin-top:1.5rem;line-height:1.6;font-weight:400"></p>
       </div>
       <p class="bio-sig" data-t="bio_sig"></p>
-      <a href="https://www.pedrohonekergallinger.art/bio.html" class="qn-link" data-t="menu_bio">Full Biography</a>
+      <a href="bio.html" class="qn-link" data-t="menu_bio">Full Biography</a>
     </div>
   </div>
 </section>
@@ -733,7 +739,7 @@ footer{background:var(--blue2);padding:4rem 3rem 2rem;color:rgba(255,255,255,0.6
       <a href="videos.html" data-t="f_vid">Videos</a>
       <h5 data-t="f_s" style="margin-top:1.5rem">Studio</h5>
       <a href="/institutional.html" data-t="f_corp">Institutional</a>
-      <a href="https://www.pedrohonekergallinger.art/bio.html" class="qn-link" data-t="menu_bio">Biography</a>
+      <a href="bio.html" class="qn-link" data-t="menu_bio">Biography</a>
       <a href="#contacto" data-t="f_conc">Contact</a>
     </div>
     <div class="footer-col">
